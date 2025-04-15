@@ -134,7 +134,8 @@ function ensureLessonDataLoaded(callback) {
     
     // Fallback to relative path if absolute path fails
     function tryRelativePath() {
-        const basePath = getBasePath();
+        // Try using getBasePath first
+        const basePath = typeof getBasePath === 'function' ? getBasePath() : '../'.repeat(window.location.pathname.split('/').filter(p => p && !p.endsWith('.html')).length);
         const relativeUrl = `${basePath}data/ks3_lessons.js`;
         console.log(`DEBUG Hamburger: Trying relative path: ${relativeUrl}`);
         
@@ -393,9 +394,8 @@ function populateHamburgerMenu() {
 }
 
 /**
- * Helper function to construct the correct path to term directory.
- * Avoids the duplicate ks3/ problem by checking the current path.
- * @param {string} basePath - The base path (e.g., "../../../")
+ * Constructs the path to a specific year/term folder
+ * @param {string} basePath - The relative path to site root
  * @param {string} year - The year (e.g., "year7")
  * @param {string} term - The term (e.g., "Year7_Term6")
  * @returns {string} - Properly constructed path to the term directory
@@ -407,19 +407,14 @@ function constructTermPath(basePath, year, term) {
 
     if (inKs3Path) {
         // If we're already in a KS3 path, use path directly to the year/term
-        if (window.SITE_ROOT) {
-            // If SITE_ROOT is defined, use it plus the direct path
-            return `${window.SITE_ROOT}ks3/${year}/${term}/`;
-        } else {
-            // Determine if our current directory is already the target directory
-            const isInTargetDir = currentPath.includes(`/ks3/${year}/${term}/`.toLowerCase());
-            if (isInTargetDir) {
-                return './'; // We're already in the right directory
-            }
-            
-            // Otherwise construct relative path based on basePath
-            return `${basePath}${year}/${term}/`;
+        // Determine if our current directory is already the target directory
+        const isInTargetDir = currentPath.includes(`/ks3/${year}/${term}/`.toLowerCase());
+        if (isInTargetDir) {
+            return './'; // We're already in the right directory
         }
+        
+        // Otherwise construct relative path based on basePath
+        return `${basePath}${year}/${term}/`;
     } else {
         // If we're not in a KS3 path, use the full path including ks3
         return `${basePath}ks3/${year}/${term}/`;
@@ -499,9 +494,6 @@ function getCurrentLessonNumber() {
  * @returns {string} Relative path like "../", "../../", etc.
  */
 function getBasePath() {
-    // If SITE_ROOT is defined, use it
-    if (window.SITE_ROOT) return window.SITE_ROOT;
-    
     // Check for a base tag in the document head
     const baseTag = document.querySelector('base[href]');
     if (baseTag) {
@@ -510,16 +502,30 @@ function getBasePath() {
         return baseHref;
     }
     
-    // Ensure the path starts with a slash for consistent splitting
-    const path = window.location.pathname.startsWith('/') ? window.location.pathname : '/' + window.location.pathname;
-    // Split by '/', filter out empty strings (from leading/trailing/double slashes)
-    // and the filename itself if present.
-    const depth = path.split('/').filter(p => p && !p.includes('.html')).length -1; // -1 because root is depth 0
+    const path = window.location.pathname;
+    
+    // Check if we're on GitHub Pages or your desired domain
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const repoName = 'SGSCS'; // Your GitHub repository name
+    
+    // If we're on GitHub Pages and the path includes the repo name
+    if (isGitHubPages && path.includes(`/${repoName}/`)) {
+        // For GitHub Pages, we need to use relative paths starting from the repo name
+        const pathAfterRepo = path.split(`/${repoName}/`)[1] || '';
+        const segments = pathAfterRepo.split('/').filter(p => p && !p.endsWith('.html')).length;
+        return '../'.repeat(segments);
+    } else {
+        // Original calculation for non-GitHub Pages deployment
+        // Ensure the path starts with a slash for consistent splitting
+        const normPath = path.startsWith('/') ? path : '/' + path;
+        // Split by '/', filter out empty strings and the filename itself if present.
+        const depth = normPath.split('/').filter(p => p && !p.includes('.html')).length - 1; // -1 because root is depth 0
 
-    if (depth <= 0) {
-        return './'; // Already at root or invalid depth
+        if (depth <= 0) {
+            return './'; // Already at root or invalid depth
+        }
+        return '../'.repeat(depth);
     }
-    return '../'.repeat(depth);
 }
 
 /**

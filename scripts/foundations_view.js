@@ -46,8 +46,35 @@ document.addEventListener("DOMContentLoaded", () => {
     let playerImageElement; // Will hold the <img> element for skills view
 
     // --- Paths (Determine dynamically based on expected location of Foundations.html) ---
-    // Assuming Foundations.html is in ks3/Concepts/
-    const basePath = '../../'; // Path from ks3/Concepts/ back to root
+    // Get the base path using the same method as other scripts
+    function getBasePath() {
+        const path = window.location.pathname;
+        
+        // Check if we're on GitHub Pages or your desired domain
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const repoName = 'SGSCS'; // Your GitHub repository name
+        
+        // If we're on GitHub Pages and the path includes the repo name
+        if (isGitHubPages && path.includes(`/${repoName}/`)) {
+            // For GitHub Pages, we need to use relative paths starting from the repo name
+            const pathAfterRepo = path.split(`/${repoName}/`)[1] || '';
+            const segments = pathAfterRepo.split('/').filter(p => p && !p.endsWith('.html')).length;
+            return '../'.repeat(segments);
+        } else {
+            // Regular path calculation
+            const depth = path.split('/').filter(p => p && !p.endsWith('.html')).length;
+            if (path === '/' || path.endsWith('/index.html')) {
+                return './'; // Root or index.html at root
+            } else {
+                return '../'.repeat(depth);
+            }
+        }
+    }
+    
+    // Calculate the base path 
+    const basePath = getBasePath();
+    console.log("DEBUG Foundations: Using base path: " + basePath);
+    
     const imagePathBase = `${basePath}assets/images/concepts/`;
     const skillImageBase = `${basePath}assets/images/Skills/`;
     const placeholderImagePath = `${basePath}assets/images/placeholder_concept.png`; // Placeholder if concept image fails

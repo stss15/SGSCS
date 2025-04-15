@@ -17,14 +17,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Calculates the relative path from the current page to the site root.
+     * Enhanced to work with GitHub Pages deployments
      */
     function getBasePath() {
         const path = window.location.pathname;
-        const depth = path.split('/').filter(p => p && !p.endsWith('.html')).length; // Count directory levels accurately
-        if (path === '/' || path.endsWith('/index.html')) {
-             return './'; // Root or index.html at root
+        
+        // Check if we're on GitHub Pages or your desired domain
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const repoName = 'SGSCS'; // Your GitHub repository name
+        
+        // If we're on GitHub Pages and the path includes the repo name
+        if (isGitHubPages && path.includes(`/${repoName}/`)) {
+            // For GitHub Pages, we need to use relative paths starting from the repo name
+            const pathAfterRepo = path.split(`/${repoName}/`)[1] || '';
+            const segments = pathAfterRepo.split('/').filter(p => p && !p.endsWith('.html')).length;
+            return '../'.repeat(segments);
         } else {
-             return '../'.repeat(depth);
+            // Original calculation for non-GitHub Pages deployment
+            const depth = path.split('/').filter(p => p && !p.endsWith('.html')).length;
+            if (path === '/' || path.endsWith('/index.html')) {
+                return './'; // Root or index.html at root
+            } else {
+                return '../'.repeat(depth);
+            }
         }
     }
 
