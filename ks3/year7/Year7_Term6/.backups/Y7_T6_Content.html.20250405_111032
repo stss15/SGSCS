@@ -1,0 +1,63 @@
+<div class="topic-container"> <div class="topic-header">
+                    <h1>
+                        Data Representation
+                    </h1>
+                   
+                </div>
+
+                <div class="content-accordion"> <button class="lesson-toggle" aria-expanded="false" aria-controls="lesson-content-0">
+                        <span>Introduction: Why Binary?</span>
+                        <span class="toggle-icon"></span> </button>
+                    <div class="lesson-content" id="lesson-content-0">
+                        <p><i>(Content for Lesson 0 will go here...)</i></p>
+                    </div>
+
+                    <button class="lesson-toggle" aria-expanded="false" aria-controls="lesson-content-1">
+                         <span>Lesson 1: Why Binary? (Converting Denary to Binary)</span>
+                         <span class="toggle-icon"></span>
+                     </button>
+                    <div class="lesson-content" id="lesson-content-1">
+                         <p><i>(Content for Lesson 1 will go here...)</i></p>
+                     </div>
+
+                     <button class="lesson-toggle" aria-expanded="false" aria-controls="lesson-content-2">
+                         <span>Lesson 2: Hex Power! The Binary Shortcut</span>
+                         <span class="toggle-icon"></span>
+                     </button>
+                     <div class="lesson-content" id="lesson-content-2">
+                          <p><i>(Content for Lesson 2 will go here...)</i></p>
+                     </div>
+
+                     <button class="lesson-toggle" aria-expanded="false" aria-controls="lesson-content-3">
+                         <span>Lesson 3: Binary Sums! (Adding 8-Bit Numbers)</span>
+                         <span class="toggle-icon"></span>
+                     </button>
+                     <div class="lesson-content" id="lesson-content-3">
+                          <p><i>(Content for Lesson 3 will go here...)</i></p>
+                     </div>
+
+                     <button class="lesson-toggle" aria-expanded="false" aria-controls="lesson-content-4">
+                          <span>Lesson 4: The Secret Life of Letters & Symbols</span>
+                          <span class="toggle-icon"></span>
+                      </button>
+                     <div class="lesson-content" id="lesson-content-4">
+                          <p><i>(Content for Lesson 4 will go here...)</i></p>
+                      </div>
+
+                     <button class="lesson-toggle" aria-expanded="false" aria-controls="lesson-content-5">
+                          <span>Lesson 5: Binary Beats: How Computers Hear Sound</span>
+                          <span class="toggle-icon"></span>
+                      </button>
+                     <div class="lesson-content" id="lesson-content-5">
+                           <p><i>(Content for Lesson 5 will go here...)</i></p>
+                      </div>
+
+                     <button class="lesson-toggle" aria-expanded="false" aria-controls="lesson-content-6">
+                          <span>Lesson 6: Pixel Power! Painting with Binary</span>
+                          <span class="toggle-icon"></span>
+                      </button>
+                     <div class="lesson-content" id="lesson-content-6">
+                            <p><i>(Content for Lesson 6 will go here...)</i></p>
+                      </div>
+
+                </div> </div>

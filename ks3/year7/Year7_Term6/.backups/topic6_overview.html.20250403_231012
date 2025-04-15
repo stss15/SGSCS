@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 7: Data Representation Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../../../styles/main.css">
+    
+    <!-- Theme Style - Will be replaced based on section -->
+    <link rel="stylesheet" href="../../../styles/ks3_theme.css">
+    
+    <!-- Page Specific Styles -->
+    
+</head>
+<body>
+    <header class="main-header nav-sticky">
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="../../../index.html">Home</a>
+            </div>
+            <ul>
+                <li><a href="../../../ks3/index.html" class="active">KS3</a></li>
+                <li><a href="../../../ks4/index.html" <!--class="active"-->>KS4</a></li>
+                <li><a href="../../../ks5/index.html" <!--class="active"-->>KS5</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <article class="card">
+            <h1>Year 7: Data Representation (Term 6)</h1>
+
+            <section class="topic-summary">
+                <h2>Topic Summary</h2>
+                <p>This unit introduces Year 7 students (11-12 years old) to the fundamental concept of binary representation in computer science over six lessons. Students will explore why computers use binary (0s and 1s) as their core language, linking it to simple ON/OFF electrical states. They will gain a foundational understanding of how different types of data – numbers, text, images, and sound – are represented digitally. The focus is on grasping the core ideas, such as converting simple positive numbers between denary and binary, understanding the role of character sets like ASCII, the concept of images being made of pixels, and the basic idea of digitising sound through sampling. Complex calculations and in-depth theory from the IGCSE syllabus are simplified for this age group.</p>
+            </section>
+
+            <section class="unit-plan">
+                <h2>Unit Plan: Lessons</h2>
+                <p>Select a lesson to begin:</p>
+
+                <div class="lesson-link-card">
+                    <h3>Lesson 1: Why Binary? Introduction to Number Systems</h3>
+                    <ul>
+                        <li>Explain why computers use binary (ON/OFF states).</li>
+                        <li>Identify denary (base-10) and binary (base-2).</li>
+                    </ul>
+                    <a href="topic6_lesson1.html" class="button">Go to Lesson 1</a>
+                </div>
+
+                <div class="lesson-link-card">
+                    <h3>Lesson 2: Binary Numbers - Denary to Binary Conversion</h3>
+                    <ul>
+                        <li>Understand binary place value (powers of 2).</li>
+                        <li>Convert positive denary (up to 255) into 8-bit binary.</li>
+                    </ul>
+                    <a href="topic6_lesson2.html" class="button">Go to Lesson 2</a>
+                </div>
+
+                <div class="lesson-link-card">
+                    <h3>Lesson 3: Binary Numbers - Binary to Denary Conversion & Addition</h3>
+                    <ul>
+                        <li>Convert 8-bit positive binary into denary.</li>
+                        <li>Recall and apply rules for binary addition (with carry).</li>
+                    </ul>
+                    <a href="topic6_lesson3.html" class="button">Go to Lesson 3</a>
+                </div>
+
+                <div class="lesson-link-card">
+                    <h3>Lesson 4: Introduction to Hexadecimal & Text Representation</h3>
+                    <ul>
+                        <li>Recognise hexadecimal (base-16, 0-9, A-F).</li>
+                        <li>Understand hex as shorthand for binary.</li>
+                        <li>Understand text characters represented by codes (ASCII).</li>
+                    </ul>
+                    <a href="topic6_lesson4.html" class="button">Go to Lesson 4</a>
+                </div>
+
+                <div class="lesson-link-card">
+                    <h3>Lesson 5: Representing Images</h3>
+                    <ul>
+                        <li>Define pixel; understand bitmap images as grids.</li>
+                        <li>Explain effect of resolution and colour depth on images.</li>
+                    </ul>
+                    <a href="topic6_lesson5.html" class="button">Go to Lesson 5</a>
+                </div>
+
+                <div class="lesson-link-card">
+                    <h3>Lesson 6: Representing Sound & Unit Review</h3>
+                    <ul>
+                        <li>Distinguish analogue vs. digital signals.</li>
+                        <li>Describe sampling to convert sound to digital data.</li>
+                        <li>Understand effect of sample rate/resolution on quality.</li>
+                    </ul>
+                    <a href="topic6_lesson6.html" class="button">Go to Lesson 6</a>
+                </div>
+                 </section>
+
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Mr Stewart, Head of Science - St. George's School Düsseldorf</p>
+    </footer>
+
+    <!-- Base Scripts -->
+    <script src="../../../scripts/main.js"></script>
+    
+    <!-- Theme Scripts - Will be replaced based on section -->
+    <script src="../../../scripts/ks3_animations.js"></script>
+    
+    <!-- Page Specific Scripts -->
+    
+</body>
+</html> 

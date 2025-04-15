@@ -1,0 +1,43 @@
+.back-nav {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 9999;
+    background: rgba(29, 53, 89, 0.7);
+    border: none;
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--body-font);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-medium);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--shadow-soft);
+}
+
+.back-nav:hover {
+    background: rgba(29, 53, 89, 0.9);
+    transform: translateX(3px);
+}
+
+.back-nav i {
+    font-size: 14px;
+    transition: var(--transition-medium);
+}
+
+.back-nav:hover i {
+    transform: translateX(-3px);
+}
+
+/* Ensure the back button doesn't overlap with other content on mobile */
+@media (max-width: 768px) {
+    .back-nav {
+        top: 70px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+} 

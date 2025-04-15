@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-template="no-include">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. George's Code Crusaders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index_styles.css">
+</head>
+<body>
+
+    <audio src="assets/sound/start.mp3" id="start-sound" preload="auto" style="display: none;"></audio>
+    <audio src="assets/sound/click.mp3" id="click-sound" preload="auto" style="display: none;"></audio>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="game-container">
+        <img src="assets/images/logo.png" alt="St. George's Code Crusaders" class="logo">
+        <button class="start-button">Press Start</button>
+
+        <div class="zelda-menu">
+            <div class="selector-arrow" style="top: 0;">►</div>
+
+            <div class="ks3-menu-item" data-selected="true">
+                <a href="javascript:void(0);" class="zelda-button" id="ks3-button">
+                    <span class="zelda-button-text">KS3</span>
+                </a>
+                <div id="ks3-submenu" class="ks3-submenu">
+                    <a href="ks3/year7/Landing_Page/Year7_Landing.html" class="zelda-button year-button">
+                         <span class="zelda-button-text">Year 7</span>
+                    </a>
+                    <a href="#" class="zelda-button year-button">
+                        <span class="zelda-button-text">Year 8</span>
+                    </a>
+                    <a href="#" class="zelda-button year-button">
+                        <span class="zelda-button-text">Year 9</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="#" class="zelda-button" id="igcse-button">
+                <span class="zelda-button-text">IGCSE</span>
+            </a>
+
+            <a href="#" class="zelda-button" id="ib-button">
+                <span class="zelda-button-text">IB</span>
+            </a>
+
+            <button class="zelda-button back-button">
+                <span class="zelda-button-text">Back</span>
+            </button>
+        </div> </div> <div class="copyright">
+        &copy; 2025 Mr Stewart, Head of Science - St. George's School Düsseldorf
+    </div>
+
+    <script src="scripts/index_animations.js"></script>
+    </body>
+</html>

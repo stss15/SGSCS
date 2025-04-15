@@ -1,0 +1,94 @@
+/* ============================================ */
+/* KS3 ACCORDION STYLES                         */
+/* ============================================ */
+
+.ks3-accordion-container {
+    width: 100%;
+    max-width: 900px; /* Adjust as needed, aligns with content */
+    margin: var(--section-spacing) auto; /* Center container */
+}
+
+.ks3-accordion-item {
+    background-color: var(--parchment); /* Light background */
+    border: 1px solid var(--gold-dark);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Important for max-height transition */
+    box-shadow: var(--shadow-soft);
+}
+
+.ks3-accordion-header {
+    background-color: var(--primary-navy-light); /* Darker header */
+    color: var(--gold);
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    display: flex; /* Use flexbox for text and indicator */
+    justify-content: space-between; /* Space between text and indicator */
+    align-items: center;
+}
+
+.ks3-accordion-header:hover {
+    background-color: var(--primary-navy); /* Slightly lighter on hover */
+    color: var(--gold-light);
+}
+
+.ks3-accordion-header.active {
+    background-color: var(--gold-dark); /* Indicate active state */
+    color: var(--primary-navy);
+}
+
+/* Indicator Style (e.g., +/- or arrow) */
+.accordion-indicator {
+    font-size: 1.2em;
+    transition: transform 0.3s ease-out;
+    font-weight: bold;
+    margin-left: 15px; /* Space between text and indicator */
+}
+
+/* Default indicator (e.g., '+') */
+.accordion-indicator::before {
+    content: '+';
+}
+
+/* Indicator when active/expanded (e.g., '-') */
+.ks3-accordion-header.active .accordion-indicator::before {
+    content: '\2212'; /* Minus sign */
+}
+
+/* Alternative Arrow Indicator (comment out the +/- above if using this) */
+/*
+.accordion-indicator::before {
+    content: '\25BC'; // Down arrow
+    display: inline-block;
+}
+.ks3-accordion-header.active .accordion-indicator {
+    transform: rotate(-180deg);
+}
+*/
+
+.ks3-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth transition */
+    padding: 0 20px;
+    background-color: var(--white); /* White background for content */
+    color: var(--dark-gray); /* Dark text for content */
+    border-top: 1px solid var(--gold-light); /* Separator line */
+}
+
+.ks3-accordion-content p {
+    margin: 15px 0; /* Add spacing around paragraphs inside */
+}
+
+/* Style when content is shown */
+.ks3-accordion-content.expanded {
+    /* max-height is set by JS, but padding activates */
+    padding: 15px 20px;
+}

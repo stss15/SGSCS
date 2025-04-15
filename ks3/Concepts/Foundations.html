@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Foundations of Computer Science</title> 
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../../styles/main.css?v=1.1.0"> 
+  <link rel="stylesheet" href="../../styles/ks3_theme.css?v=1.1.0"> 
+  <link rel="stylesheet" href="../../styles/foundations_page.css?v=1.1.0"> 
+</head>
+<body data-theme="ks3">
+  <button class="back-nav" onclick="window.history.back()">
+    <i class="fas fa-chevron-left"></i>
+    <span>Back</span>
+  </button>
+  
+  <!-- Include the shared header via include.js -->
+  <div data-include="header"></div>
+
+  <main>
+    <div class="main-content"> 
+      <div class="content-area"> 
+        <div id="concepts-view" style="display: flex;"> 
+          <div class="concept-display-area" id="concept-display-area">
+            <div class="concept-header">
+              <h2 class="view-title">Core Concepts</h2>
+            </div>
+            <div class="concept-content">
+              <!-- Concept content goes here -->
+            </div>
+            <div class="concept-footer">
+              <button class="view-toggle-button" id="show-skills">Skills</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="skills-view" style="display: none;">
+          <h2 class="view-title">Key Skills</h2>
+          <div class="skills-container">
+            <div class="player-character-area">
+              <!-- Player character content -->
+            </div>
+            <div class="skills-buttons">
+              <button class="skill-button" data-skill="Programming">
+                <div class="skill-rune"><i class="fas fa-code"></i></div>
+                <span>Programming</span>
+              </button>
+              <button class="skill-button" data-skill="DataHandling">
+                <div class="skill-rune"><i class="fas fa-database"></i></div>
+                <span>Data Handling</span>
+              </button>
+              <button class="skill-button" data-skill="DigitalLiteracy">
+                <div class="skill-rune"><i class="fas fa-laptop-code"></i></div>
+                <span>Digital Literacy</span>
+              </button>
+              <button class="skill-button" data-skill="ComputationalThinking">
+                <div class="skill-rune"><i class="fas fa-brain"></i></div>
+                <span>Computational Thinking</span>
+              </button>
+              <button class="skill-button" data-skill="Creativity">
+                <div class="skill-rune"><i class="fas fa-lightbulb"></i></div>
+                <span>Creativity</span>
+              </button>
+            </div>
+          </div>
+          <button class="view-toggle-button" id="show-concepts">Concepts</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Include the shared footer via include.js -->
+  <div data-include="footer"></div>
+  
+  <script src="../../scripts/main.js?v=1.1.0" defer></script> 
+  <script src="../../scripts/foundations_view.js?v=1.1.0" defer></script> 
+  <script src="../../scripts/include.js" defer></script>
+</body>
+</html>

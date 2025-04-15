@@ -1,0 +1,320 @@
+body {
+    margin: 0;
+    background-color: #0a1e3c; /* Fallback - keep specific or replace with --primary-navy-dark? */
+    font-family: var(--pixel-font), Arial, sans-serif; /* Use variable */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind content */
+}
+
+.game-container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+    gap: 20px; /* Add consistent spacing between logo and button */
+}
+
+.logo {
+    max-width: 60%;
+    height: auto;
+    margin-bottom: 0; /* Remove bottom margin */
+    filter: drop-shadow(0 0 10px rgba(218, 185, 75, 0.7)); /* Keep specific rgba or use var(--gold) ? */
+    transition: transform 0.8s, opacity 0.8s;
+    display: block;
+}
+
+.start-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: var(--gold);
+    color: var(--primary-navy);
+    border: 3px solid var(--gold-dark);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    position: relative;
+    animation: flash 1.5s infinite;
+    text-decoration: none;
+    font-family: var(--heading-font), serif; /* Use variable */
+    font-weight: 700;
+    text-transform: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0; /* Remove top margin */
+    box-shadow: 0 6px 0 var(--gold-dark);
+    transition: transform 0.1s, box-shadow 0.1s, background-color 0.3s, color 0.3s;
+}
+
+.start-button:hover {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 var(--gold-dark);
+    background-color: var(--gold-light);
+    color: var(--primary-navy-dark);
+    border-color: var(--gold);
+}
+
+.start-button:active {
+    transform: translateY(6px);
+    box-shadow: none;
+    background-color: var(--gold-dark);
+}
+
+@keyframes flash {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0.7;
+    }
+}
+
+/* Main Menu Styling */
+.zelda-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Consistent gap between main items */
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 1.2s, transform 1.2s;
+    position: relative;
+    width: 320px; /* Ensure width consistency */
+}
+
+.zelda-menu.visible {
+     display: flex;
+     opacity: 1;
+     transform: scale(1);
+}
+
+/* Wrapper for KS3 Button + Submenu */
+.ks3-menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Take full width */
+    position: relative; /* Needed if arrow needs positioning relative to this */
+}
+
+
+.zelda-button {
+    width: 280px; /* Keep consistent width for main buttons */
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: var(--gold);
+    color: var(--primary-navy);
+    border: 3px solid var(--gold-dark);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-family: var(--heading-font), serif; /* Use variable */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    position: relative;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 0 var(--gold-dark);
+    transition: transform 0.3s ease-out, box-shadow 0.1s, opacity 0.3s ease-out, background-color 0.3s, color 0.3s;
+}
+
+.zelda-button:hover {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 var(--gold-dark);
+    background-color: var(--gold-light);
+    color: var(--primary-navy-dark);
+    border-color: var(--gold);
+}
+
+.zelda-button:active {
+    transform: translateY(6px);
+    box-shadow: none;
+    background-color: var(--gold-dark);
+}
+
+.zelda-button-text {
+    width: 100%;
+    text-align: center;
+}
+
+/* Submenu Styling */
+.ks3-submenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%; /* Submenu relative to its wrapper */
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.3s 0.2s ease-out;
+    margin-top: 10px; /* Small margin between KS3 button and submenu items */
+}
+
+.ks3-submenu.open {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.ks3-submenu .zelda-button {
+    width: 240px;
+    font-size: 1rem;
+    padding: 12px 15px;
+    background-color: var(--gold-light);
+    color: var(--primary-navy);
+    border: 2px solid var(--gold);
+    box-shadow: 0 4px 0 var(--gold-dark);
+}
+.ks3-submenu .zelda-button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--gold-dark);
+    background-color: var(--gold);
+    color: var(--primary-navy-dark);
+    border-color: var(--gold-dark);
+}
+.ks3-submenu .zelda-button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+    background-color: var(--gold-dark);
+}
+
+
+/* Animation Class for fading other buttons */
+.zelda-menu.ks3-submenu-open #igcse-button,
+.zelda-menu.ks3-submenu-open #ib-button,
+.zelda-menu.ks3-submenu-open .back-button {
+    opacity: 0.7; /* Keep fade effect */
+     /* No vertical shift needed */
+}
+
+
+/* Selector Arrow Styling */
+.selector-arrow {
+    position: absolute;
+    left: -40px;
+    font-size: 24px;
+    color: var(--gold);
+    animation: flash 1.5s infinite;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s, top 0.3s ease-out;
+    pointer-events: none;
+    animation-play-state: paused;
+}
+
+.selector-active {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+
+.copyright {
+    position: absolute;
+    bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: var(--medium-gray); /* Use variable */
+    width: 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pixelate {
+    0% { filter: blur(0px); }
+    50% { filter: blur(2px); }
+    100% { filter: blur(0px); }
+}
+
+@keyframes soundEffect {
+    0% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+.sound-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(218,185,75,0.8) 0%, rgba(218,185,75,0) 70%);
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 2;
+    animation: soundEffect 0.8s forwards;
+}
+
+@media (max-width: 768px) {
+    .logo { max-width: 90%; }
+    .start-button {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+    .zelda-button {
+        width: 220px;
+        font-size: 1rem;
+    }
+    #ks3-button, #igcse-button, #ib-button, .back-button {
+        width: 220px;
+    }
+    .ks3-submenu .zelda-button {
+        width: 200px;
+        font-size: 0.9rem;
+    }
+    .selector-arrow {
+        left: -30px;
+        font-size: 20px;
+    }
+}
+
+/* Add CSS for transition effects */
+.fade-transition {
+    animation: fadeOutScale 0.8s forwards;
+}
+
+@keyframes fadeOutScale {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Update the existing transitions in CSS */
+.zelda-menu {
+    transition: opacity 0.8s, transform 0.8s;
+}
+.logo {
+    transition: opacity 0.8s, transform 0.8s;
+}

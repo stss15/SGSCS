@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St George's Computer Science</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../../styles/main.css">
+    
+    <!-- Theme Style - Will be replaced based on section -->
+    <link rel="stylesheet" href="../../styles/ks3_theme.css">
+    
+    <!-- Page Specific Styles -->
+    
+</head>
+<body>
+    <header class="main-header nav-sticky">
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="../../index.html">Home</a>
+            </div>
+            <ul>
+                <li><a href="../../ks3/index.html" class="active">KS3</a></li>
+                <li><a href="../../ks4/index.html" <!--class="active"-->>KS4</a></li>
+                <li><a href="../../ks5/index.html" <!--class="active"-->>KS5</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Mr Stewart, Head of Science - St. George's School Düsseldorf</p>
+    </footer>
+
+    <!-- Base Scripts -->
+    <script src="../../scripts/main.js"></script>
+    
+    <!-- Theme Scripts - Will be replaced based on section -->
+    <script src="../../scripts/ks3_animations.js"></script>
+    
+    <!-- Page Specific Scripts -->
+    
+</body>
+</html> 

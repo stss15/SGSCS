@@ -1,0 +1,777 @@
+/* ==================================
+   KS3 Lessons Layout - Modern VLE Style
+   Designed for Year 7 Term 6 lessons
+   ================================== */
+
+:root {
+    --lesson-primary: #3a5a96;
+    --lesson-secondary: #ffcc4d;
+    --lesson-accent: #f45d48;
+    --lesson-success: #4caf50;
+    --lesson-info: #2196f3;
+    --lesson-light-bg: var(--parchment-light);
+    --lesson-dark-bg: #2b3e63;
+    --lesson-border-radius: 12px;
+    --lesson-box-shadow: var(--shadow-medium);
+    --lesson-transition: var(--transition-medium);
+    --parchment-text: #332b1a;
+}
+
+/* Main lesson container */
+.topic-container {
+    padding: 2rem;
+    background-color: var(--parchment);
+    border-radius: var(--lesson-border-radius);
+    box-shadow: var(--lesson-box-shadow);
+    position: relative;
+    color: var(--parchment-text);
+}
+
+/* Lesson title */
+.topic-container h1 {
+    color: var(--lesson-primary);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--lesson-secondary);
+    position: relative;
+}
+
+.topic-container h1::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background-color: var(--lesson-accent);
+}
+
+/* Lesson sections styling */
+.lesson-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--lesson-border-radius);
+    background-color: var(--parchment-light);
+    box-shadow: var(--lesson-box-shadow);
+    transition: var(--lesson-transition);
+}
+
+.lesson-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Section headers */
+.lesson-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--parchment-dark);
+}
+
+.lesson-section h2 {
+    color: var(--lesson-primary);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Add icons to section headers */
+.lesson-section.objectives h2::before {
+    content: "🎯";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.lesson-section.keywords h2::before {
+    content: "🔤";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.lesson-section.discussion-hook h2::before {
+    content: "💭";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.lesson-section.activity h2::before {
+    content: "✏️";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+/* Add icon for retrieval practice section */
+.lesson-section.retrieval h2::before {
+    content: "🔄";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+/* Add icon for homework section */
+.lesson-section.homework h2::before {
+    content: "📚";
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+/* Learning objectives styling */
+.lesson-section.objectives {
+    border-left-color: var(--lesson-success);
+    background-color: var(--parchment-light);
+}
+
+.lesson-section.objectives ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.lesson-section.objectives li {
+    padding: 0.6rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.lesson-section.objectives li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--lesson-success);
+    font-weight: bold;
+}
+
+/* Keywords styling */
+.lesson-section.keywords {
+    border-left-color: var(--lesson-info);
+    background-color: var(--parchment-light);
+}
+
+.keyword {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    margin: 0.3rem;
+    background-color: var(--lesson-info);
+    color: var(--white);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: var(--lesson-transition);
+}
+
+.keyword:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Discussion hook styling */
+.lesson-section.discussion-hook {
+    border-left-color: var(--lesson-accent);
+    background-color: var(--parchment-light);
+}
+
+.lesson-section.discussion-hook p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.lesson-section.discussion-hook em {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Retrieval practice styling */
+.lesson-section.retrieval {
+    border-left: 4px solid #9c27b0;
+    background-color: var(--parchment-light);
+}
+
+.lesson-section.retrieval ol {
+    padding-left: 2rem;
+}
+
+.lesson-section.retrieval li {
+    padding: 0.8rem 0;
+    color: var(--parchment-text);
+}
+
+/* Activity section styling */
+.lesson-section.activity {
+    border-left-color: var(--lesson-secondary);
+    background-color: var(--parchment-light);
+}
+
+.lesson-section.activity ol {
+    padding-left: 2rem;
+}
+
+.lesson-section.activity li {
+    padding: 0.5rem 0;
+}
+
+/* Homework section styling */
+.lesson-section.homework {
+    border-left: 4px solid #ff9800;
+    background-color: var(--parchment-light);
+    margin-bottom: 2rem;
+}
+
+.lesson-section.homework ol {
+    padding-left: 2rem;
+}
+
+.lesson-section.homework li {
+    padding: 0.5rem 0;
+}
+
+.homework-content {
+    margin-top: 1rem;
+}
+
+.homework-content p:last-child {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Mastery challenges styling */
+.master-challenge {
+    margin-top: 3rem;
+    background-color: var(--parchment-dark);
+    border-radius: var(--lesson-border-radius);
+    overflow: hidden;
+    box-shadow: var(--lesson-box-shadow);
+    color: var(--parchment-text);
+}
+
+.skills-overview {
+    margin: 1rem auto 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px dashed var(--lesson-secondary);
+    max-width: 800px;
+}
+
+.skills-overview .concept-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.skills-overview .concept-card {
+    flex: 0 1 200px;
+    padding: 1rem;
+    min-width: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.skills-overview .concept-card:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.skills-overview .concept-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.skills-overview h3 {
+    color: var(--lesson-primary);
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.skill-card:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.skill-card .concept-image {
+    width: 100px;
+    height: 100px;
+}
+
+.master-challenge-title {
+    background-color: var(--lesson-primary);
+    color: #ffd700 !important;
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+.master-challenge-title .title-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.master-challenge-title .trophy {
+    font-size: 1.5rem;
+}
+
+.master-challenge-title h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #ffd700 !important;
+}
+
+/* Skill cards in mastery challenges */
+.skills-cards {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+/* Modify the skill card container */
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Remove any top padding (keep bottom padding for the text) */
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    /* Ensure the card's width adjusts to content (or set a preferred width if needed) */
+    width: auto;
+    min-width: 70px;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Make the image fill the top area of the card */
+.skill-card .skill-image {
+    display: block;
+    width: 100%;           /* The image fills the card width */
+    height: auto;          /* Height will scale to preserve aspect ratio */
+    object-fit: contain;   /* Ensure the image is not cropped */
+    max-height: 60px;      /* Control the maximum height */
+}
+
+/* Style the text below the image */
+.skill-text {
+    text-align: center;
+    margin-top: 0.5rem;   /* A small gap between image and text */
+    color: #ffd700;       /* Use the same gold as in your mastery challenges */
+    font-size: 0.75rem;
+    line-height: 1.2;
+    /* Allow the text to wrap naturally if it gets too long */
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.skill-card:hover {
+    background: none;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .master-challenge-title {
+        padding: 0.75rem 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .skills-cards {
+        margin-left: auto;
+        gap: 0.75rem;
+    }
+    
+    .skill-card {
+        min-width: 60px;
+    }
+    
+    .skill-card .skill-image {
+        max-height: 45px;
+    }
+    
+    .skill-text {
+        font-size: 0.65rem;
+    }
+}
+
+.challenge-content {
+    padding: 1.5rem;
+    color: var(--parchment-text);
+}
+
+.challenge-level {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: var(--lesson-transition);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+}
+
+.challenge-level:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.challenge-level h4 {
+    margin: 0;
+    display: contents;
+}
+
+.shield-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: start;
+}
+
+.challenge-level h4 > span {
+    grid-column: 2;
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--lesson-primary);
+}
+
+.challenge-level p {
+    grid-column: 2;
+    margin: 0.5rem 0 0 0;
+}
+
+.challenge-level.bronze {
+    background-color: rgba(176, 141, 87, 0.3);
+}
+
+.challenge-level.silver {
+    background-color: rgba(192, 192, 192, 0.3);
+}
+
+.challenge-level.gold {
+    background-color: rgba(255, 215, 0, 0.3);
+}
+
+.challenge-level.platinum {
+    background: linear-gradient(to right, #e6f3ff, #c9e6ff);
+    border: 1px solid #a8d5ff;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .topic-container {
+        padding: 1rem;
+        background-color: var(--parchment);
+    }
+    
+    .topic-container h1 {
+        font-size: 2rem;
+    }
+    
+    .lesson-section {
+        padding: 1rem;
+    }
+    
+    .lesson-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .skills-cards {
+        margin-left: auto;
+        gap: 1rem;
+    }
+    
+    .skill-card {
+        width: 50px;
+        height: 50px;
+        padding: 0.25rem;
+    }
+    
+    .shield-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .skill-card .concept-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .skills-overview .concept-card {
+        flex: 0 1 180px;
+    }
+    
+    .skills-overview .concept-image {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Additional elements for enhanced VLE experience */
+/* Progress indicator */
+.lesson-progress {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 8px;
+    background-color: var(--parchment-dark);
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0; /* Will be updated with JS */
+    background: linear-gradient(90deg, var(--lesson-secondary), var(--lesson-accent));
+    transition: width 0.3s ease;
+}
+
+
+/* Content cards for grouped information */
+.content-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.content-card {
+    background-color: var(--parchment-light);
+    border-radius: var(--lesson-border-radius);
+    overflow: hidden;
+    box-shadow: var(--lesson-box-shadow);
+    transition: var(--lesson-transition);
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    padding: 1rem 1.5rem;
+    background-color: var(--lesson-primary);
+    color: white;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    padding: 1rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: right;
+}
+
+/* Quote blocks for interesting facts or quotes */
+blockquote.lesson-quote {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--parchment-light);
+    border-left: 5px solid var(--lesson-secondary);
+    font-style: italic;
+    position: relative;
+}
+
+blockquote.lesson-quote::before {
+    content: "\201C";  /* Unicode for left double quotation mark */
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 4rem;
+    color: rgba(0, 0, 0, 0.1);
+    font-family: Georgia, serif;
+}
+
+blockquote.lesson-quote p {
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    position: relative;
+}
+
+blockquote.lesson-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Interactive elements */
+.interactive-element {
+    padding: 1.5rem;
+    background-color: var(--parchment-light);
+    border-radius: var(--lesson-border-radius);
+    margin: 2rem 0;
+    border: 1px solid rgba(33, 150, 243, 0.3);
+    position: relative;
+}
+
+.interactive-element::before {
+    content: "👉 Interactive";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: var(--lesson-info);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Timeline for sequential content */
+.lesson-timeline {
+    margin: 2rem 0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.lesson-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background-color: var(--lesson-primary);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--lesson-primary);
+    border: 3px solid var(--parchment);
+    box-shadow: 0 0 0 3px var(--lesson-primary);
+}
+
+.timeline-item h3 {
+    margin-top: 0;
+    color: var(--lesson-primary);
+}
+
+/* Code blocks with syntax highlighting */
+pre.code-block {
+    font-family: var(--code-font);
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 1em;
+    border-radius: 6px;
+    border: 1px solid var(--primary-navy-light);
+    overflow-x: auto;
+    margin-bottom: 1em;
+    box-shadow: var(--shadow-inner);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+pre.code-block code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+}
+
+.code-language {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-navy-light);
+    color: var(--off-white);
+    padding: 0.2em 0.5em;
+    font-size: 0.8em;
+    border-radius: 0 0 0 4px;
+    font-family: var(--body-font);
+}
+
+/* Concept spotlight styling */
+.concept-spotlight .concept-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.concept-card {
+    background: var(--parchment-light);
+    border-radius: var(--lesson-border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--lesson-box-shadow);
+    flex: 1;
+    max-width: 300px;
+    transition: var(--lesson-transition);
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.concept-card .concept-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.concept-card h3 {
+    color: var(--lesson-primary);
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.concept-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--parchment-text);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .concept-spotlight .concept-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .concept-card {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .concept-card .concept-image {
+        width: 120px;
+        height: 120px;
+    }
+} 

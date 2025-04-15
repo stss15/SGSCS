@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 19.0px '.SF NS'; color: #0e0e0e}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 19.0px '.SF NS'; color: #0e0e0e; min-height: 22.0px}
+    p.p3 {margin: 12.0px 0.0px 0.0px 25.0px; text-indent: -25.0px; font: 19.0px 'Helvetica Neue'; color: #0e0e0e}
+    p.p4 {margin: 12.0px 0.0px 0.0px 25.0px; text-indent: -25.0px; font: 19.0px '.SF NS'; color: #0e0e0e}
+    p.p5 {margin: 12.0px 0.0px 0.0px 25.0px; text-indent: -25.0px; font: 19.0px '.SF NS'; color: #0e0e0e; min-height: 22.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 19.0px 'Helvetica Neue'; color: #0e0e0e}
+    span.s1 {font: 19.0px '.SF NS'}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">Below is the revised Lesson 3 text as a plain text file. This version retains the original content while incorporating clearer, step‐by‐step explanations for binary addition and overflow, plus additional real‐world examples to show where these concepts matter.</p>
+<p class="p2"><br></p>
+<p class="p1">────────────────────────────</p>
+<p class="p1">Lesson 3: Binary Breakers – Adding 8-Bit Binary Numbers and Understanding Overflow</p>
+<p class="p2"><br></p>
+<p class="p1">Welcome back, digital detectives! In Lesson 1, we discovered that computers speak a secret language made up of only two numbers—0 and 1. We learned how these simple on/off switches form the building blocks of all computer data. In Lesson 2, we uncovered a clever shortcut called hexadecimal that compresses long strings of binary into neat, easy-to-read symbols. Now, in Lesson 3, we’re going to take a closer look at one of the most important operations in computer arithmetic: adding 8-bit binary numbers. We’ll work through a clear, step-by-step breakdown and explore what happens when the sum exceeds what 8 bits can store—a phenomenon known as overflow.</p>
+<p class="p2"><br></p>
+<p class="p1">────────────────────────────</p>
+<p class="p1">A Quick Recap</p>
+<p class="p2"><br></p>
+<p class="p1">Before we dive into adding binary numbers, let’s review a few key points:</p>
+<p class="p1"> • Binary Basics: Computers use binary because each tiny electronic switch can only be either on (1) or off (0). Every piece of digital data—from images to games—is built from these bits.</p>
+<p class="p1"> • Place Values in Binary: In an 8-bit binary number, each bit has a value based on a power of 2. The rightmost bit represents 2⁰ (or 1), and each bit to the left has double the value of the one before it; for example, the leftmost (8th) bit represents 2⁷ (or 128).</p>
+<p class="p1"> • Hexadecimal Shortcut: In Lesson 2, we learned that hexadecimal is a base‑16 system that condenses long binary strings into shorter symbols—each hex digit equals four binary digits.</p>
+<p class="p2"><br></p>
+<p class="p1">With these ideas fresh in your mind, you’re ready to see how computers actually perform calculations using binary addition.</p>
+<p class="p2"><br></p>
+<p class="p1">────────────────────────────</p>
+<p class="p1">Adding Two 8-Bit Binary Numbers</p>
+<p class="p2"><br></p>
+<p class="p1">The Basic Idea</p>
+<p class="p1">Adding binary numbers is much like the decimal addition you do every day, except you only work with two digits: 0 and 1. When you add two binary digits:</p>
+<p class="p1"> • 0 + 0 = 0  (no carry)</p>
+<p class="p1"> • 0 + 1 = 1  (no carry)</p>
+<p class="p1"> • 1 + 0 = 1  (no carry)</p>
+<p class="p1"> • 1 + 1 = 10 in binary  (write 0 and carry 1 to the next column)</p>
+<p class="p2"><br></p>
+<p class="p1">These simple “recipes” allow you to build up larger numbers from bits.</p>
+<p class="p2"><br></p>
+<p class="p1">────────────────────────────</p>
+<p class="p1">Step-by-Step Example</p>
+<p class="p2"><br></p>
+<p class="p1">Let’s add two 8-bit binary numbers. Consider these numbers:</p>
+<p class="p2"><br></p>
+<p class="p1">  Number A: 01010110   (which is 86 in decimal)</p>
+<p class="p1">  Number B: 00111011   (which is 59 in decimal)</p>
+<p class="p2"><br></p>
+<p class="p1">We will add these numbers column by column (from right to left). Write them in column format:</p>
+<p class="p2"><br></p>
+<p class="p1">     01010110</p>
+<p class="p1">  + 00111011</p>
+<p class="p1">  ───────────</p>
+<p class="p2"><br></p>
+<p class="p1">Now, let’s add each column with care:</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span>1.<span class="Apple-tab-span">	</span></span><b>Column 8 (1s place):</b><b></b></p>
+<p class="p4">  A: 0  B: 1</p>
+<p class="p4">  0 + 1 = 1  → Write 1; no carry.</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span>2.<span class="Apple-tab-span">	</span></span><b>Column 7 (2s place):</b><b></b></p>
+<p class="p4">  A: 1  B: 1</p>
+<p class="p4">  1 + 1 = 10 in binary.</p>
+<p class="p4">  → Write 0; carry 1 to the next column.</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span>3.<span class="Apple-tab-span">	</span></span><b>Column 6 (4s place):</b><b></b></p>
+<p class="p4">  A: 1  B: 0; plus the carried 1 gives: 1 + 0 + 1 = 10.</p>
+<p class="p4">  → Write 0; carry 1.</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span>4.<span class="Apple-tab-span">	</span></span><b>Column 5 (8s place):</b><b></b></p>
+<p class="p4">  A: 0  B: 1; plus the carried 1 gives: 0 + 1 + 1 = 10.</p>
+<p class="p4">  → Write 0; carry 1.</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span>5.<span class="Apple-tab-span">	</span></span><b>Column 4 (16s place):</b><b></b></p>
+<p class="p4">  A: 1  B: 1; plus the carried 1 gives: 1 + 1 + 1 = 11 in binary.</p>
+<p class="p4">  → Write 1; carry 1.</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span>6.<span class="Apple-tab-span">	</span></span><b>Column 3 (32s place):</b><b></b></p>
+<p class="p4">  A: 0  B: 1; plus the carried 1 gives: 0 + 1 + 1 = 10.</p>
+<p class="p4">  → Write 0; carry 1.</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span>7.<span class="Apple-tab-span">	</span></span><b>Column 2 (64s place):</b><b></b></p>
+<p class="p4">  A: 1  B: 0; plus the carried 1 gives: 1 + 0 + 1 = 10.</p>
+<p class="p4">  → Write 0; carry 1.</p>
+<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span>8.<span class="Apple-tab-span">	</span></span><b>Column 1 (128s place):</b><b></b></p>
+<p class="p4">  A: 0  B: 0; plus the carried 1 gives: 0 + 0 + 1 = 1.</p>
+<p class="p4">  → Write 1; no further carry.</p>
+<p class="p5"><br></p>
+<p class="p4">When you combine the digits from left (Column 1) to right (Column 8), the final result is:</p>
+<p class="p5"><br></p>
+<p class="p4">  Result: 10010001</p>
+<p class="p5"><br></p>
+<p class="p4">To double-check, convert 10010001 to decimal:</p>
+<p class="p4">  1×128 + 0×64 + 0×32 + 1×16 + 0×8 + 0×4 + 0×2 + 1×1 = 128 + 16 + 1 = 145</p>
+<p class="p4">This matches the sum of 86 and 59.</p>
+<p class="p5"><br></p>
+<p class="p4">────────────────────────────</p>
+<p class="p4">Understanding Overflow</p>
+<p class="p5"><br></p>
+<p class="p4">Overflow occurs when the result of an addition exceeds the maximum value that can be stored in 8 bits (which is 255, since 11111111 in binary equals 255).</p>
+<p class="p5"><br></p>
+<p class="p4">Imagine you have a small cup that can hold only 255 millilitres of water. If you try to pour in 300 millilitres, the extra water spills out. Similarly, if you add two 8-bit numbers and the sum is greater than 255, the extra value “overflows” and is lost. This can lead to errors in calculations.</p>
+<p class="p5"><br></p>
+<p class="p4">For example, consider adding two larger numbers:</p>
+<p class="p4">  • 200 in 8-bit binary: 11001000</p>
+<p class="p4">  • 100 in 8-bit binary: 01100100</p>
+<p class="p4">Their true sum is 300, but since 300 exceeds 255, only the last 8 bits are stored, and the overflow is discarded. This might lead to unexpected results in a program or device.</p>
+<p class="p5"><br></p>
+<p class="p4">────────────────────────────</p>
+<p class="p4">Real-World Examples of Binary Addition and Overflow</p>
+<p class="p5"><br></p>
+<p class="p6"><b>Digital Clocks:</b><b></b></p>
+<p class="p1">Many digital clocks use binary arithmetic to count seconds. If an 8-bit counter reaches its maximum value (255) and overflows, the clock must either reset or use additional bits to continue counting correctly. Overflow management ensures the clock displays the correct time.</p>
+<p class="p2"><br></p>
+<p class="p6"><b>Video Games:</b><b></b></p>
+<p class="p1">In video games, binary arithmetic is used for scoring, tracking lives, or managing in-game timers. An overflow in an 8-bit system might cause a score to drop suddenly or display an error, which is why game designers often use larger bit systems to avoid such issues.</p>
+<p class="p2"><br></p>
+<p class="p6"><b>Communication Devices:</b><b></b></p>
+<p class="p1">When sending data over networks, devices perform numerous binary calculations. Overflow errors in these operations could result in data corruption or transmission glitches. Reliable systems are designed to detect and handle overflow, ensuring data integrity.</p>
+<p class="p2"><br></p>
+<p class="p1">────────────────────────────</p>
+<p class="p1">Recap and Key Points</p>
+<p class="p2"><br></p>
+<p class="p1">Let’s summarise what we’ve learned in this lesson:</p>
+<p class="p6"><span class="s1"> 1. </span><b>Adding 8-Bit Binary Numbers:</b><b></b></p>
+<p class="p1">  - Write the numbers in column format and add from right to left.</p>
+<p class="p1">  - When the sum of a column reaches 2 (or more), write down the appropriate digit and carry the extra value to the next column.</p>
+<p class="p1">  - In our example, adding 01010110 (86) and 00111011 (59) gave us 10010001 (145).</p>
+<p class="p2"><br></p>
+<p class="p6"><span class="s1"> 2. </span><b>Understanding Overflow:</b><b></b></p>
+<p class="p1">  - An 8-bit system can only represent values from 0 to 255.</p>
+<p class="p1">  - If an addition produces a number greater than 255, the extra bits “overflow” (like water spilling from a cup), which can cause errors.</p>
+<p class="p2"><br></p>
+<p class="p6"><span class="s1"> 3. </span><b>Real-World Applications:</b><b></b></p>
+<p class="p1">  - Digital clocks, video games, and communication devices all rely on precise binary arithmetic.</p>
+<p class="p1">  - Effective handling of overflow is crucial to ensure these systems work correctly.</p>
+<p class="p2"><br></p>
+<p class="p1">────────────────────────────</p>
+<p class="p1">Inspiring Curiosity</p>
+<p class="p2"><br></p>
+<p class="p1">Every digital device you use—from the clock on your wall to the game on your tablet—relies on the simple yet powerful principles of binary arithmetic. Understanding how to add binary numbers gives you a peek behind the scenes at how computers operate. By learning the correct method of addition and the importance of managing overflow, you’re one step closer to cracking the computer’s secret language.</p>
+<p class="p2"><br></p>
+<p class="p1">Imagine being able to see the hidden calculations in a video game score or knowing how your digital clock keeps track of time. These aren’t just numbers—they are the foundation of the digital world, and mastering them is like learning to read the computer’s mind.</p>
+<p class="p2"><br></p>
+<p class="p1">────────────────────────────</p>
+<p class="p1">Conclusion</p>
+<p class="p2"><br></p>
+<p class="p1">In this lesson, we broke down the process of adding two 8-bit binary numbers into clear, manageable steps. We discovered that careful column-by-column addition—with proper carrying—is essential for accurate results. We also explored the concept of overflow, understanding how a simple mistake can lead to errors in a computer’s calculations.</p>
+<p class="p2"><br></p>
+<p class="p1">By connecting these ideas to real-world examples like digital clocks and video games, we see that binary arithmetic isn’t merely an abstract exercise—it’s a vital part of every digital system around us. Embrace these concepts and let them guide you as you continue your journey into the fascinating world of computer science.</p>
+<p class="p2"><br></p>
+</body>
+</html>

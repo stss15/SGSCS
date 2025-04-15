@@ -1,0 +1,136 @@
+/*****************************************************************************
+ * 
+ * LANDING PAGES STYLESHEET
+ * Common styles for landing/overview pages across all key stages
+ * 
+ *****************************************************************************/
+
+/* ==========================================================================
+   1. LANDING PAGE CONTAINERS
+   ========================================================================== */
+
+/* Year Landing Page Container */
+.year-landing-container {
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Container for top buttons on landing pages */
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  background-color: rgba(13, 36, 66, 0.6);
+  border-radius: 8px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--theme-accent, var(--gold));
+  margin-bottom: var(--section-spacing);
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-buttons .zelda-button {
+  flex-grow: 1; /* Allow buttons to grow */
+  max-width: 300px; /* Max width */
+}
+
+/* ==========================================================================
+   2. TERM CARDS
+   ========================================================================== */
+
+/* Term Card Grid (Used on Year Landing Pages) */
+.term-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* Term Card Styling */
+.term-card {
+  background-color: var(--parchment);
+  border: 3px solid var(--theme-accent-dark, var(--gold-dark));
+  border-radius: 10px;
+  box-shadow: var(--shadow-medium);
+  color: var(--primary-navy);
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+  overflow: hidden;
+  display: flex; /* Make card a flex container */
+  flex-direction: column; /* Stack content vertically */
+  min-height: 380px;
+  /* Subtle texture */
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239A8453' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.term-card a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Allow link to fill card */
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.term-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: var(--shadow-strong);
+  z-index: 5;
+}
+
+/* Optional rotation on hover */
+.term-card:nth-child(3n+1):hover { transform: translateY(-8px) scale(1.03) rotate(1.2deg); }
+.term-card:nth-child(3n+3):hover { transform: translateY(-8px) scale(1.03) rotate(-1.2deg); }
+
+.card-term-name {
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--theme-accent-dark, var(--gold-dark));
+  width: 90%;
+  text-align: center;
+}
+
+.term-card img {
+  width: 85%;
+  max-width: 200px; /* Limit image size */
+  height: 150px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensure image covers space */
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid var(--theme-accent, var(--gold));
+}
+
+.term-card h3 { /* Topic title */
+  font-family: var(--accent-font);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.term-card p { /* Description */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  flex-grow: 1; /* Allow description to take remaining space */
+  font-family: var(--body-font);
+  padding: 0 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* ... existing styles below ... */ 

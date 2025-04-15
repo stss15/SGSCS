@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St George's Computer Science</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/main.css">
+    
+    
+    
+    
+    
+    
+</head>
+<body>
+    <!-- HEADER: This will be dynamically loaded via includes/header.html -->
+    <header class="main-header nav-sticky">
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="../index.html">Home</a>
+            </div>
+            <ul>
+                <li><a href="../ks3/year7/Landing_Page/Year7_Landing.html">Year 7</a></li>
+                <li><a href="#">Year 8</a></li>
+                <li><a href="#">Year 9</a></li>
+                <li><a href="../ks3/index.html">KS3</a></li>
+                <li><a href="../ks4/index.html">KS4</a></li>
+                <li><a href="../ks5/index.html">KS5</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- CONTENT: Your content goes here -->
+        <!-- 
+        EXAMPLE CONTENT STRUCTURE:
+        
+        <div class="article-container">
+            <div class="page-title">
+                <h1>Your Page Title</h1>
+            </div>
+            
+            <section class="content-section">
+                <h2>Section Heading</h2>
+                <p>Your content goes here...</p>
+            </section>
+        </div>
+        -->
+        <!-- CONTENT: Your content goes here -->
+        <!-- 
+        EXAMPLE CONTENT STRUCTURE:
+        
+        <div class="article-container">
+            <div class="page-title">
+                <h1>Your Page Title</h1>
+            </div>
+            
+            <section class="content-section">
+                <h2>Section Heading</h2>
+                <p>Your content goes here...</p>
+            </section>
+        </div>
+        -->
+        <!-- CONTENT: Your content goes here -->
+        <!-- 
+        EXAMPLE CONTENT STRUCTURE:
+        
+        <div class="article-container">
+            <div class="page-title">
+                <h1>Your Page Title</h1>
+            </div>
+            
+            <section class="content-section">
+                <h2>Section Heading</h2>
+                <p>Your content goes here...</p>
+            </section>
+        </div>
+        -->
+    </main>
+
+    <!-- FOOTER: This will be dynamically loaded via includes/footer.html -->
+    <footer class="main-footer">
+        <p>&copy; 2025 Mr Stewart, Head of Science - St. George's School Düsseldorf</p>
+    </footer>
+
+    <!-- 
+    SCRIPTS: Will be dynamically loaded
+    The template system will automatically include:
+    - /scripts/main.js
+    - Any additional scripts defined in includes/footer.html
+    -->
+    <script src="../scripts/main.js"></script>
+    
+    
+    
+    
+    
+    
+</body>
+</html>

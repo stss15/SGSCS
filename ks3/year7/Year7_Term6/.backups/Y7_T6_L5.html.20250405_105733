@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Power! Painting with Binary</title>
+  <link rel="stylesheet" href="../../../styles/main.css?v=1.0.3" />
+  <link rel="stylesheet" href="../../../styles/ks3.css?v=1.0.3" />
+</head>
+<body>
+  <div class="page-content-wrapper">
+    <main>
+      <div class="topic-container">
+        <div class="topic-header">
+          <h1><span class="topic-icon">💻</span> Pixel Power! Painting with Binary</h1>
+        </div>
+        <div class="topic-overview">
+          <p>Zoom in close on a digital photo! Find out how images are made of tiny coloured squares called 'pixels', with each colour stored as a binary number code.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

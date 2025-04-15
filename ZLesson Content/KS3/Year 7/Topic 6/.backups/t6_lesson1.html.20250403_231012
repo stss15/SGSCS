@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Numbers: How Computers Talk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    
+    <!-- Theme Style - Will be replaced based on section -->
+    <link rel="stylesheet" href="../../../../styles/ks3_theme.css">
+    
+    <!-- Page Specific Styles -->
+    
+</head>
+<body>
+    <header class="main-header nav-sticky">
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="../../../../index.html">Home</a>
+            </div>
+            <ul>
+                <li><a href="../../../../ks3/index.html" class="active">KS3</a></li>
+                <li><a href="../../../../ks4/index.html" <!--class="active"-->>KS4</a></li>
+                <li><a href="../../../../ks5/index.html" <!--class="active"-->>KS5</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Binary Numbers: How Computers Talk</h1>
+    <p>Have you ever wondered how computers, phones, and tablets understand what we want them to do? It's actually pretty amazing—they talk using a secret language called binary. Binary might sound complicated at first, but it's simply made up of two numbers: 0 and 1. Imagine these numbers like tiny switches that can turn things ON or OFF. When these switches work together, they help computers make logical decisions and process data quickly and accurately.</p>
+
+    <h2>Why Binary?</h2>
+    <p>Computers need a clear and simple way to understand instructions and store information. They are packed full of tiny electronic switches that can either be in an ON (1) or OFF (0) state. Using just two states makes it straightforward for computers to follow logical instructions and process data efficiently. Binary is perfect for computers because it’s simple, clear, and reliable, allowing them to perform incredibly complex tasks by breaking them down into simple processes.</p>
+
+    <h2>The Magic Behind Binary</h2>
+    <p>To understand how binary works, think of it like a special code. Each digit in binary, called a 'bit', has a specific value. Bits are grouped together, usually in groups of eight, called bytes. Each bit within the byte has a different value:</p>
+    <p><strong>128 | 64 | 32 | 16 | 8 | 4 | 2 | 1</strong></p>
+    <p>These values double each time, starting from the right. This doubling is key to how binary helps computers logically organize and process data.</p>
+
+    <h2>Turning Binary into Numbers We Understand</h2>
+    <p>Let’s decode the binary number 10110101 step-by-step:</p>
+    <p><strong>128 | 64 | 32 | 16 | 8 | 4 | 2 | 1</strong><br>
+       <strong>1 | 0 | 1 | 1 | 0 | 1 | 0 | 1</strong></p>
+    <p>We add up the values wherever there's a 1:</p>
+    <p>128 + 32 + 16 + 4 + 1 = <strong>181</strong></p>
+    <p>So, the binary 10110101 logically represents the number <strong>181</strong>.</p>
+
+    <h2>Why Use Binary Instead of Regular Numbers?</h2>
+    <p>Regular numbers (denary numbers), like 10, 20, or 100, use ten digits (0–9). But computers find it difficult to handle ten different values at once. Using binary simplifies this, making it quicker and easier to process data, helping computers run smoothly and efficiently.</p>
+
+    <h2>Turning Regular Numbers into Binary</h2>
+    <p>Converting regular (denary) numbers into binary helps you understand how computers logically organize data. Let’s take the number <strong>45</strong> and see how this works:</p>
+    <ul>
+        <li>Find the largest binary value that fits into 45: <strong>32</strong></li>
+        <li>45 - 32 leaves <strong>13</strong></li>
+        <li>13 - 8 leaves <strong>5</strong></li>
+        <li>5 - 4 leaves <strong>1</strong></li>
+        <li>1 - 1 leaves <strong>0</strong></li>
+    </ul>
+    <p><strong>Binary:</strong> 00101101</p>
+
+    <h2>Another Cool Trick: Division by 2</h2>
+    <p>You can also convert denary numbers into binary by repeatedly dividing by two:</p>
+    <ul>
+        <li>22 ÷ 2 = 11 remainder <strong>0</strong></li>
+        <li>11 ÷ 2 = 5 remainder <strong>1</strong></li>
+        <li>5 ÷ 2 = 2 remainder <strong>1</strong></li>
+        <li>2 ÷ 2 = 1 remainder <strong>0</strong></li>
+        <li>1 ÷ 2 = 0 remainder <strong>1</strong></li>
+    </ul>
+    <p>Reading backwards, you get <strong>10110</strong>. Add zeros to fill a byte: <strong>00010110</strong>.</p>
+
+    <h2>Binary in the Real World</h2>
+    <p>Binary is everywhere! All digital photos, videos, music, and games you enjoy are stored as binary data. Even emojis! Understanding binary helps you appreciate how computers process and manage data.</p>
+
+    <h2>Binary and Computational Thinking</h2>
+    <p>Learning binary develops computational thinking—a logical way of solving problems by breaking them into simpler parts. Binary helps you logically see how complex tasks can be split into simple on/off decisions.</p>
+
+    <h2>Binary, Logic, and Data</h2>
+    <p>Understanding binary strengthens digital literacy by showing how data is logically represented and processed. Computers follow clear logical rules using binary, ensuring every click or tap does exactly what you expect.</p>
+
+    <h2>Ready to Talk Like a Computer?</h2>
+    <p>Learning binary gives you skills programmers, engineers, and scientists use every day. It’s like understanding a secret digital language. Remember, all the cool things your devices do happen because of binary logic.</p>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Mr Stewart, Head of Science - St. George's School Düsseldorf</p>
+    </footer>
+
+    <!-- Base Scripts -->
+    <script src="../../../../scripts/main.js"></script>
+    
+    <!-- Theme Scripts - Will be replaced based on section -->
+    <script src="../../../../scripts/ks3_animations.js"></script>
+    
+    <!-- Page Specific Scripts -->
+    
+</body>
+</html> 

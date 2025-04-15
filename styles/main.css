@@ -1,0 +1,560 @@
+/*****************************************************************************
+ *
+ * BASE STYLESHEET - Shared across all Key Stages
+ *
+ *****************************************************************************/
+
+/* ==========================================================================
+   1. BASE VARIABLES & RESET
+   ========================================================================== */
+
+   :root {
+    /* Core Colors (Keep general ones, theme-specific ones go in theme files) */
+    --primary-navy: #0D2442;
+    --primary-navy-light: #1D3559;
+    --primary-navy-dark: #0b1d36;
+    --gold: #DAB94B; /* Main accent color - might be overridden by themes */
+    --gold-light: #E5D4A8;
+    --gold-dark: #9A8453;
+    --parchment: #F5EFE0; /* Light background for content boxes */
+    --parchment-light: #faf6ea; /* Added variation */
+    --parchment-dark: #e8dfc0;  /* Added variation */
+    --white: #FFFFFF;
+    --off-white: #F9F6ED;
+    --light-gray: #f8f9fa;
+    --medium-gray: #dee2e6;
+    --dark-gray: #343a40; /* Default dark text color for light backgrounds */
+    --text-purple: #9B7ED9; /* New purple for text */
+    --info-blue: #4a90e2;
+    --info-blue-light: #a4c8f0;
+    --bronze: #cd7f32;
+    --silver: #c0c0c0;
+    --platinum: #7b1fa2;
+  
+    /* Typography (Define base fonts) */
+    --heading-font: 'Cinzel', serif; /* Default heading */
+    --body-font: 'Open Sans', sans-serif; /* Default body */
+    --accent-font: 'Palatino Linotype', serif; /* Can be used for specific accents */
+    --pixel-font: 'Press Start 2P', cursive; /* Specific pixelated font */
+    --code-font: 'Consolas', 'Monaco', 'Courier New', monospace; /* Font for code blocks */
+    --code-bg: #050a10; /* Background for <pre> */
+    --code-text: #9fefb4; /* Text color for <pre> */
+  
+    /* Spacing */
+    --content-max-width: 1200px;
+    --content-padding-h: 40px; /* Increased horizontal padding */
+    --content-padding-v: 30px; /* Vertical padding */
+    --section-spacing: 40px;
+    --element-spacing: 20px;
+  
+    /* Shadows (General shadows) */
+     --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.1);
+     --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+     --shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.2);
+     --shadow-inner: inset 0 0 8px rgba(0, 0, 0, 0.1);
+  
+     /* Transitions */
+     --transition-fast: all 0.2s ease-in-out;
+     --transition-medium: all 0.3s ease-in-out;
+     --transition-long: all 0.5s ease-in-out;
+  
+     /* Side Menu Variables (can be overridden by themes) */
+     --menu-width-closed: 60px;
+     --menu-width-open: 250px; /* Default open width */
+     --menu-button-height: 60px;
+     --menu-transition-speed: 0.4s;
+     --menu-z-index: 100;
+     --menu-top-position: 70px; /* Match header height */
+     --menu-hamburger-color: var(--primary-navy); /* Default color */
+     --menu-hamburger-hover: var(--gold); /* Default hover */
+     --menu-bg: var(--parchment); /* Default BG */
+     --menu-text: var(--primary-navy); /* Default text */
+     --menu-active: var(--gold); /* Default active */
+     --menu-border: var(--gold-light); /* Default border */
+  }
+  
+  /* Universal reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-purple); /* Updated text color */
+    background-color: var(--primary-navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px; /* Base font size */
+  }
+  
+  /* Custom Scrollbar (Optional - can be theme-specific if desired) */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--primary-navy-dark); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+  
+  /* Prevent body scroll when modals/menus are open */
+  body.no-scroll {
+    overflow: hidden;
+  }
+  
+  /* ==========================================================================
+     2. TYPOGRAPHY
+     ========================================================================== */
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.75em; /* Consistent bottom margin */
+    color: var(--gold); /* Default heading color for dark background */
+  }
+  
+  /* Specific heading colors for light backgrounds (e.g., inside cards) */
+  .topic-container h1, .topic-container h2, .topic-container h3, .topic-container h4,
+  .article-container h1, .article-container h2, .article-container h3, .article-container h4,
+  .textbook-container h1, .textbook-container h2, .textbook-container h3, .textbook-container h4,
+  .activity-section h1, .activity-section h2, .activity-section h3, .activity-section h4,
+  .goal-card h1, .goal-card h2, .goal-card h3, .goal-card h4,
+  .challenge-level h4,
+  .summary-box h3,
+  .vle-main-content h1, .vle-main-content h2, .vle-main-content h3, .vle-main-content h4,
+  .concept-container h1, .concept-container h2, .concept-container h3, .concept-container h4 {
+      color: var(--primary-navy); /* Dark text on light backgrounds */
+  }
+  /* Headings on dark backgrounds keep the default gold */
+  .topic-header h1, .page-title h1, .zelda-hero-banner h1, .master-challenge-title, .textbook-heading h1 {
+      color: var(--gold);
+  }
+  
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.9rem; }
+  h3 { font-size: 1.6rem; }
+  h4 { font-size: 1.3rem; }
+  h5 { font-size: 1.1rem; }
+  h6 { font-size: 1rem; }
+  
+  p {
+    margin-bottom: 1.2em;
+    color: inherit; /* Inherit color from parent */
+  }
+  
+  /* Default link color for dark backgrounds */
+  a {
+    color: var(--gold-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  a:hover {
+    color: var(--white);
+    text-decoration: underline;
+  }
+  
+  /* Link color for light backgrounds */
+  .topic-container a, .article-container a, .textbook-container a, .activity-content a, .goal-card a, .challenge-level a, .vle-main-content a, .concept-container a {
+      color: var(--primary-navy); /* Dark link on light backgrounds */
+      font-weight: 600;
+  }
+  .topic-container a:hover, .article-container a:hover, .textbook-container a:hover, .activity-content a:hover, .goal-card a:hover, .challenge-level a:hover, .vle-main-content a:hover, .concept-container a:hover {
+      color: var(--primary-navy-dark); /* Darker hover on light backgrounds */
+      text-decoration: underline;
+  }
+  
+  strong, b {
+      font-weight: 700;
+      color: inherit; /* Ensure strong text is visible on different backgrounds */
+  }
+  
+  ul, ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em; /* Standard indentation */
+  }
+  
+  li {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Code Blocks */
+  pre {
+    font-family: var(--code-font);
+    background-color: var(--primary-navy-dark);
+    color: var(--off-white);
+    padding: 1em;
+    border-radius: 6px;
+    border: 1px solid var(--primary-navy-light);
+    overflow-x: auto;
+    margin-bottom: 1em;
+    box-shadow: var(--shadow-inner);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  code {
+    font-family: var(--code-font);
+    background-color: rgba(218, 185, 75, 0.1); /* Subtle gold background */
+    color: var(--gold-dark); /* Dark gold text */
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+  pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+  
+  
+  /* ==========================================================================
+     3. BASIC LAYOUT & CONTAINERS
+     ========================================================================== */
+  
+  main {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--content-padding-v) var(--content-padding-h);
+    flex-grow: 1; /* Ensures main content pushes footer down */
+    min-height: 70vh; /* Added minimum height */
+  }
+  
+  /* Use a wrapper inside main for consistent max-width and padding */
+  .content-wrapper {
+    max-width: var(--content-max-width);
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 var(--content-padding-h); /* Updated padding */
+  }
+  
+  /* Specific override for index.html */
+  body[data-page="index"] .content-wrapper {
+    padding: 0;
+  }
+  
+  section {
+    margin-bottom: var(--section-spacing);
+  }
+  
+  /* General purpose container */
+  .container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  
+  /* Card styling (base for various content boxes) */
+  .card {
+      background-color: var(--white);
+      color: var(--dark-gray);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow-medium);
+      border: 1px solid var(--gold-light);
+      margin-bottom: var(--section-spacing);
+      width: auto;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  /* ==========================================================================
+     4. HEADER & NAVIGATION (Base structure)
+     ========================================================================== */
+  
+  .main-header {
+    background-color: var(--primary-navy);
+    color: white;
+    padding: 0.5rem var(--content-padding-h); /* Reduced padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1010; /* Ensure header is above side menu */
+    height: 70px; /* Fixed height */
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-sticky {
+    position: sticky;
+    top: 0;
+  }
+  
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  }
+  
+  .main-nav .logo a {
+    font-family: var(--heading-font);
+    font-size: 1.4rem; /* Slightly adjusted size */
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  .main-nav .logo a:hover {
+      color: var(--gold-light);
+  }
+  
+  .main-nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    align-items: center; /* Vertically center nav items */
+  }
+  
+  .main-nav li {
+    margin-left: 1.5rem; /* Adjusted spacing */
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--accent-font); /* Use accent font for nav links */
+    font-size: 1rem;
+    padding: 0.5rem 0; /* Add some padding for hit area */
+    transition: color var(--transition-fast);
+    position: relative;
+  }
+  
+  .main-nav a::after { /* Underline effect */
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px; /* Position below the text */
+      left: 0;
+      background-color: var(--gold);
+      transition: width var(--transition-medium);
+  }
+  
+  .main-nav a:hover,
+  .main-nav a.active {
+    color: var(--gold);
+  }
+  .main-nav a:hover::after,
+  .main-nav a.active::after {
+      width: 100%;
+  }
+  
+  /* Mobile Menu Toggle Button */
+  .menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0;
+    height: 40px; /* Ensure consistent height */
+    width: 40px; /* Ensure consistent width */
+    z-index: 1011; /* Above header content */
+  }
+  
+  /* Hamburger Icon */
+  .hamburger-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--gold); /* Use gold color */
+    position: relative;
+    transition: background-color 0s 0.3s; /* Delay transition for X */
+  }
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gold);
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+  .hamburger-icon::before { top: -8px; }
+  .hamburger-icon::after { top: 8px; }
+  
+  /* Active state for hamburger (X shape) */
+  .menu-toggle[aria-expanded="true"] .hamburger-icon {
+      background-color: transparent; /* Hide middle bar */
+  }
+  .menu-toggle[aria-expanded="true"] .hamburger-icon::before {
+      top: 0;
+      transform: rotate(45deg);
+  }
+  .menu-toggle[aria-expanded="true"] .hamburger-icon::after {
+      top: 0;
+      transform: rotate(-45deg);
+  }
+  
+  /* ==========================================================================
+     5. FOOTER
+     ========================================================================== */
+  
+  .main-footer {
+    background-color: var(--primary-navy-dark);
+    color: var(--off-white);
+    padding: 1.5rem var(--content-padding-h);
+    margin-top: auto; /* Push footer to bottom */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+  }
+  .main-footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ==========================================================================
+     6. BUTTONS & INTERACTIVE ELEMENTS
+     ========================================================================== */
+  
+  .button { /* Basic button class */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-navy);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition-medium);
+    text-align: center;
+  }
+  .button:hover {
+    background-color: var(--primary-navy-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
+  .button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+  
+  /* Interactive Widget Base Style */
+  .interactive-widget {
+    background-color: var(--primary-navy-light);
+    color: var(--off-white);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 20px;
+    margin: var(--element-spacing) 0;
+    box-shadow: var(--shadow-medium);
+  }
+  
+  /* ==========================================================================
+     7. RESPONSIVE DESIGN
+     ========================================================================== */
+  
+  @media (max-width: 768px) {
+    .main-nav ul {
+      display: none; /* Hide desktop nav */
+      flex-direction: column;
+      position: fixed; /* Full screen overlay */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(13, 36, 66, 0.98); /* Slightly transparent navy */
+      backdrop-filter: blur(5px);
+      padding-top: 80px; /* Space for header */
+      z-index: 1005; /* Below header toggle */
+      overflow-y: auto;
+    }
+  
+    .main-nav ul.active {
+      display: flex; /* Show mobile nav */
+    }
+  
+    .main-nav li {
+      margin: 0;
+      width: 100%;
+    }
+  
+    .main-nav li a {
+      display: block;
+      padding: 1rem var(--content-padding-h);
+      text-align: center;
+      font-size: 1.2rem;
+      border-bottom: 1px solid rgba(218, 185, 75, 0.2); /* Faint separator */
+    }
+     .main-nav li:last-child a {
+         border-bottom: none;
+     }
+    .main-nav a::after {
+        display: none; /* Hide underline effect on mobile */
+    }
+  
+    .menu-toggle {
+      display: block; /* Show hamburger */
+    }
+  
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.1rem; }
+  
+    main {
+      margin-top: 20px;
+      padding: var(--content-padding-v) 15px; /* Reduce horizontal padding */
+    }
+  }
+  
+  /* ==========================================================================
+     8. UTILITIES
+     ========================================================================== */
+  
+  .text-center { text-align: center; }
+  .text-left { text-align: left; }
+  .text-right { text-align: right; }
+  
+  .mt-1 { margin-top: 0.5rem; }
+  .mt-2 { margin-top: 1rem; }
+  .mt-3 { margin-top: 1.5rem; }
+  .mt-4 { margin-top: 2rem; }
+  
+  .mb-1 { margin-bottom: 0.5rem; }
+  .mb-2 { margin-bottom: 1rem; }
+  .mb-3 { margin-bottom: 1.5rem; }
+  .mb-4 { margin-bottom: 2rem; }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  /* Basic fade-in for elements scrolled into view (requires JS) */
+  .fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }

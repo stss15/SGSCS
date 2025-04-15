@@ -1,0 +1,24 @@
+<!-- Hamburger Menu Template - To be included on KS3 lesson pages -->
+<button id="hamburger-btn" class="hamburger-button" aria-label="Toggle Menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<nav id="hamburger-menu" class="hamburger-menu" aria-hidden="true">
+    <ul>
+        <li><a href="#" id="menu-overview-link">Overview</a></li>
+        <li><a href="#" id="menu-content-link">Content</a></li>
+        <li class="submenu-container">
+            <button class="submenu-toggle" aria-expanded="false">
+                Lessons <span class="toggle-indicator">▼</span>
+            </button>
+            <ul class="lesson-submenu">
+                <!-- This will be populated dynamically by hamburger-menu.js -->
+                <li><a href="#loading">Loading lessons...</a></li>
+            </ul>
+        </li>
+        <li><a href="#" id="menu-homework-link">Homework</a></li>
+        <li><a href="#" id="menu-resources-link">Independent Resources</a></li>
+    </ul>
+</nav> 

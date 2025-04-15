@@ -1,0 +1,304 @@
+/* 
+ * Hamburger Menu Styles
+ * For use in KS3 curriculum site
+ */
+
+/* Hamburger Button Styles */
+.hamburger-button {
+    position: fixed;
+    top: 90px; /* Position below header - Consider using a variable based on header height */
+    left: 20px;
+    z-index: var(--menu-z-index); /* Use main variable */
+    background: var(--gold);
+    border: 2px solid var(--primary-navy-dark);
+    border-radius: 5px;
+    width: 50px; /* Keep fixed size or use variable? */
+    height: 50px; /* Keep fixed size or use variable? */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-medium); /* Use main variable */
+}
+
+.hamburger-button span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-navy);
+    border-radius: 2px;
+    transition: var(--transition-medium); /* Use main variable */
+}
+
+/* Hamburger animation to 'X' */
+.hamburger-button.open span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger-button.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-button.open span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Menu Panel Styles */
+.hamburger-menu {
+    position: fixed;
+    top: 80px; /* Position below header - Needs variable */
+    left: 0;
+    width: var(--menu-width-open); /* Use main variable (or theme override) */
+    height: calc(100% - 80px - 60px); /* Subtract header/footer heights - Needs variables */
+    background-color: var(--menu-bg); /* Use main variable (or theme override) */
+    border-right: 3px solid var(--gold); /* Use main variable? --menu-border? */
+    box-shadow: var(--shadow-strong);
+    transform: translateX(-100%);
+    transition: transform var(--menu-transition-speed) ease-in-out; /* Use main variable */
+    z-index: calc(var(--menu-z-index) - 5);
+    padding-top: calc(50px + 20px); /* Add padding to clear the hamburger button - Use variable? */
+    overflow-y: auto;
+}
+
+.hamburger-menu.open {
+    transform: translateX(0);
+}
+
+/* Menu Items */
+.hamburger-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Make the first menu item stand out better */
+.hamburger-menu > ul > li:first-child {
+    margin-top: 10px;
+    border-top: 1px solid var(--primary-navy-light);
+}
+
+.hamburger-menu li {
+    border-bottom: 1px solid var(--primary-navy-light);
+}
+
+/* General style for links and the toggle button text */
+.hamburger-menu a,
+.hamburger-menu .submenu-toggle {
+    display: block;
+    padding: 15px 25px;
+    color: var(--menu-text); /* Use main variable */
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    transition: background-color var(--transition-fast), color var(--transition-fast); /* Use variable */
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Style for the submenu toggle button - default state */
+.hamburger-menu .submenu-toggle {
+    /* Ensure other styles match the 'a' tags for consistency */
+    display: block; /* Match 'a' tags */
+    padding: 15px 25px; /* Match 'a' tags padding */
+    color: var(--gold-light); /* Match 'a' tags color */
+    text-decoration: none; /* Match 'a' tags */
+    font-family: var(--heading-font); /* Match 'a' tags */
+    font-size: 1.1rem; /* Match 'a' tags */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Match 'a' tags */
+    background: none; /* Explicitly ensure no background */
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    /* Add back flex properties needed for the indicator */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600; /* Keep font weight */
+}
+
+/* Hover state for links and the toggle */
+.hamburger-menu a:hover,
+.hamburger-menu .submenu-toggle:hover {
+    background-color: var(--primary-navy-light); /* Keep specific or use a --menu-hover-bg variable? */
+    color: var(--white); /* Use main variable */
+}
+
+/* Style for active navigation links ONLY (e.g., Overview, Content page links) */
+.hamburger-menu li a.active {
+    background-color: var(--menu-active); /* Use main variable */
+    color: var(--primary-navy); /* Use main variable? --menu-active-text? */
+    font-weight: bold;
+}
+
+/* Optional: Define hover for active link if needed */
+.hamburger-menu li a.active:hover {
+     color: var(--primary-navy-dark);
+}
+
+/* Style for the submenu toggle button ITSELF when expanded */
+/* Added li.submenu-container for more specificity */
+.hamburger-menu li.submenu-container > .submenu-toggle[aria-expanded="true"] {
+    background-color: var(--gold-dark); /* Keep specific or use --menu-active? */
+    color: var(--gold-light); /* Keep specific or use --menu-active-text? */
+    font-weight: bold;
+}
+
+/* Ensure hover state overrides expanded state text color for the toggle */
+.hamburger-menu li.submenu-container > .submenu-toggle[aria-expanded="true"]:hover {
+    background-color: var(--primary-navy); /* Keep specific or use --menu-hover-bg? */
+    color: var(--white); 
+}
+
+/* Style for the indicator arrow */
+.hamburger-menu .submenu-toggle .toggle-indicator {
+    display: inline-block;
+    margin-left: auto;
+    color: inherit; /* Inherit color from the button text */
+    transition: transform var(--transition-medium); /* Use variable */
+    font-size: 1em; 
+}
+
+/* Lesson Submenu - Default (Collapsed) State */
+.lesson-submenu {
+    list-style: none;
+    padding: 0; 
+    margin: 0;  
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Keep specific timing */
+    background-color: rgba(0, 0, 0, 0.15); /* Keep specific or use variable? */
+    border: none; 
+    box-sizing: border-box; 
+}
+
+/* Lesson Submenu - Expanded State */
+.lesson-submenu.expanded {
+    max-height: 1000px; /* Or a suitable large value */
+    /* Apply padding ONLY when expanded */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* Apply border ONLY when expanded */
+    border-bottom: 1px solid var(--primary-navy-light);
+}
+
+.submenu-container {
+    border-bottom: none !important;
+}
+
+.lesson-submenu li {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+.lesson-submenu li a {
+    padding: 10px 45px;
+    font-size: 1rem;
+    color: var(--parchment);
+    display: block;
+    text-decoration: none;
+    transition: background-color var(--transition-fast); /* Use variable */
+}
+
+.lesson-submenu li a:hover {
+    background-color: var(--gold-dark); /* Keep specific or use --menu-active? */
+    color: var(--primary-navy);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hamburger-button {
+        top: 70px; /* Adjust for mobile header */
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+    
+    .hamburger-button.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger-button.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .hamburger-menu {
+        top: 60px;
+        width: 100%;
+        height: calc(100% - 60px - 50px);
+        border-right: none;
+    }
+    
+    /* For mobile, we still want full-width push */
+    body.hamburger-open .content-wrapper {
+        width: 100%;
+        margin-left: 0;
+        transform: translateX(100%);
+    }
+    
+    .content-wrapper {
+        transform: translateX(0);
+        transition: transform var(--hamburger-transition-speed) ease-in-out;
+    }
+}
+
+/* Style for active navigation links (e.g., Overview, Content) */
+.hamburger-menu a.active {
+    background-color: var(--gold-dark);
+    color: var(--primary-navy);
+    font-weight: bold;
+}
+
+/* Style specifically for the SUBMENU TOGGLE when it is expanded */
+.hamburger-menu .submenu-toggle[aria-expanded="true"] {
+    background-color: var(--gold-dark);
+    color: var(--gold-light);
+    font-weight: bold;
+}
+
+/* Optional: Ensure hover style on expanded toggle is consistent */
+.hamburger-menu .submenu-toggle[aria-expanded="true"]:hover {
+    color: var(--white);
+}
+
+/* Ensure the indicator arrow also matches the text color when expanded */
+.hamburger-menu .submenu-toggle[aria-expanded="true"] .toggle-indicator {
+    color: var(--gold-light);
+}
+
+/* Style for lesson submenu items */
+.hamburger-menu .lesson-submenu {
+    background-color: var(--primary-navy-light);
+    padding: 8px 0;
+}
+
+.hamburger-menu .lesson-submenu a {
+    color: var(--gold-light);
+    padding: 8px 20px 8px 40px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu .lesson-submenu a:hover {
+    background-color: var(--primary-navy);
+    color: var(--white);
+}
+
+.hamburger-menu .lesson-submenu a.active {
+    background-color: var(--gold-dark);
+    color: var(--primary-navy);
+    font-weight: bold;
+}
+
+/* Style for the indicator arrow */
+.hamburger-menu .submenu-toggle .toggle-indicator {
+    color: var(--gold-light);
+    transition: transform 0.3s ease;
+} 

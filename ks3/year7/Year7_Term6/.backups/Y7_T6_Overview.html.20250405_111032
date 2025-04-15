@@ -1,0 +1,73 @@
+<div class="topic-container">
+                <div class="topic-header">
+                    <h1>Data Representation</h1>
+                </div>
+
+                <div class="topic-overview">
+                    <h2>Unit Summary</h2>
+                    <p>Ever wonder how computers understand everything from numbers to music and pictures? This topic explores the fascinating ways computers represent all kinds of information using their own special codes. You'll focus on the most important one, binary – the computer's core language made of just 0s and 1s! You'll also see how this connects to the denary numbers you use every day and another helpful system called hexadecimal. You will get the big picture of how computers cleverly translate text, sound, and images into a digital format they can understand and work with.</p>
+
+                    <div class="concepts-skills-container">
+                        <div class="concepts-section">
+                            <h2>Concepts Covered</h2>
+                            <div class="concepts-grid">
+                                <div class="concept-item">
+                                    <img src="../../../assets/images/concepts/Logic.png" alt="Logic Concept">
+                                    <span>Logic</span>
+                                </div>
+                                <div class="concept-item">
+                                    <img src="../../../assets/images/concepts/Data.png" alt="Data Concept">
+                                    <span>Data</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-section">
+                            <h2>Skills Unlocked</h2>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <img src="../../../assets/images/skills/Computational_Thinking.png" alt="Computational Thinking Skill">
+                                    <span>Computational Thinking</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="../../../assets/images/skills/Data_Handling.png" alt="Data Handling Skill">
+                                    <span>Data Handling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-cards">
+                    <div class="lesson-card">
+                        <h3 class="lesson-title">1. Binary Basics</h3>
+                        <p class="lesson-summary">Start your journey into binary by learning how to convert everyday numbers into computer code! Discover the simple patterns that let you switch between binary (the computer's 1s and 0s) and denary (our normal numbers).</p>
+                        <a href="Y7_T6_L1_Why_Binary.html" class="zelda-button">Start Lesson</a>
+                    </div>
+                    <div class="lesson-card">
+                       <h3 class="lesson-title">2. Hex Power! The Binary Shortcut</h3>
+                       <p class="lesson-summary">Binary code can get super long! Discover Hexadecimal ('Hex') – a cool shortcut using numbers 0-9 *and* letters A-F to represent chunks of binary much faster.</p>
+                       <a href="Y7_T6_L2.html" class="zelda-button">Start Lesson</a>
+                    </div>
+                    <div class="lesson-card">
+                       <h3 class="lesson-title">3. Binary Conversion Master</h3>
+                       <p class="lesson-summary">Master the art of converting numbers between binary and denary! Learn the tricks to quickly switch between the number systems computers use and the ones we use every day.</p>
+                       <a href="Y7_T6_L3.html" class="zelda-button">Start Lesson</a>
+                    </div>
+                    <div class="lesson-card">
+                       <h3 class="lesson-title">4. The Secret Life of Letters & Symbols</h3>
+                       <p class="lesson-summary">Ever wonder how your computer stores your name or texts? Uncover the secret codes (like ASCII) that computers use to turn every letter, number, and symbol into binary!</p>
+                       <a href="#" class="zelda-button">Start Lesson</a>
+                    </div>
+                    <div class="lesson-card">
+                       <h3 class="lesson-title">5. Pixel Power! Painting with Binary</h3>
+                       <p class="lesson-summary">Zoom in close on a digital photo! Find out how images are made of tiny coloured squares called 'pixels', with each colour stored as a binary number code.</p>
+                       <a href="Y7_T6_L5.html" class="zelda-button">Start Lesson</a>
+                    </div>
+                    <div class="lesson-card">
+                       <h3 class="lesson-title">6. Binary Beats: How Computers Hear Sound</h3>
+                       <p class="lesson-summary">How does your favourite song get inside your computer? Explore how sound waves are 'sampled' thousands of times a second and turned into digital 0s and 1s.</p>
+                       <a href="Y7_T6_L6.html" class="zelda-button">Start Lesson</a>
+                    </div>
+                </div>
+            </div>

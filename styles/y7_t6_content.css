@@ -1,0 +1,1644 @@
+/* Styles for ALL Y7 T6 Content Page Specific Interactives - MINIMAL CONTRAST FIXES v3 */
+
+/* =====================================
+   Enhanced Interactive Elements Styles
+   For Y7 T6 Curriculum Components
+========================================= */
+
+/* Using interactive-widget as base class for all interactive components */
+
+/* --- Light Switch Enhancement (Lesson 0) --- */
+.light-switch-container {
+    composes: interactive-widget;
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    margin: 20px 0;
+    background: linear-gradient(to right, rgba(40, 44, 52, 0.7), rgba(255, 255, 255, 0.1));
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    width: fit-content;
+    transform-origin: center left;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.light-switch-container:hover {
+    box-shadow: 0 4px 8px rgba(218, 185, 75, 0.3);
+    transform: scale(1.02);
+}
+
+.light-switch {
+    background-color: #3a4152;
+    border: 2px solid #2c3240;
+    border-radius: 20px;
+    width: 60px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.light-switch.on {
+    background-color: #feca57;
+    border-color: #e6b94c;
+    box-shadow: 0 0 8px rgba(254, 202, 87, 0.6);
+}
+
+.light-switch .switch-handle {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    border: 1px solid #888;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.light-switch.on .switch-handle {
+    transform: translateX(30px);
+}
+
+.switch-label {
+    color: var(--off-white);
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.light-switch.on + .switch-label {
+    color: var(--gold-light);
+}
+
+.switch-binary-value {
+    color: var(--off-white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease;
+}
+
+.switch-binary-value:after {
+    content: "Binary Value";
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.switch-binary-value span {
+    font-weight: bold;
+    font-family: var(--code-font);
+    display: inline-block;
+    background: linear-gradient(145deg, var(--primary-navy-dark), var(--primary-navy));
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--gold);
+    min-width: 1.5em;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.light-switch.on ~ .switch-binary-value span {
+    animation: pulse-highlight 1s ease;
+}
+
+@keyframes pulse-highlight {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* --- Binary Interactive Converter Enhancement (Lessons 0 & 1) --- */
+.binary-interactive-converter {
+    composes: interactive-widget;
+    background: linear-gradient(135deg, rgba(13, 36, 66, 0.9), rgba(30, 55, 90, 0.9));
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.binary-interactive-converter:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+    border-radius: 5px 5px 0 0;
+}
+
+.binary-interactive-converter:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.binary-interactive-converter h4 {
+    color: var(--gold);
+    font-size: 1.2em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    border-bottom: 2px solid var(--gold-light);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.binary-place-values {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.05);
+}
+
+.binary-place-values .place-value-button,
+.binary-place-values .place-value-box {
+    background: var(--parchment);
+    color: var(--primary-navy-dark);
+    border: 2px solid var(--gold-dark);
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-family: var(--code-font);
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+    font-size: 1em;
+    position: relative;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.binary-place-values .place-value-button:after,
+.binary-place-values .place-value-box:after {
+    content: attr(data-exponent);
+    position: absolute;
+    top: -12px;
+    right: -5px;
+    background: var(--gold-light);
+    color: var(--primary-navy-dark);
+    border-radius: 50%;
+    font-size: 0.7em;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.binary-place-values.clickable .place-value-button {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.binary-place-values.clickable .place-value-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(218, 185, 75, 0.3);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-out;
+    z-index: 0;
+}
+
+.binary-place-values.clickable .place-value-button:hover:before {
+    transform: scaleX(1);
+}
+
+.binary-place-values.clickable .place-value-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.binary-place-values.clickable .place-value-button:active {
+    transform: translateY(1px);
+}
+
+.binary-place-values.headings-only {
+    background-color: transparent;
+    border: none;
+    padding-bottom: 8px;
+    margin-bottom: 0;
+}
+
+.binary-place-values.headings-only div {
+    background-color: transparent;
+    color: var(--gold);
+    border: none;
+    padding: 2px 8px;
+    font-weight: bold;
+    position: relative;
+}
+
+.binary-place-values.headings-only div:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--gold-light);
+    transform: translateX(-50%);
+}
+
+.binary-digits-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.binary-digits-row div,
+.binary-digits-row .binary-digit-toggle,
+.binary-digits-row .binary-digit-display {
+    background: linear-gradient(145deg, #4a5e7a, #5a6e8a);
+    color: var(--off-white);
+    border: 2px solid #42536e;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: var(--code-font);
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.binary-digits-row .binary-digit-toggle {
+    cursor: pointer;
+}
+
+.binary-digits-row .binary-digit-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.binary-digits-row .binary-digit-toggle.on,
+.binary-digits-row div.on {
+    background: linear-gradient(145deg, #e5b857, #feca57);
+    color: var(--primary-navy-dark);
+    border-color: var(--gold-dark);
+    box-shadow: 0 0 10px rgba(254, 202, 87, 0.5);
+}
+
+.binary-digits-row.input-row div {
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    color: var(--primary-navy);
+    border-color: #ddd;
+}
+
+.decimal-value-display {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--off-white);
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    position: relative;
+}
+
+.decimal-value-display:before {
+    content: "Decimal Equivalent";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-navy-light);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.7em;
+    color: var(--gold-light);
+    white-space: nowrap;
+}
+
+.decimal-value-display span:first-child {
+    color: var(--off-white);
+    margin-right: 5px;
+}
+
+.interactiveDecimalValueDisplay,
+#interactiveDecimalValue,
+.decimal-value-display .calc-result,
+.sim-result span {
+    display: inline-block;
+    min-width: 40px;
+    padding: 5px 10px;
+    background: linear-gradient(145deg, #f5efd7, var(--parchment));
+    border: 2px solid var(--gold-dark);
+    color: var(--primary-navy-dark);
+    border-radius: 6px;
+    margin-left: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.interactiveDecimalValueDisplay[data-value-changed="true"] {
+    animation: highlight-change 0.6s ease;
+}
+
+@keyframes highlight-change {
+    0%, 100% { background: linear-gradient(145deg, #f5efd7, var(--parchment)); }
+    50% { background: linear-gradient(145deg, var(--gold-light), #f5efd7); }
+}
+
+/* --- General Interactive/Info Box Styles --- */
+/* These containers usually have a dark blue background */
+.interactive-analogy, /* L0 */
+.binary-interactive-converter, /* L0, L1 */
+.interactive-challenge, /* L0 */
+.binary-to-denary-interactive, /* L1 */
+/* .method-box, /* L1 - Light BG, see below */
+/* .division-method, /* L1 - Contains light table */
+/* .hex-binary-table-container, /* L2 - Light BG */
+/* .conversion-box, /* L2 - Light BG */
+/* .real-world-examples, /* L2 - Contains light cards */
+.interactive-color-picker, /* L2, L5 */
+.addition-rules, /* L3 - Contains light rule boxes */
+.interactive-binary-adder, /* L3 */
+.overflow-simulator, /* L3 */
+.binary-to-char-converter, /* L4 */
+/* .representation-comparison, /* L4 - Light BG */
+/* .character-set-info, /* L4 - Light BG */
+.text-encoding-example, /* L4 */
+.pixel-example, /* L5 - Contains info-box */
+/* .resolution-demo, /* L5 - Light BG */
+.pixel-painter-container, /* L5 */
+/* .file-size-calc-box, /* L5, L6 - Light BG */
+.sampling-analogy, /* L6 */
+.interactive-sound-demo, /* L6 */
+.compression-types /* L6 - Contains light boxes */ {
+    background-color: var(--primary-navy-light); /* Original dark background */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    margin: 20px 0;
+    color: var(--off-white); /* Original LIGHT text color for dark backgrounds */
+}
+
+/* Info Box general style - Light BG */
+.info-box {
+    background-color: rgba(218, 185, 75, 0.1); /* Original subtle gold bg */
+    border: 1px dashed var(--gold-dark);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    /* FIXED CONTRAST: Dark text needed on this light background */
+    color: var(--primary-navy); 
+    font-size: 0.95em;
+}
+.info-box strong {
+     /* FIXED CONTRAST: Darker text for emphasis on light background */
+    color: var(--primary-navy-dark); 
+}
+
+/* --- Headings within interactives --- */
+/* Headings on DARK backgrounds */
+.binary-interactive-converter h4,
+.overflow-simulator h4,
+.binary-to-char-converter h4, 
+.interactive-sound-demo h4,
+.pixel-painter-container h4,
+.interactive-analogy h3,
+.interactive-challenge h2,
+.interactive-color-picker h2 { /* Covers L2 picker h2 */
+    color: var(--gold); /* Original Gold heading on dark background - OK */
+    margin-top: 0;
+    border-bottom: 1px solid var(--gold-light);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+/* Headings on LIGHT backgrounds */
+.character-set-info h4, /* L4 */
+.method-box h3, /* L1 */
+.file-size-calc-box h4, /* L5, L6 */
+.resolution-demo h5, /* L5 */
+.conversion-box h4, /* L2 */
+.compression-box h4 /* L6 */ {
+     /* FIXED CONTRAST: Dark heading needed on light backgrounds */
+    color: var(--primary-navy-dark); 
+    margin-top: 0;
+    border-bottom: 1px solid var(--gold); /* Keep original border style where applicable */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+.info-box h4 { /* Specific style for info box H4 if needed */
+    color: var(--primary-navy-dark); 
+    margin-top: 0;
+    border-bottom: 1px solid var(--gold); 
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+
+/* --- Fix for Color Picker Text (Lesson 2 - #pickerL2) --- */
+#pickerL2 h2 {
+    /* color: var(--gold); Inherited from general rule */
+    border-bottom: none; /* Keep this specific style */
+}
+#pickerL2 p {
+    color: var(--off-white); /* Ensure light text */
+}
+#pickerL2 p em {
+    color: var(--gold-light); /* Ensure light emphasis */
+}
+/* Ensure labels/results in L2 picker are light */
+#pickerL2 .slider-group label { color: var(--off-white); } 
+#pickerL2 .slider-group label span { color: var(--off-white); }
+#pickerL2 .slider-group .hex-val { color: var(--gold-light); /* Original light text */ } 
+#pickerL2 .hex-result { color: var(--off-white); } /* Original light text */
+#pickerL2 .hex-result .hex-code { background-color: var(--parchment); color: var(--primary-navy); /* Original light box/dark text */ }
+
+/* --- Lesson 0 Styles --- */
+.light-switch-container { display: flex; align-items: center; gap: 10px; margin: 15px 0; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px; border: 1px solid var(--gold-dark); width: fit-content;}
+.light-switch { background-color: #555; border: 2px solid #333; border-radius: 15px; width: 50px; height: 25px; position: relative; cursor: pointer; transition: background-color 0.3s; }
+.light-switch.on { background-color: #feca57; border-color: var(--gold-dark); }
+.light-switch .switch-handle { background-color: white; border: 1px solid #888; border-radius: 50%; width: 19px; height: 19px; position: absolute; top: 1px; left: 2px; transition: transform 0.3s; }
+.light-switch.on .switch-handle { transform: translateX(25px); }
+.switch-label { color: var(--off-white); font-weight: bold; }
+.switch-binary-value { color: var(--off-white); }
+.switch-binary-value span { font-weight: bold; font-family: var(--code-font); display: inline-block; background-color: var(--primary-navy); padding: 2px 6px; border-radius: 3px; color: var(--gold-light); min-width: 1em; text-align: center;}
+
+/* Shared Binary Components (L0, L1, etc.) */
+.binary-place-values { display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; margin-bottom: 5px; }
+.binary-place-values .place-value-button,
+.binary-place-values .place-value-box { background-color: var(--parchment); color: var(--primary-navy); border: 1px solid var(--gold-dark); padding: 8px 10px; border-radius: 4px; font-family: var(--code-font); font-weight: bold; min-width: 35px; text-align: center; font-size: 0.9em; }
+.binary-place-values.clickable .place-value-button { cursor: pointer; transition: transform 0.1s, background-color 0.2s; }
+.binary-place-values.clickable .place-value-button:hover { background-color: var(--gold-light); }
+.binary-place-values.clickable .place-value-button:active { transform: scale(0.95); }
+.binary-place-values.headings-only { background-color: transparent; border: none; padding-bottom: 5px; margin-bottom: 0; }
+.binary-place-values.headings-only div { background-color: transparent; color: var(--gold-light); border: none; padding: 2px 5px; }
+
+.binary-digits-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.binary-digits-row div,
+.binary-digits-row .binary-digit-toggle,
+.binary-digits-row .binary-digit-display { background-color: #5a6e8a; color: var(--off-white); border: 1px solid #42536e; padding: 6px 10px; border-radius: 4px; font-family: var(--code-font); font-weight: bold; min-width: 35px; text-align: center; font-size: 1em; transition: background-color 0.2s, color 0.2s; }
+.binary-digits-row .binary-digit-toggle.on,
+.binary-digits-row div.on { background-color: #feca57; color: var(--primary-navy-dark); border-color: var(--gold-dark); }
+.binary-digits-row.input-row div { background-color: var(--white); color: var(--primary-navy); } /* For static display in L1 */
+.binary-digits-row.answer-row div { background-color: #5a6e8a; color: var(--off-white);} /* Ensure default is dark for challenge answer */
+.binary-digits-row.answer-row div.on { background-color: #feca57; color: var(--primary-navy-dark); } /* Highlight ON bits for challenge answer */
+
+.decimal-value-display { text-align: center; margin-top: 15px; font-size: 1.1em; font-weight: bold; color: var(--off-white); }
+.decimal-value-display span:first-child { color: var(--off-white); }
+.interactiveDecimalValueDisplay,
+#interactiveDecimalValue,
+.decimal-value-display .calc-result,
+.sim-result span.actual-value { /* Combined selectors needing this style */
+    display: inline-block; 
+    min-width: 30px; 
+    padding: 3px 8px; 
+    background-color: var(--parchment); 
+    border: 1px solid var(--gold-dark); 
+    color: var(--primary-navy); /* Dark text on light box */ 
+    border-radius: 4px; 
+    margin-left: 5px; 
+    font-weight: bold; 
+}
+.sim-result code.binary-result, 
+.sim-result code.binary-display { 
+    background-color: rgba(0,0,0,0.2); 
+    color: var(--gold-light); /* Light text on dark snippet */ 
+    padding: 2px 6px; 
+} 
+
+/* Mini Challenge (L0) */
+.interactive-challenge .challenge-answer { background-color: var(--primary-navy-light); color: var(--gold); padding: 10px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px; border: 1px dashed var(--gold-dark); transition: background-color 0.3s; position: relative; padding-left: 35px; }
+.interactive-challenge .challenge-answer:hover { background-color: var(--primary-navy); }
+.interactive-challenge .challenge-answer::before { content: "▶ Click to Reveal Answer"; position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-weight: bold; transition: content 0.3s; }
+.interactive-challenge .challenge-answer.revealed::before { content: "▼ Click to Hide Answer"; }
+.interactive-challenge .answer-hidden { display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--gold-light); color: var(--off-white); overflow: hidden; transition: max-height 0.5s ease-out, opacity 0.5s ease-out; max-height: 0; opacity: 0; }
+.interactive-challenge .challenge-answer.revealed .answer-hidden { display: block; max-height: 500px; opacity: 1; }
+
+/* --- Lesson 1 Specific --- */
+.binary-to-denary-interactive { background-color: rgba(245, 239, 224, 0.1); padding: 15px; border-radius: 8px; border: 1px dashed var(--gold-light); margin-bottom: 15px; color: var(--off-white);} /* Ensure default light text */
+.calculation-explanation { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--gold-light); text-align: center; font-size: 1.1em; color: var(--off-white); }
+.calculation-explanation .calc-step { color: var(--gold-light); font-weight: bold; }
+.calculation-explanation .calc-result { /* Uses shared style defined above */ }
+
+.method-box { border: 1px solid var(--gold); background-color: rgba(218, 185, 75, 0.05); padding: 15px; margin-bottom: 20px; border-radius: 8px; color: var(--primary-navy);} /* Dark text on light bg */
+.method-box h3 { color: var(--primary-navy-dark); /* Dark heading */ margin-top: 0; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
+.step-list { padding-left: 20px; color: var(--primary-navy); list-style-type: decimal; } /* Dark list text */
+.step-list li { margin-bottom: 8px; }
+.step-list strong { color: var(--primary-navy-dark); } /* Darker emphasis */
+
+.division-method { margin: 15px auto; max-width: 350px; overflow-x: auto;}
+.division-table { width: 100%; border-collapse: collapse; background-color: var(--parchment); color: var(--primary-navy); border: 1px solid var(--gold-dark); } /* OK */
+.division-table th, .division-table td { border: 1px solid var(--gold-light); padding: 8px; text-align: center; white-space: nowrap; }
+.division-table th { background-color: var(--primary-navy-light); color: var(--gold-light); font-family: var(--heading-font); font-size: 0.9em; position: sticky; top: 0; } /* OK */
+.division-table td { color: var(--primary-navy); } /* Ensure dark text */
+.division-table td strong { color: #c0392b; font-size: 1.1em; } /* OK */
+.division-table td:last-child { font-weight: bold; }
+.division-table .arrow-indicator { color: var(--primary-navy-light); font-size: 0.8em; display: inline-block; margin-left: 4px;} /* OK */
+
+/* --- Lesson 2 Specific --- */
+.hex-binary-table-container { max-width: 300px; margin: 15px auto; }
+.number-base-table { width: 100%; border-collapse: collapse; background-color: var(--parchment); color: var(--primary-navy); border: 1px solid var(--gold-dark); } /* OK */
+.number-base-table th, .number-base-table td { border: 1px solid var(--gold-light); padding: 6px 10px; text-align: center; color: var(--primary-navy);} /* Ensure dark text */
+.number-base-table th { background-color: var(--primary-navy-light); color: var(--gold-light); font-family: var(--heading-font); font-size: 0.9em;} /* OK */
+.number-base-table td:nth-child(3) { font-family: var(--code-font); } /* Binary column */
+.number-base-table.interactive-hover tbody tr:hover { background-color: rgba(218, 185, 75, 0.2); cursor: default; }
+
+.conversion-box { border: 1px solid var(--gold); background-color: rgba(218, 185, 75, 0.08); padding: 15px; margin-bottom: 20px; border-radius: 8px; color: var(--primary-navy);} /* Dark text on light bg */
+.conversion-box h4 { color: var(--primary-navy-dark); /* Dark heading */ margin-top: 0; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
+.conversion-box code { background-color: rgba(13, 36, 66, 0.7); color: var(--gold-light); padding: 3px 6px; border-radius: 3px; font-size: 1.1em; } /* OK */
+.conversion-steps-container { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; justify-content: center; }
+.conversion-step { display: inline-flex; align-items: center; background: var(--primary-navy-light); padding: 8px 10px; border-radius: 4px; border: 1px solid var(--primary-navy); font-family: var(--code-font); color: var(--off-white); gap: 6px; text-align: center; min-width: 80px; justify-content: center; } /* OK */
+.conversion-step .binary-group { color: var(--gold-light); letter-spacing: 1px; font-size: 1em; } /* OK */
+.conversion-step .hex-digit { font-size: 1.1em; color: var(--gold); font-weight: bold; } /* OK */
+.conversion-step .denary-value { font-size: 1em; color: #a7c5eb; font-style: italic; } /* OK */
+.conversion-step .arrow { color: var(--gold-dark); font-weight: bold; } /* OK */
+
+.real-world-examples.hex-apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+.hex-apps .example-item { background-color: var(--parchment); color: var(--primary-navy); padding: 15px; border-radius: 5px; border-left: 5px solid var(--gold-dark); box-shadow: var(--shadow-soft); } /* OK */
+.hex-apps .example-item h3 { color: var(--primary-navy-dark); /* Darker heading */ margin-top: 0; font-size: 1.1em; }
+.hex-apps .example-item p { font-size: 0.9em; margin-bottom: 0; color: var(--primary-navy); } /* Ensure dark text */
+.hex-apps .example-icon { font-size: 1.5em; margin-bottom: 5px; color: var(--primary-navy-dark);} /* Darker icon */
+
+/* Interactive Color Picker (L2) styles */
+.interactive-color-picker {
+    composes: interactive-widget;
+    background: linear-gradient(135deg, rgba(13, 36, 66, 0.9), rgba(30, 55, 90, 0.9));
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interactive-color-picker:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.interactive-color-picker h2 {
+    color: var(--gold);
+    font-size: 1.3em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.interactive-color-picker h2:before {
+    content: "🎨";
+    font-size: 1.2em;
+}
+
+.interactive-color-picker p {
+    color: var(--off-white);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.interactive-color-picker em {
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+.color-picker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(218, 185, 75, 0.3);
+}
+
+.color-preview {
+    width: 100%;
+    height: 100px;
+    border: 3px solid var(--gold-light);
+    border-radius: 8px;
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 0 30px rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.color-preview:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+}
+
+.sliders {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.slider-group {
+    display: grid;
+    grid-template-columns: 100px 1fr 60px;
+    align-items: center;
+    gap: 15px;
+    color: var(--off-white);
+    font-size: 0.95em;
+}
+
+.slider-group label {
+    text-align: right;
+    font-weight: bold;
+    color: var(--off-white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.slider-group label[for^="redSlider"]:before {
+    content: "🔴";
+    font-size: 1.2em;
+}
+
+.slider-group label[for^="greenSlider"]:before {
+    content: "🟢";
+    font-size: 1.2em;
+}
+
+.slider-group label[for^="blueSlider"]:before {
+    content: "🔵";
+    font-size: 1.2em;
+}
+
+.slider-group input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    height: 8px;
+    -webkit-appearance: none;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.slider-group input[id^="redSlider"]::-webkit-slider-thumb {
+    background: linear-gradient(145deg, #ff5555, #ff0000);
+}
+
+.slider-group input[id^="greenSlider"]::-webkit-slider-thumb {
+    background: linear-gradient(145deg, #55ff55, #00ff00);
+}
+
+.slider-group input[id^="blueSlider"]::-webkit-slider-thumb {
+    background: linear-gradient(145deg, #5555ff, #0000ff);
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.slider-group input[type="range"]:focus {
+    outline: none;
+}
+
+.slider-group .hex-val {
+    font-family: var(--code-font);
+    background-color: rgba(0,0,0,0.4);
+    padding: 5px 8px;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--gold-light);
+    font-weight: bold;
+    border: 1px solid rgba(218, 185, 75, 0.3);
+    transition: all 0.2s ease;
+}
+
+.hex-result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hex-result:before {
+    content: "#️⃣";
+    font-size: 1.2em;
+}
+
+.hex-result .hex-code {
+    font-family: var(--code-font);
+    background: linear-gradient(145deg, #f5efd7, var(--parchment));
+    color: var(--primary-navy-dark);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-left: 5px;
+    font-size: 1.2em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold-dark);
+    position: relative;
+}
+
+.hex-result .hex-code:after {
+    content: "CSS Color Code";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    color: var(--gold-light);
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+/* --- Lesson 3 Styles --- */
+.addition-rules { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 15px 0; }
+.rule-box { background-color: var(--parchment); color: var(--primary-navy); padding: 10px 15px; border-radius: 5px; border: 1px solid var(--gold-dark); font-family: var(--code-font); font-weight: bold; text-align: center; min-width: 120px; } /* OK */
+.rule-box.carry-rule { background-color: var(--gold-light); }
+.rule-box .carry-text { display: block; font-size: 0.8em; font-weight: normal; color: #c0392b; } /* OK */
+.interactive-binary-adder {
+    composes: interactive-widget;
+    background: linear-gradient(135deg, rgba(13, 36, 66, 0.9), rgba(30, 55, 90, 0.9));
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-binary-adder:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+    border-radius: 5px 5px 0 0;
+}
+
+.interactive-binary-adder h4 {
+    color: var(--gold);
+    font-size: 1.2em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--gold-light);
+    padding-bottom: 10px;
+}
+
+.adder-numbers {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.3);
+    border: 1px solid rgba(218, 185, 75, 0.3);
+}
+
+.number-row, 
+.carry-row, 
+.result-row {
+    display: flex; 
+    justify-content: flex-end;
+    letter-spacing: 4px;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.number-row span, 
+.carry-row span, 
+.result-row span {
+    min-width: 2em;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.number-row span {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.carry-row {
+    color: var(--gold-light);
+    font-size: 0.9em;
+    height: 1.5em;
+    margin-bottom: 10px; 
+}
+
+.carry-row span {
+    min-height: 1.5em;
+    display: inline-block;
+}
+
+.carry-row span.active-carry {
+    font-weight: bold;
+    color: #e74c3c;
+    animation: highlight-carry 1s infinite;
+}
+
+@keyframes highlight-carry {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.result-row span {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px dashed rgba(218, 185, 75, 0.3);
+    font-weight: bold;
+}
+
+.result-row span.current-col {
+    background-color: rgba(218, 185, 75, 0.3);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(218, 185, 75, 0.5);
+    animation: pulse-column 2s infinite;
+}
+
+@keyframes pulse-column {
+    0%, 100% { box-shadow: 0 0 10px rgba(218, 185, 75, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(218, 185, 75, 0.8); }
+}
+
+.plus-sign {
+    font-size: 1.2em;
+    padding-right: 0.8em;
+    color: var(--gold);
+}
+
+.adder-line {
+    border-bottom: 2px solid var(--gold);
+    margin: 5px 0 15px 0;
+}
+
+.adder-controls {
+    text-align: center;
+    margin: 25px 0 15px;
+}
+
+.adder-controls button {
+    background: linear-gradient(145deg, var(--gold-light), var(--gold-dark));
+    color: var(--primary-navy-dark);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.adder-controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.adder-controls button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.adder-explanation {
+    text-align: center;
+    font-size: 1em;
+    color: var(--gold-light);
+    min-height: 3em;
+    font-style: italic;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid rgba(218, 185, 75, 0.3);
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.3);
+    line-height: 1.5;
+}
+
+/* --- Overflow Simulator Enhancement (Lesson 3) --- */
+.overflow-simulator {
+    composes: interactive-widget;
+    background: linear-gradient(135deg, rgba(13, 36, 66, 0.9), rgba(30, 55, 90, 0.9));
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.overflow-simulator:before {
+    content: "8-bit Overflow Demo";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--gold);
+    color: var(--primary-navy-dark);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.overflow-simulator h4 {
+    color: var(--gold);
+    font-size: 1.2em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    padding-right: 150px; /* Make room for the badge */
+    border-bottom: 2px solid var(--gold-light);
+    padding-bottom: 10px;
+}
+
+.overflow-simulator .sim-inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.3);
+    border: 1px solid rgba(218, 185, 75, 0.3);
+}
+
+.sim-inputs div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.sim-inputs label {
+    color: var(--off-white);
+    min-width: 120px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.sim-inputs input[type="number"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid var(--gold-dark);
+    width: 80px;
+    background: linear-gradient(145deg, #f5efd7, var(--parchment));
+    color: var(--primary-navy);
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.sim-inputs input[type="number"]:focus {
+    outline: none;
+    border-color: var(--gold-light);
+    box-shadow: 0 0 8px rgba(218, 185, 75, 0.5);
+}
+
+.sim-inputs code.binary-display {
+    background-color: rgba(0,0,0,0.4);
+    color: var(--gold-light);
+    font-family: var(--code-font);
+    padding: 5px 10px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid rgba(218, 185, 75, 0.3);
+    position: relative;
+}
+
+.sim-inputs code.binary-display:after {
+    content: "Binary";
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    background: var(--primary-navy-dark);
+    color: var(--gold-light);
+    font-size: 0.7em;
+    padding: 2px 5px;
+    border-radius: 3px;
+    opacity: 0.8;
+}
+
+.sim-result {
+    margin-bottom: 15px;
+    color: var(--off-white);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.3);
+    border: 1px solid rgba(218, 185, 75, 0.3);
+}
+
+.sim-result p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    flex-wrap: wrap;
+}
+
+.sim-result p:before {
+    content: "➡️";
+    font-size: 1.2em;
+}
+
+.sim-result span.actual-value {
+    font-size: 1.1em;
+    padding: 5px 10px;
+}
+
+.sim-result code.binary-result {
+    background-color: rgba(0,0,0,0.4);
+    color: var(--gold-light);
+    padding: 5px 10px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid rgba(218, 185, 75, 0.3);
+}
+
+.overflow-warning {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: none;
+    animation: blinkWarning 1s infinite, shake 0.5s ease;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
+    border: 2px solid #c0392b;
+    margin-top: 20px;
+    position: relative;
+}
+
+.overflow-warning:before {
+    content: "⚠️";
+    font-size: 1.3em;
+    margin-right: 10px;
+}
+
+.overflow-warning.visible {
+    display: block;
+}
+
+@keyframes blinkWarning {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* --- Lesson 4 Styles --- */
+/* Char Set Info (Light BG) - Fixed */
+.character-set-info { background-color: rgba(218, 185, 75, 0.05); color: var(--primary-navy); border-color: var(--gold-dark); padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+.character-set-info h4 { color: var(--primary-navy-dark); /* Fixed */ margin-top: 0; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
+.character-set-info ul { color: var(--primary-navy); /* Fixed */ padding-left: 20px; margin-top: 10px; }
+.character-set-info li { color: var(--primary-navy); /* Fixed */ margin-bottom: 5px; }
+.character-set-info li strong { color: var(--primary-navy-dark); /* Fixed */ }
+/* ASCII Table (Light BG) - Check contrast */
+.ascii-table-container { background: var(--parchment); border-color: var(--gold-dark); }
+.ascii-full-table { color: var(--primary-navy); } /* Original dark text - OK */
+.ascii-full-table th { background-color: var(--primary-navy-light); color: var(--gold-light); } /* OK */
+.ascii-full-table td { border-color: var(--gold-light); color: var(--primary-navy); /* Ensure dark text */ } /* OK */
+/* Emoji Fact (Dark BG) */
+.emoji-fact { background-color: var(--primary-navy-light); color: var(--gold-light); padding: 10px; border-radius: 5px; text-align: center; margin-top: 15px; } /* OK */
+/* Text Encoding Example (Dark BG) */
+.text-encoding-example { border-left-color: var(--gold); } /* OK */
+.char-encoding .char { color: var(--gold); } /* OK */
+.char-encoding .arrow { color: var(--gold-dark); } /* OK */
+.char-encoding .code-value { color: #a7c5eb; } /* OK */
+.char-encoding .binary-code { background-color: rgba(0,0,0,0.2); color: var(--gold-light); } /* OK */
+/* Binary to Char Converter (Dark BG) */
+.binary-to-char-converter label, .binary-to-char-converter .result-label { color: var(--off-white); } /* OK */
+.binary-to-char-converter input[type="text"] { background: var(--parchment); color: var(--primary-navy); } /* OK */
+.char-result-box { background-color: var(--parchment); color: var(--primary-navy); border-color: var(--gold-dark); } /* OK */
+.input-error { color: #e74c3c; } /* OK */
+/* Representation Comparison (Light BG) */
+.representation-comparison { background-color: rgba(218, 185, 75, 0.05); border-color: var(--gold); color: var(--primary-navy);} /* Fixed default text */
+.rep-label { color: var(--primary-navy-dark); } /* Fixed label */
+.rep-value.text-val { color: var(--primary-navy); } /* Fixed text */
+.rep-value.binary-val span { background-color: rgba(13, 36, 66, 0.1); color: var(--primary-navy-dark); } /* Fixed span */
+.rep-value.hex-val span { background-color: var(--primary-navy-light); color: var(--gold); } /* OK */
+
+/* --- Lesson 5 Styles --- */
+.pixel-example img { /* No text, OK */ }
+/* Resolution Demo (Light BG) */
+.resolution-demo { background-color: rgba(218, 185, 75, 0.08); border-color: var(--gold); color: var(--primary-navy);} /* Fixed default text */
+.resolution-demo h5 { color: var(--primary-navy-dark); } /* Fixed heading */
+.resolution-demo label { color: var(--primary-navy); } /* Fixed label */
+.resolution-demo span#stretchValueL5 { color: var(--primary-navy-dark); } /* Fixed value */
+.resolution-demo p { color: var(--primary-navy); } /* Fixed text */
+/* Embedded Picker (Assumes dark page BG) */
+.interactive-color-picker.embedded-picker { border-top-color: var(--gold-light); color: var(--off-white); } /* OK */
+.embedded-picker p { color: var(--off-white); } /* OK */
+.embedded-picker p em { color: var(--gold-light); } /* Ensure light emphasis */
+.embedded-picker .slider-group label { color: var(--off-white); } /* OK */
+.embedded-picker .slider-group label span { color: var(--off-white); } /* OK */
+.embedded-picker .slider-group .hex-val { color: var(--gold-light); background-color: rgba(0,0,0,0.2); } /* OK */
+.embedded-picker .hex-result { color: var(--off-white); } /* OK */
+.embedded-picker .hex-code { background-color: var(--parchment); color: var(--primary-navy); } /* OK */
+/* Pixel Painter (Dark BG) */
+.painter-controls .control-group label { color: var(--off-white); } /* OK */
+.painter-output label { color: var(--off-white); } /* OK */
+.painter-output textarea { background-color: rgba(0,0,0,0.2); color: var(--gold-light); } /* OK */
+.painter-output .file-size, #fileSizeL5 { background-color: var(--parchment); color: var(--primary-navy); } /* OK */
+
+/* --- Lesson 6 Styles --- */
+.sampling-analogy p { color: var(--gold-light); } /* OK */
+/* Sound Demo (Dark BG) */
+.sound-controls label { color: var(--off-white); } /* OK */
+.sound-controls .demo-value { color: var(--gold-light); } /* OK */
+.sound-visualizer .file-size { color: var(--gold-light); } /* OK */
+.demo-explanation { color: var(--off-white); } /* OK */
+/* File Calc Box (Light BG) */
+.file-size-calc-box { background-color: var(--parchment); color: var(--primary-navy); } /* OK */
+.file-size-calc-box h4 { color: var(--primary-navy-dark); } /* Darker heading */
+.calc-input-group label { color: var(--primary-navy-dark); } /* Darker label */
+.calc-input-group input, .calc-input-group select { background: var(--white); color: var(--primary-navy); } /* OK */
+.calc-result-display { background-color: var(--gold-light); color: var(--primary-navy); border-color: var(--gold-dark); } /* OK */
+/* Compression Boxes (Light Tint BG) */
+.compression-box h4 { color: var(--primary-navy-dark); } /* Darker Heading */
+.compression-box p { color: var(--primary-navy); } /* Fixed: Dark Text */
+.compression-box.lossless { background-color: rgba(52, 152, 219, 0.1); }
+.compression-box.lossy { background-color: rgba(231, 76, 60, 0.1); }
+
+/* --- Interactive Challenge Enhancement (Answer Reveal) --- */
+.interactive-challenge {
+    background: linear-gradient(135deg, rgba(13, 36, 66, 0.9), rgba(30, 55, 90, 0.9));
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-challenge:before {
+    content: "👨‍💻 Challenge";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--gold);
+    color: var(--primary-navy-dark);
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 0 0 0 8px;
+    font-size: 0.9em;
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.interactive-challenge h2 {
+    color: var(--gold);
+    font-size: 1.3em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    border-bottom: 2px solid var(--gold-light);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    padding-right: 120px; /* Make room for the badge */
+}
+
+.interactive-challenge p {
+    color: var(--off-white);
+    font-size: 1.05em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.interactive-challenge .challenge-answer {
+    background: linear-gradient(to right, rgba(13, 36, 66, 0.9), rgba(30, 55, 90, 0.9));
+    color: var(--gold);
+    padding: 15px 20px 15px 45px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    border: 1px dashed var(--gold);
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.interactive-challenge .challenge-answer:hover {
+    background: linear-gradient(to right, rgba(20, 43, 73, 0.9), rgba(40, 65, 100, 0.9));
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+.interactive-challenge .challenge-answer::before {
+    content: "▶ Click to Reveal Answer";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: var(--gold-light);
+}
+
+.interactive-challenge .challenge-answer.revealed {
+    background: linear-gradient(to right, rgba(30, 43, 73, 0.9), rgba(50, 75, 120, 0.9));
+    padding-bottom: 20px;
+}
+
+.interactive-challenge .challenge-answer.revealed::before {
+    content: "▼ Click to Hide Answer";
+    color: var(--gold);
+}
+
+.interactive-challenge .answer-hidden {
+    display: none;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--gold-light);
+    color: var(--off-white);
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    max-height: 0;
+    opacity: 0;
+}
+
+.interactive-challenge .challenge-answer.revealed .answer-hidden {
+    display: block;
+    max-height: 500px;
+    opacity: 1;
+    animation: answer-fade-in 0.5s ease-out;
+}
+
+@keyframes answer-fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Color Picker Enhancement (Lesson 2) --- */
+.interactive-color-picker {
+    composes: interactive-widget;
+    background: linear-gradient(135deg, rgba(13, 36, 66, 0.9), rgba(30, 55, 90, 0.9));
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interactive-color-picker:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.interactive-color-picker h2 {
+    color: var(--gold);
+    font-size: 1.3em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.interactive-color-picker h2:before {
+    content: "🎨";
+    font-size: 1.2em;
+}
+
+.interactive-color-picker p {
+    color: var(--off-white);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.interactive-color-picker em {
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+.color-picker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(218, 185, 75, 0.3);
+}
+
+.color-preview {
+    width: 100%;
+    height: 100px;
+    border: 3px solid var(--gold-light);
+    border-radius: 8px;
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 0 30px rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.color-preview:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+}
+
+.sliders {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.slider-group {
+    display: grid;
+    grid-template-columns: 100px 1fr 60px;
+    align-items: center;
+    gap: 15px;
+    color: var(--off-white);
+    font-size: 0.95em;
+}
+
+.slider-group label {
+    text-align: right;
+    font-weight: bold;
+    color: var(--off-white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.slider-group label[for^="redSlider"]:before {
+    content: "🔴";
+    font-size: 1.2em;
+}
+
+.slider-group label[for^="greenSlider"]:before {
+    content: "🟢";
+    font-size: 1.2em;
+}
+
+.slider-group label[for^="blueSlider"]:before {
+    content: "🔵";
+    font-size: 1.2em;
+}
+
+.slider-group input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    height: 8px;
+    -webkit-appearance: none;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.slider-group input[id^="redSlider"]::-webkit-slider-thumb {
+    background: linear-gradient(145deg, #ff5555, #ff0000);
+}
+
+.slider-group input[id^="greenSlider"]::-webkit-slider-thumb {
+    background: linear-gradient(145deg, #55ff55, #00ff00);
+}
+
+.slider-group input[id^="blueSlider"]::-webkit-slider-thumb {
+    background: linear-gradient(145deg, #5555ff, #0000ff);
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.slider-group input[type="range"]:focus {
+    outline: none;
+}
+
+.slider-group .hex-val {
+    font-family: var(--code-font);
+    background-color: rgba(0,0,0,0.4);
+    padding: 5px 8px;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--gold-light);
+    font-weight: bold;
+    border: 1px solid rgba(218, 185, 75, 0.3);
+    transition: all 0.2s ease;
+}
+
+.hex-result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hex-result:before {
+    content: "#️⃣";
+    font-size: 1.2em;
+}
+
+.hex-result .hex-code {
+    font-family: var(--code-font);
+    background: linear-gradient(145deg, #f5efd7, var(--parchment));
+    color: var(--primary-navy-dark);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-left: 5px;
+    font-size: 1.2em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold-dark);
+    position: relative;
+}
+
+.hex-result .hex-code:after {
+    content: "CSS Color Code";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    color: var(--gold-light);
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+/* --- Binary to ASCII Character Converter Enhancement (Lesson 4) --- */
+.binary-to-char-converter {
+    composes: interactive-widget;
+    background: linear-gradient(135deg, rgba(13, 36, 66, 0.9), rgba(30, 55, 90, 0.9));
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.binary-to-char-converter h4 {
+    color: var(--gold);
+    font-size: 1.2em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 5px;
+    text-align: center;
+    border-bottom: 2px solid var(--gold-light);
+    padding-bottom: 10px;
+}
+
+.binary-to-char-converter label {
+    color: var(--gold-light);
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.binary-to-char-converter input[type="text"] {
+    font-family: var(--code-font);
+    padding: 10px 15px;
+    border: 2px solid var(--gold-dark);
+    border-radius: 6px;
+    background: linear-gradient(145deg, #f5efd7, var(--parchment));
+    color: var(--primary-navy);
+    width: 180px;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.binary-to-char-converter input[type="text"]:focus {
+    outline: none;
+    border-color: var(--gold-light);
+    box-shadow: 0 0 10px rgba(218, 185, 75, 0.5);
+    transform: translateY(-2px);
+}
+
+.binary-to-char-converter .result-label {
+    margin-left: 10px;
+    color: var(--gold-light);
+    font-weight: bold;
+}
+
+.char-result-box {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: linear-gradient(145deg, #f5efd7, var(--parchment));
+    color: var(--primary-navy-dark);
+    border: 3px solid var(--gold-dark);
+    border-radius: 8px;
+    font-size: 1.8em;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.input-error {
+    color: #e74c3c;
+    font-size: 0.95em;
+    font-weight: bold;
+    width: 100%;
+    min-height: 1.2em;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
