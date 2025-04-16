@@ -368,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const skillImageMap = { // Map dataset value to filename
              'Programming': 'Coding.png',
              'DataHandling': 'Data_Handling.png',
-             'DigitalLiteracy': 'digital_literacy.png',
+             'DigitalLiteracy': 'Digital_Literacy.png',
              'ComputationalThinking': 'Computational_Thinking.png',
              'Creativity': 'Creativity.png'
          };
