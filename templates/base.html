@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <title>{{title}}</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>{{title}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <link rel="stylesheet" href="{{base_path}}styles/main.css?v=1.1.0"> {{theme_css_link}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{base_path}}styles/global/main.css?v=1.1.0">
+    {{theme_css_link}}
 
     {{page_specific_css_links}}
 
@@ -25,7 +28,9 @@
             </div>
             <ul>
                 <li><a href="{{base_path}}ks3/year7/Landing_Page/Year7_Landing.html">Year 7</a></li>
-                <li><a href="{{base_path}}ks3/year8/overview.html">Year 8</a></li> <li><a href="{{base_path}}ks3/year9/overview.html">Year 9</a></li> <li><a href="{{base_path}}ks3/index.html">KS3</a></li>
+                <li><a href="{{base_path}}ks3/year8/overview.html">Year 8</a></li>
+                <li><a href="{{base_path}}ks3/year9/overview.html">Year 9</a></li>
+                <li><a href="{{base_path}}ks3/index.html">KS3</a></li>
                 <li><a href="{{base_path}}ks4/index.html">KS4</a></li>
                 <li><a href="{{base_path}}ks5/index.html">KS5</a></li>
             </ul>
@@ -36,7 +41,8 @@
     </header>
 
     <main>
-        <div class="content-wrapper"> {{content}}
+        <div class="content-wrapper">
+            {{content}}
         </div>
     </main>
 
@@ -44,28 +50,20 @@
         <p>&copy; 2025 Mr Stewart, Head of Science - St. George's School Düsseldorf</p>
     </footer>
 
-    <!-- Scripts: Load Data and Utils first, then core main/include, then component/page scripts -->
-    <!-- Ensure defer is used for non-blocking load -->
-    <script src="{{base_path}}data/ks3_lessons.js?v=1.1.0" defer></script> 
-    <script src="{{base_path}}scripts/utils.js?v=1.1.0" defer></script>
-    <script src="{{base_path}}scripts/main.js?v=1.1.0" defer></script>
-    <script src="{{base_path}}scripts/include.js?v=1.1.0" defer></script> 
-    <!-- KS3 Menu/Interaction Logic -->
-    <script src="{{base_path}}scripts/hamburger-menu.js?v=1.1.0" defer></script>
-    <script src="{{base_path}}scripts/ks3_accordion.js?v=1.1.0" defer></script>
-    <!-- Animations & Page Specific -->
-    <script src="{{base_path}}scripts/index_animations.js?v=1.1.0" defer></script> <!-- May only be needed on index -->
-    <script src="{{base_path}}scripts/ks3_animations.js?v=1.1.0" defer></script>
-    <script src="{{base_path}}scripts/foundations_view.js?v=1.1.0" defer></script> <!-- Only needed on foundations page -->
-    <script src="{{base_path}}scripts/y7_t6_content_interactives.js?v=1.1.0" defer></script> <!-- Only needed on Y7 T6 content -->
-    
-    <!-- Placeholder for theme-specific scripts -->
+    <!-- Core Scripts (needed on every page) -->
+    <script src="{{base_path}}scripts/global/utils.js?v=1.1.0" defer></script>
+    <script src="{{base_path}}scripts/global/main.js?v=1.1.0" defer></script>
+    <script src="{{base_path}}scripts/global/include.js?v=1.1.0" defer></script>
+    <script src="{{base_path}}scripts/global/hamburger-menu.js?v=1.1.0" defer></script>
+    <script src="{{base_path}}data/ks3_lessons.js?v=1.1.0" defer></script>
+
+    <!-- Theme-specific scripts -->
     {{theme_scripts}}
 
-    <!-- Placeholder for page-specific script links -->
+    <!-- Page-specific script links -->
     {{page_specific_js_links}}
 
-    <!-- Placeholder for inline page scripts -->
+    <!-- Page-specific inline scripts -->
     {{page_scripts}}
 
 </body>

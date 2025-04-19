@@ -26,10 +26,24 @@ find . -name "*.html" -type f | while read -r file; do
     # 1. Fix paths like src="/assets/..." or href="/assets/..."
     sed -i.bak -E "s#(src|href)=\"/assets/#\1=\"${relative_prefix}assets/#g" "$file"
     
-    # 2. Fix paths like src="/scripts/..." or href="/scripts/..."
+    # 2. Fix paths for scripts with the new directory structure
+    # Global scripts
+    sed -i.bak -E "s#(src|href)=\"/scripts/global/#\1=\"${relative_prefix}scripts/global/#g" "$file"
+    # KS3 scripts
+    sed -i.bak -E "s#(src|href)=\"/scripts/ks3/#\1=\"${relative_prefix}scripts/ks3/#g" "$file"
+    # Year-specific scripts
+    sed -i.bak -E "s#(src|href)=\"/scripts/ks3/year[0-9]/#\1=\"${relative_prefix}scripts/ks3/year&/#g" "$file"
+    # Other scripts (fallback)
     sed -i.bak -E "s#(src|href)=\"/scripts/#\1=\"${relative_prefix}scripts/#g" "$file"
     
-    # 3. Fix paths like src="/styles/..." or href="/styles/..."
+    # 3. Fix paths for styles with the new directory structure
+    # Global styles
+    sed -i.bak -E "s#(src|href)=\"/styles/global/#\1=\"${relative_prefix}styles/global/#g" "$file"
+    # KS3 styles
+    sed -i.bak -E "s#(src|href)=\"/styles/ks3/#\1=\"${relative_prefix}styles/ks3/#g" "$file"
+    # Year-specific styles
+    sed -i.bak -E "s#(src|href)=\"/styles/ks3/year[0-9]/#\1=\"${relative_prefix}styles/ks3/year&/#g" "$file"
+    # Other styles (fallback)
     sed -i.bak -E "s#(src|href)=\"/styles/#\1=\"${relative_prefix}styles/#g" "$file"
     
     # 4. Fix paths like src="/data/..." or href="/data/..."

@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <title>Lesson Title - Year 7 Term 6</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../styles/main.css?v=1.1.0">
-    <link rel="stylesheet" href="../../../styles/ks3_theme.css?v=1.1.0">
-    <link rel="stylesheet" href="../../../styles/hamburger-menu.css?v=1.1.0">
-    <link rel="stylesheet" href="../../../styles/ks3_topic_overview.css?v=1.1.0">
-    <link rel="stylesheet" href="../../../styles/ks3_accordion.css?v=1.1.0">
-    <link rel="stylesheet" href="../../../styles/ks3_lessons_layout.css?v=1.0.0">
+    <meta name="description" content="Year 7 Term 6 Lesson 1 - Example Lesson Title">
+    {{base_head}}
+    <!-- Additional CSS specific to this page -->
+    <link rel="stylesheet" href="{{base_path}}styles/ks3/ks3_topic_overview.css?v=1.1.0">
+    <link rel="stylesheet" href="{{base_path}}styles/ks3/ks3_accordion.css?v=1.1.0">
+    <link rel="stylesheet" href="{{base_path}}styles/ks3/ks3_lessons_layout.css?v=1.0.0">
 </head>
 <body data-theme="ks3" data-has-hamburger="true">
-    <div data-include="header"></div>
-    <main>
+    <div id="header-placeholder"></div>
+
+    <main id="main-content">
         <div class="content-wrapper">
             <div class="topic-container"> 
                 <div class="lesson-progress">
@@ -115,20 +112,16 @@
                         </div>
                     </div>
                 </section>
-
             </div>
         </div>
     </main>
 
-    <div data-include="footer"></div>
+    <div id="footer-placeholder"></div>
+    <div id="hamburger-menu-placeholder"></div>
 
-    <script src="../../../scripts/main.js?v=1.1.0" defer></script>
-    <script src="../../../scripts/include.js?v=1.1.0" defer></script>
-    <script src="../../../scripts/utils.js?v=1.1.0" defer></script>
-    <script src="../../../data/ks3_lessons.js?v=1.1.0" defer></script>
-    <script src="../../../scripts/ks3-menu-content.js?v=1.1.0" defer></script>
-    <script src="../../../scripts/hamburger-menu.js?v=1.1.0" defer></script>
-    <script src="../../../scripts/ks3_accordion.js?v=1.1.0" defer></script>
+    {{base_scripts}}
+
+    <!-- Page-specific scripts -->
     <script>
         // Progress bar functionality
         window.addEventListener('scroll', function() {
