@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Year 7 Term 6: Data Representation Content</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../../../styles/global/main.css?v=1.1.0">
+    <link rel="stylesheet" href="../../../styles/ks3/ks3_theme.css?v=1.1.0">
+    
+    <link rel="stylesheet" href="../../../styles/ks3/ks3_topic_overview.css?v=1.1.0"> 
+    <link rel="stylesheet" href="../../../styles/global/hamburger-menu.css?v=1.1.0">
+    <link rel="stylesheet" href="../../../styles/ks3/ks3_accordion.css?v=1.1.0">
+
+    <link rel="stylesheet" href="../../../styles/ks3/year7/y7_t6_content.css?v=1.1.0"> 
+
+</head>
+<body data-theme="ks3" data-has-hamburger="true">
+
+    <div data-include="header"></div>
+
+    <main>
+        <div class="content-wrapper">
+            <div class="topic-container">
+
+                <h1>Data Representation</h1>
+
+                <div class="ks3-accordion-container">
+                    <div class="ks3-accordion-item">
+                        <button class="ks3-accordion-header" aria-expanded="false">
+                            <span>Lesson 0: Introduction: Why Binary?</span>
+                            <span class="accordion-indicator" aria-hidden="true"></span>
+                        </button>
+                        <div class="ks3-accordion-content" role="region">
+                            <section class="content-section">
+                                <h2>Welcome, Digital Detectives! 🕵️‍♀️</h2>
+                                <p>Ever wonder how computers understand your commands? It's like they have a secret language! This language is called <strong>binary</strong>, and it's super simple: it only uses two symbols, <strong>0</strong> and <strong>1</strong>. Think of them like tiny light switches inside the computer!</p>
+                            </section>
+                            <section class="content-section interactive-analogy">
+                                <h3>The Light Switch Analogy 💡</h3>
+                                <p>Imagine a row of light switches. Each switch can be either <strong>OFF</strong> or <strong>ON</strong>. Computers work the same way!</p>
+                                <div class="light-switch-container">
+                                    <div class="switch-label">Switch 1:</div>
+                                    <button class="light-switch off" onclick="toggleLight(this)" aria-pressed="false">
+                                        <span class="switch-handle"></span>
+                                    </button>
+                                    <div class="switch-binary-value">Value: <span>0</span></div>
+                                </div>
+                                <p>In binary:</p>
+                                <ul>
+                                    <li><strong>0</strong> means <strong>OFF</strong></li>
+                                    <li><strong>1</strong> means <strong>ON</strong></li>
+                                </ul>
+                                <p><em>Click the switch above to see it change!</em></p>
+                                <div class="info-box">
+                                    <p>Computers use millions of these tiny 'switches' (called transistors) to represent everything: numbers, letters, pictures, and sounds!</p>
+                                </div>
+                            </section>
+                            <section class="content-section">
+                                <h2>What Is the Binary System? 🤔</h2>
+                                <p>We use the <strong>denary</strong> (or decimal) system every day, with ten digits (0-9). Binary is different – it's a <strong>base-2</strong> system, using only 0 and 1. Each digit in a binary number is called a <strong>bit</strong>.</p>
+                                <p>Just like in denary where places mean units, tens, hundreds (powers of 10), in binary, each place value is a <strong>power of 2</strong>. Click the place value boxes below to build your own binary number!</p>
+                                <div class="binary-interactive-converter" id="converterL0">
+                                    <div class="binary-place-values clickable">
+                                        <div class="place-value-button" onclick="toggleBinaryDigit(this, 7, 'converterL0')" data-value="128" title="Click to toggle bit 7 (128)">128</div>
+                                        <div class="place-value-button" onclick="toggleBinaryDigit(this, 6, 'converterL0')" data-value="64" title="Click to toggle bit 6 (64)">64</div>
+                                        <div class="place-value-button" onclick="toggleBinaryDigit(this, 5, 'converterL0')" data-value="32" title="Click to toggle bit 5 (32)">32</div>
+                                        <div class="place-value-button" onclick="toggleBinaryDigit(this, 4, 'converterL0')" data-value="16" title="Click to toggle bit 4 (16)">16</div>
+                                        <div class="place-value-button" onclick="toggleBinaryDigit(this, 3, 'converterL0')" data-value="8" title="Click to toggle bit 3 (8)">8</div>
+                                        <div class="place-value-button" onclick="toggleBinaryDigit(this, 2, 'converterL0')" data-value="4" title="Click to toggle bit 2 (4)">4</div>
+                                        <div class="place-value-button" onclick="toggleBinaryDigit(this, 1, 'converterL0')" data-value="2" title="Click to toggle bit 1 (2)">2</div>
+                                        <div class="place-value-button" onclick="toggleBinaryDigit(this, 0, 'converterL0')" data-value="1" title="Click to toggle bit 0 (1)">1</div>
+                                    </div>
+                                    <div class="binary-digits-row">
+                                        <div class="binary-digit-toggle" data-index="7">0</div>
+                                        <div class="binary-digit-toggle" data-index="6">0</div>
+                                        <div class="binary-digit-toggle" data-index="5">0</div>
+                                        <div class="binary-digit-toggle" data-index="4">0</div>
+                                        <div class="binary-digit-toggle" data-index="3">0</div>
+                                        <div class="binary-digit-toggle" data-index="2">0</div>
+                                        <div class="binary-digit-toggle" data-index="1">0</div>
+                                        <div class="binary-digit-toggle" data-index="0">0</div>
+                                    </div>
+                                    <div class="decimal-value-display">
+                                        <span>Decimal Value: </span><span class="interactiveDecimalValueDisplay">0</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="content-section">
+                                <h2>Why Do Computers Use Binary? 💻</h2>
+                                <p>Why not just use our normal numbers?</p>
+                                <ul>
+                                    <li><strong>Simplicity:</strong> It's easy for electronic circuits to represent two states (ON/OFF, High/Low voltage).</li>
+                                    <li><strong>Reliability:</strong> It's less prone to errors caused by electrical noise compared to systems with many voltage levels.</li>
+                                    <li><strong>Efficiency:</strong> Simple circuits are easier and cheaper to build.</li>
+                                </ul>
+                                <p>This simple system allows computers to perform incredibly complex tasks reliably!</p>
+                            </section>
+                            <section class="content-section">
+                                <h2>Binary in Everyday Tech 📱🎮📸🎵</h2>
+                                <p>You use binary all the time without realising it!</p>
+                                <ul>
+                                    <li>The apps on your phone? Binary code!</li>
+                                    <li>Your favourite video game characters and levels? Binary!</li>
+                                    <li>The photos you take and share? Stored as binary!</li>
+                                    <li>The music you listen to? Digital sound represented in binary!</li>
+                                </ul>
+                            </section>
+                            <section class="content-section interactive-challenge">
+                                 <h2>Mini-Challenge: Binary Thinking 🤔</h2>
+                                 <p>Imagine you have 8 light switches (place values). How would you represent the number 5 using only ON (1) and OFF (0)?</p>
+                                 <div class="challenge-answer" onclick="revealAnswer(this)">
+                                     <div class="answer-hidden">
+                                         <p>You need the 4 switch (ON) and the 1 switch (ON). The others are OFF.</p>
+                                         <div class="binary-place-values headings-only">
+                                             <div class="place-value-box">128</div> <div class="place-value-box">64</div> <div class="place-value-box">32</div> <div class="place-value-box">16</div> <div class="place-value-box">8</div> <div class="place-value-box">4</div> <div class="place-value-box">2</div> <div class="place-value-box">1</div>
+                                         </div>
+                                         <div class="binary-digits-row answer-row">
+                                             <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle on">1</div> <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle on">1</div>
+                                         </div>
+                                         <p>So, 5 in binary (using 8 bits) is <strong>00000101</strong>.</p>
+                                     </div>
+                                 </div>
+                            </section>
+                            <section class="content-section conclusion">
+                                <h2>Recap & Next Steps 🚀</h2>
+                                <p>Today you learned:</p>
+                                <ul>
+                                    <li>Computers use the <strong>binary</strong> system (0s and 1s).</li>
+                                    <li>Binary digits are called <strong>bits</strong>.</li>
+                                    <li>Binary uses place values based on <strong>powers of 2</strong>.</li>
+                                    <li>Computers use binary because it's simple and reliable.</li>
+                                </ul>
+                                <p>Think about this: <strong>How can just 0s and 1s represent letters, colours, and sounds?</strong> That's what we'll start exploring next, including a cool shortcut called Hexadecimal!</p>
+                            </section>
+                            <script> // Keep placeholder script tags if they define functions used inline
+                                 if (typeof toggleLight === 'undefined') { function toggleLight(button) { button.classList.toggle('on'); console.log("toggleLight function not defined globally yet."); } }
+                                 if (typeof toggleBinaryDigit === 'undefined') { function toggleBinaryDigit(btn, idx) { console.log("toggleBinaryDigit not defined"); } }
+                                 if (typeof updateInteractiveDecimalValue === 'undefined') { function updateInteractiveDecimalValue(el) { console.log("updateInteractiveDecimalValue not defined"); } }
+                                 if (typeof revealAnswer === 'undefined') { function revealAnswer(element) { console.log("revealAnswer function not defined globally yet."); } }
+                             </script>
+                        </div>
+                    </div>
+                            
+                    <div class="ks3-accordion-item">
+                        <button class="ks3-accordion-header" aria-expanded="false">
+                            <span>Lesson 1: Decoding Binary Numbers</span>
+                            <span class="accordion-indicator" aria-hidden="true"></span>
+                        </button>
+                        <div class="ks3-accordion-content" role="region">
+                            <section class="content-section">
+                                <h2>Lesson 1: Decoding Binary Numbers</h2>
+                                <p>Computers use binary (0s and 1s), but we use denary (0-9). Let's learn how to translate between these two number systems! It's a key skill for understanding how computers handle numbers.</p>
+                            </section>
+                            <section class="content-section">
+                                <h3>Understanding Place Values</h3>
+                                <p>Remember, in binary, each position has a value that's a power of 2. For an 8-bit number:</p>
+                                <div class="binary-place-values static-display">
+                                     <div class="place-value-box" title="2^7">128</div><div class="place-value-box" title="2^6">64</div><div class="place-value-box" title="2^5">32</div><div class="place-value-box" title="2^4">16</div><div class="place-value-box" title="2^3">8</div><div class="place-value-box" title="2^2">4</div><div class="place-value-box" title="2^1">2</div><div class="place-value-box" title="2^0">1</div>
+                                </div>
+                            </section>
+                            <section class="content-section">
+                                <h2>Converting Binary to Denary (Binary → Denary)</h2>
+                                <p>To convert a binary number to denary, you just add up the place values for every '1' bit.</p>
+                                <p><strong>Example:</strong> Let's convert <strong>10110010</strong></p>
+                                <div class="binary-to-denary-interactive">
+                                    <div class="binary-digits-row input-row">
+                                        <div class="binary-digit-display">1</div><div class="binary-digit-display">0</div><div class="binary-digit-display">1</div><div class="binary-digit-display">1</div><div class="binary-digit-display">0</div><div class="binary-digit-display">0</div><div class="binary-digit-display">1</div><div class="binary-digit-display">0</div>
+                                    </div>
+                                    <div class="binary-place-values headings-only">
+                                         <div class="place-value-box">128</div><div class="place-value-box">64</div><div class="place-value-box">32</div><div class="place-value-box">16</div><div class="place-value-box">8</div><div class="place-value-box">4</div><div class="place-value-box">2</div><div class="place-value-box">1</div>
+                                    </div>
+                                    <div class="calculation-explanation">
+                                        <p>Add the values where there is a '1':</p>
+                                        <span class="calc-step">128</span> + <span class="calc-step">32</span> + <span class="calc-step">16</span> + <span class="calc-step">2</span> = <span class="calc-result">178</span>
+                                    </div>
+                                </div>
+                                <p>So, <strong>10110010</strong> (binary) is <strong>178</strong> (denary).</p>
+                                <div class="info-box">
+                                    <h4>Try It! Binary → Denary Converter</h4>
+                                    <p>Click the place value buttons below to set the binary digits (0 or 1) and see the denary value update!</p>
+                                    <div class="binary-interactive-converter" id="converterL1_b2d"> 
+                                        <div class="binary-place-values clickable">
+                                             <div class="place-value-button" onclick="toggleBinaryDigit(this, 7, 'converterL1_b2d')" data-value="128" title="Click to toggle bit 7 (128)">128</div><div class="place-value-button" onclick="toggleBinaryDigit(this, 6, 'converterL1_b2d')" data-value="64" title="Click to toggle bit 6 (64)">64</div><div class="place-value-button" onclick="toggleBinaryDigit(this, 5, 'converterL1_b2d')" data-value="32" title="Click to toggle bit 5 (32)">32</div><div class="place-value-button" onclick="toggleBinaryDigit(this, 4, 'converterL1_b2d')" data-value="16" title="Click to toggle bit 4 (16)">16</div><div class="place-value-button" onclick="toggleBinaryDigit(this, 3, 'converterL1_b2d')" data-value="8" title="Click to toggle bit 3 (8)">8</div><div class="place-value-button" onclick="toggleBinaryDigit(this, 2, 'converterL1_b2d')" data-value="4" title="Click to toggle bit 2 (4)">4</div><div class="place-value-button" onclick="toggleBinaryDigit(this, 1, 'converterL1_b2d')" data-value="2" title="Click to toggle bit 1 (2)">2</div><div class="place-value-button" onclick="toggleBinaryDigit(this, 0, 'converterL1_b2d')" data-value="1" title="Click to toggle bit 0 (1)">1</div>
+                                        </div>
+                                        <div class="binary-digits-row">
+                                             <div class="binary-digit-toggle" data-index="7">0</div><div class="binary-digit-toggle" data-index="6">0</div><div class="binary-digit-toggle" data-index="5">0</div><div class="binary-digit-toggle" data-index="4">0</div><div class="binary-digit-toggle" data-index="3">0</div><div class="binary-digit-toggle" data-index="2">0</div><div class="binary-digit-toggle" data-index="1">0</div><div class="binary-digit-toggle" data-index="0">0</div>
+                                        </div>
+                                        <div class="decimal-value-display">
+                                            <span>Decimal Value: </span><span class="interactiveDecimalValueDisplay">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="content-section">
+                                <h2>Converting Denary to Binary (Denary → Binary)</h2>
+                                <p>There are two main methods to convert denary numbers into binary.</p>
+                                <div class="method-box">
+                                    <h3>Method 1: Subtraction Method</h3>
+                                    <p>Find the largest power of 2 that fits into your number, subtract it, put a '1' in that position, and repeat with the remainder. Fill unused positions with '0'.</p>
+                                    <p><strong>Example: Convert 45 to Binary</strong></p>
+                                    <ol class="step-list">
+                                        <li>Largest power of 2 ≤ 45 is <strong>32</strong>. Remainder: 45 - 32 = 13.</li>
+                                        <li>Largest power of 2 ≤ 13 is <strong>8</strong>. Remainder: 13 - 8 = 5.</li>
+                                        <li>Largest power of 2 ≤ 5 is <strong>4</strong>. Remainder: 5 - 4 = 1.</li>
+                                        <li>Largest power of 2 ≤ 1 is <strong>1</strong>. Remainder: 1 - 1 = 0.</li>
+                                    </ol>
+                                    <p>Binary representation (positions 32, 8, 4, 1 are '1'):</p>
+                                    <div class="binary-result-display">
+                                         <div class="binary-place-values headings-only">
+                                             <div class="place-value-box">128</div> <div class="place-value-box">64</div> <div class="place-value-box">32</div> <div class="place-value-box">16</div> <div class="place-value-box">8</div> <div class="place-value-box">4</div> <div class="place-value-box">2</div> <div class="place-value-box">1</div>
+                                         </div>
+                                         <div class="binary-digits-row answer-row">
+                                             <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle on">1</div> <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle on">1</div> <div class="binary-digit-toggle on">1</div> <div class="binary-digit-toggle">0</div> <div class="binary-digit-toggle on">1</div>
+                                         </div>
+                                    </div>
+                                    <p>So, 45 (denary) = <strong>00101101</strong> (binary).</p>
+                                </div>
+                                <div class="method-box">
+                                    <h3>Method 2: Repeated Division by 2</h3>
+                                    <p>Repeatedly divide the denary number by 2, noting the remainder (0 or 1) each time. Continue until the result is 0. Read the remainders in reverse order (bottom to top).</p>
+                                    <p><strong>Example: Convert 156 to Binary</strong></p>
+                                    <div class="division-method">
+                                        <table class="division-table">
+                                            <thead><tr><th>Division</th><th>Result</th><th>Remainder</th></tr></thead>
+                                            <tbody>
+                                                <tr><td>156 ÷ 2</td><td>78</td><td><strong>0</strong> <span class="arrow-indicator">↑</span> LSB</td></tr>
+                                                <tr><td>78 ÷ 2</td><td>39</td><td><strong>0</strong> <span class="arrow-indicator">↑</span></td></tr>
+                                                <tr><td>39 ÷ 2</td><td>19</td><td><strong>1</strong> <span class="arrow-indicator">↑</span></td></tr>
+                                                <tr><td>19 ÷ 2</td><td>9</td><td><strong>1</strong> <span class="arrow-indicator">↑</span></td></tr>
+                                                <tr><td>9 ÷ 2</td><td>4</td><td><strong>1</strong> <span class="arrow-indicator">↑</span></td></tr>
+                                                <tr><td>4 ÷ 2</td><td>2</td><td><strong>0</strong> <span class="arrow-indicator">↑</span></td></tr>
+                                                <tr><td>2 ÷ 2</td><td>1</td><td><strong>0</strong> <span class="arrow-indicator">↑</span></td></tr>
+                                                <tr><td>1 ÷ 2</td><td>0</td><td><strong>1</strong> <span class="arrow-indicator">↑</span> MSB (Read First)</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <p>Reading remainders upwards: <strong>10011100</strong>.</p>
+                                    <p>So, 156 (denary) = <strong>10011100</strong> (binary).</p>
+                                </div>
+                            </section>
+                            <section class="content-section conclusion">
+                                <h2>Lesson 1 Recap</h2>
+                                <p>You've learned two key skills:</p>
+                                <ul>
+                                    <li><strong>Binary to Denary:</strong> Add up the place values (128, 64, 32...) wherever you see a '1'.</li>
+                                    <li><strong>Denary to Binary:</strong> Use either the subtraction method or the repeated division-by-2 method.</li>
+                                </ul>
+                                <p>Practice these conversions – they are fundamental to understanding computer data!</p>
+                            </section>
+                             <script> // Keep placeholder script tags if they define functions used inline
+                                 if (typeof toggleBinaryDigit === 'undefined') { function toggleBinaryDigit(btn, idx, containerId) { console.log("toggleBinaryDigit not defined"); } }
+                                 if (typeof updateInteractiveDecimalValue === 'undefined') { function updateInteractiveDecimalValue(el) { console.log("updateInteractiveDecimalValue not defined"); } }
+                             </script>
+                        </div>
+                    </div>
+
+                    <div class="ks3-accordion-item">
+                         <button class="ks3-accordion-header" aria-expanded="false">
+                             <span>Lesson 2: Hex Power! The Binary Shortcut</span>
+                             <span class="accordion-indicator" aria-hidden="true"></span>
+                         </button>
+                         <div class="ks3-accordion-content" role="region">
+                              <section class="content-section">
+                                 <h2>Lesson 2: Hex Power! The Binary Shortcut 🚀</h2>
+                                 <p>Binary numbers (0s and 1s) can get really long! Imagine trying to read `11111111`. It's a bit much, right? Luckily, computer experts have a cool shortcut called <strong>Hexadecimal</strong> (or 'Hex' for short). It packs binary code into shorter, easier-to-read symbols.</p>
+                             </section>
+                             <section class="content-section">
+                                 <h3>What is Hexadecimal?</h3>
+                                 <p>Hexadecimal is a <strong>base-16</strong> number system. While our normal denary system uses 10 digits (0-9), Hex uses 16 symbols:</p>
+                                 <ul><li>The digits <strong>0, 1, 2, 3, 4, 5, 6, 7, 8, 9</strong> (representing values 0 to 9)</li><li>The letters <strong>A, B, C, D, E, F</strong> (representing values 10, 11, 12, 13, 14, 15)</li></ul>
+                                 <p>So, after 9 comes A (10), then B (11), ..., up to F (15). The number after F is 10 in hex, which means 16 in denary!</p>
+                             </section>
+                             <section class="content-section">
+                                 <h3>The Magic Link: 1 Hex Digit = 4 Binary Bits! ✨</h3>
+                                 <p>Here's the superpower: <strong>one single hex digit represents exactly four binary digits (bits)</strong>. This makes converting between them super easy!</p>
+                                 <p>Check out the table below (hover over rows to highlight!):</p>
+                                 <div class="hex-binary-table-container">
+                                     <table class="number-base-table interactive-hover">
+                                         <thead><tr><th>Hex Digit</th><th>Decimal Value</th><th>4-Bit Binary</th></tr></thead>
+                                         <tbody>
+                                             <tr><td>0</td><td>0</td><td>0000</td></tr><tr><td>1</td><td>1</td><td>0001</td></tr><tr><td>2</td><td>2</td><td>0010</td></tr><tr><td>3</td><td>3</td><td>0011</td></tr><tr><td>4</td><td>4</td><td>0100</td></tr><tr><td>5</td><td>5</td><td>0101</td></tr><tr><td>6</td><td>6</td><td>0110</td></tr><tr><td>7</td><td>7</td><td>0111</td></tr><tr><td>8</td><td>8</td><td>1000</td></tr><tr><td>9</td><td>9</td><td>1001</td></tr><tr><td>A</td><td>10</td><td>1010</td></tr><tr><td>B</td><td>11</td><td>1011</td></tr><tr><td>C</td><td>12</td><td>1100</td></tr><tr><td>D</td><td>13</td><td>1101</td></tr><tr><td>E</td><td>14</td><td>1110</td></tr><tr><td>F</td><td>15</td><td>1111</td></tr>
+                                         </tbody>
+                                     </table>
+                                 </div>
+                             </section>
+                             <section class="content-section">
+                                 <h2>Converting Binary ↔ Hexadecimal</h2>
+                                 <div class="conversion-box">
+                                     <h4>Binary to Hex: Group by 4!</h4>
+                                     <p>Take a binary number, split it into groups of 4 bits (starting from the right!), find the denary value of each group, then convert that to its hex digit.</p>
+                                     <p><strong>Example:</strong> <code>1101001010101111</code></p>
+                                     <div class="conversion-steps-container"><div class="conversion-step"><span class="binary-group">1101</span><span class="arrow">→</span><span class="denary-value">13</span><span class="arrow">→</span><span class="hex-digit">D</span></div><div class="conversion-step"><span class="binary-group">0010</span><span class="arrow">→</span><span class="denary-value">2</span><span class="arrow">→</span><span class="hex-digit">2</span></div><div class="conversion-step"><span class="binary-group">1010</span><span class="arrow">→</span><span class="denary-value">10</span><span class="arrow">→</span><span class="hex-digit">A</span></div><div class="conversion-step"><span class="binary-group">1111</span><span class="arrow">→</span><span class="denary-value">15</span><span class="arrow">→</span><span class="hex-digit">F</span></div></div>
+                                     <p>Combine the Hex digits: <strong>D2AF</strong> (Hex)</p>
+                                 </div>
+                                 <div class="conversion-box">
+                                     <h4>Hex to Binary: Expand each digit!</h4>
+                                     <p>Take each hex digit and write out its 4-bit binary equivalent using the table above.</p>
+                                     <p><strong>Example:</strong> <code>3F</code> (Hex)</p>
+                                     <div class="conversion-steps-container"><div class="conversion-step"><span class="hex-digit">3</span><span class="arrow">→</span><span class="binary-group">0011</span></div><div class="conversion-step"><span class="hex-digit">F</span><span class="arrow">→</span><span class="binary-group">1111</span></div></div>
+                                     <p>Combine the binary groups: <strong>00111111</strong> (Binary)</p>
+                                 </div>
+                             </section>
+                             <section class="content-section">
+                                 <h2>Where is Hex Used? (Real World Apps!)</h2>
+                                 <div class="real-world-examples hex-apps">
+                                     <div class="example-item"><div class="example-icon">🎨</div><h3>HTML Colour Codes</h3><p>Like <code>#FF0000</code> for Red. Uses two hex digits for Red, Green, and Blue intensity (00 to FF).</p></div>
+                                     <div class="example-item"><div class="example-icon">🔧</div><h3>Error Codes</h3><p>Short codes like <code>0x1A3F</code> help technicians diagnose computer problems.</p></div>
+                                     <div class="example-item"><div class="example-icon">🌐</div><h3>MAC Addresses</h3><p>Unique network IDs like <code>00-1A-2B-3C-4D-5E</code> are written in hex.</p></div>
+                                     <div class="example-item"><div class="example-icon">💾</div><h3>Memory Addresses</h3><p>Programmers use hex to refer to specific locations in computer memory.</p></div>
+                                 </div>
+                             </section>
+                              <section class="content-section interactive-color-picker" id="pickerL2">
+                                  <h2>Interactive HTML Colour Picker 🎨</h2>
+                                  <p>Play with the sliders to mix Red, Green, and Blue. See how the colour changes and how its Hex code is generated!</p>
+                                  <div class="color-picker-container">
+                                      <div id="colorPreviewL2" class="color-preview"></div>
+                                      <div class="sliders">
+                                          <div class="slider-group"><label for="redSliderL2">Red (<span id="redValueL2">0</span>)</label><input type="range" id="redSliderL2" min="0" max="255" value="0" oninput="updateColorPicker('pickerL2')"><span class="hex-val" id="redHexL2">00</span></div>
+                                          <div class="slider-group"><label for="greenSliderL2">Green (<span id="greenValueL2">0</span>)</label><input type="range" id="greenSliderL2" min="0" max="255" value="0" oninput="updateColorPicker('pickerL2')"><span class="hex-val" id="greenHexL2">00</span></div>
+                                          <div class="slider-group"><label for="blueSliderL2">Blue (<span id="blueValueL2">0</span>)</label><input type="range" id="blueSliderL2" min="0" max="255" value="0" oninput="updateColorPicker('pickerL2')"><span class="hex-val" id="blueHexL2">00</span></div>
+                                      </div>
+                                      <div class="hex-result">Hex Code: <span class="hex-code" id="hexCodeL2">#000000</span></div>
+                                  </div>
+                              </section>
+                              <section class="content-section conclusion">
+                                 <h2>Lesson 2 Recap</h2>
+                                 <ul><li><strong>Hexadecimal (Base-16):</strong> Uses 0-9 and A-F (10-15).</li><li><strong>Binary Shortcut:</strong> 1 Hex digit = 4 Binary bits. Makes binary easier to read!</li><li><strong>Conversions:</strong> Group binary by 4s (showing denary value helps) for Hex; expand each Hex digit to 4 bits for binary.</li><li><strong>Uses:</strong> Common in colours, MAC addresses, error codes, memory.</li></ul>
+                                 <p>Hex is a powerful tool bridging human-readable code and the computer's binary language!</p>
+                             </section>
+                             <script> // Keep placeholder script tags if needed
+                                 if (typeof updateColorPicker === 'undefined') { function updateColorPicker(id) { console.log("updateColorPicker not defined"); } }
+                             </script>
+                         </div>
+                     </div>
+
+                     <div class="ks3-accordion-item">
+                         <button class="ks3-accordion-header" aria-expanded="false">
+                             <span>Lesson 3: Binary Addition</span>
+                             <span class="accordion-indicator" aria-hidden="true"></span>
+                         </button>
+                         <div class="ks3-accordion-content" role="region">
+                             <section class="content-section">
+                                 <h2>Lesson 3: Binary Addition ➕</h2>
+                                 <p>Now that you know how binary numbers represent values (Lesson 1) and how Hex is a useful shortcut (Lesson 2), let's see how computers actually *add* using only 0s and 1s! It's like normal addition, but with simpler rules.</p>
+                             </section>
+                             <section class="content-section">
+                                 <h3>The Basic Rules of Binary Addition</h3>
+                                 <p>There are only four simple rules to remember:</p>
+                                 <div class="addition-rules"><div class="rule-box"><code>0 + 0 = 0</code></div><div class="rule-box"><code>0 + 1 = 1</code></div><div class="rule-box"><code>1 + 0 = 1</code></div><div class="rule-box carry-rule"><code>1 + 1 = 0</code> <span class="carry-text">(and carry 1)</span></div></div>
+                                 <p>The "carry 1" is just like carrying over a ten in normal addition when a column adds up to 10 or more!</p>
+                             </section>
+                             <section class="content-section">
+                                 <h3>Step-by-Step Binary Addition Example</h3>
+                                 <p>Let's add two 8-bit numbers: <strong>01010110</strong> (86) + <strong>00111011</strong> (59).</p>
+                                 <p>We add column by column, from right to left, just like denary addition.</p>
+                                 <div class="interactive-binary-adder" id="adderL3">
+                                     <div class="adder-numbers">
+                                         <div class="carry-row" id="carryRowL3"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                                         <div class="number-row num-a" id="numAL3"><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span><span>1</span><span>1</span><span>0</span></div>
+                                         <div class="number-row plus-sign">+</div>
+                                         <div class="number-row num-b" id="numBL3"><span>0</span><span>0</span><span>1</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span></div>
+                                         <div class="adder-line"></div>
+                                         <div class="result-row" id="resultRowL3"><span>?</span><span>?</span><span>?</span><span>?</span><span>?</span><span>?</span><span>?</span><span>?</span></div>
+                                     </div>
+                                     <div class="adder-controls">
+                                         <button class="step-button" onclick="stepBinaryAddition('adderL3')">Next Column →</button>
+                                         <button class="reset-button" onclick="resetBinaryAddition('adderL3')" style="display: none;">Reset</button>
+                                     </div>
+                                     <div class="adder-explanation" id="explanationL3">Click "Next Column" to start adding from the rightmost column (1s place).</div>
+                                 </div>
+                                 <p>The final result should be <strong>10010001</strong> (which is 145 in denary, 86 + 59 = 145).</p>
+                             </section>
+                             <section class="content-section">
+                                 <h2>Watch Out! The Dreaded Overflow Error 💥</h2>
+                                 <p>What happens if the result of adding two 8-bit numbers is bigger than what 8 bits can hold? (Remember, the biggest number 8 bits can store is 11111111 = 255).</p>
+                                 <p>It's like trying to pour too much water into a small cup – the extra spills out! This is called an <strong>overflow error</strong>. The computer can only store the 8 bits, and the extra 'carry' bit from the leftmost column gets lost, leading to a wrong answer.</p>
+                                 <div class="overflow-simulator" id="overflowSimL3">
+                                      <h4>Overflow Simulator</h4>
+                                      <div class="sim-inputs">
+                                          <div><label for="num1InputL3">Number 1 (0-255):</label><input type="number" id="num1InputL3" min="0" max="255" value="200" oninput="updateOverflowSim('overflowSimL3')"><code class="binary-display" id="num1BinaryL3">11001000</code></div>
+                                          <div><label for="num2InputL3">Number 2 (0-255):</label><input type="number" id="num2InputL3" min="0" max="255" value="100" oninput="updateOverflowSim('overflowSimL3')"><code class="binary-display" id="num2BinaryL3">01100100</code></div>
+                                      </div>
+                                      <div class="sim-result">
+                                          <p>Expected Denary Sum: <span class="expected-sum" id="expectedSumL3">300</span></p>
+                                          <p>Actual 8-Bit Binary Result: <code class="binary-result" id="binaryResultL3">00101100</code></p>
+                                          <p>Value of 8-Bit Result: <span class="actual-value" id="actualValueL3">44</span></p>
+                                      </div>
+                                      <div class="overflow-warning" id="warningL3">🚨 OVERFLOW! The result (300) is too big for 8 bits (max 255). The leading '1' was lost!</div>
+                                 </div>
+                                 <p>Overflow errors can cause problems in games (like scores resetting), clocks, or other calculations if not handled correctly.</p>
+                             </section>
+                             <section class="content-section">
+                                 <h2>Real-World Binary Addition</h2>
+                                 <p>Binary addition happens constantly inside:</p>
+                                 <ul><li><strong>Digital Clocks:</strong> Adding seconds, minutes, hours.</li><li><strong>Calculators & Computers:</strong> Performing all arithmetic operations.</li><li><strong>Video Games:</strong> Calculating scores, positions, damage.</li><li><strong>Network Devices:</strong> Processing data packets and addresses.</li></ul>
+                                 <p>Handling carries and preventing overflow are essential for these systems to work reliably!</p>
+                             </section>
+                             <section class="content-section conclusion">
+                                 <h2>Lesson 3 Recap</h2>
+                                 <ul><li>Binary addition follows simple rules (0+0=0, 0+1=1, 1+1=0 carry 1).</li><li>We add binary numbers column by column, right-to-left, carrying over when needed.</li><li><strong>Overflow</strong> happens when the result is too large for the number of bits available (e.g., > 255 for 8 bits), causing errors.</li></ul>
+                             </section>
+                             <script> // Keep placeholder script tags if needed
+                                 if (typeof setupAdderUI === 'undefined') { function setupAdderUI() { console.log("setupAdderUI not defined"); } }
+                                 if (typeof stepBinaryAddition === 'undefined') { function stepBinaryAddition(id) { console.log("stepBinaryAddition not defined"); } }
+                                 if (typeof resetBinaryAddition === 'undefined') { function resetBinaryAddition(id) { console.log("resetBinaryAddition not defined"); } }
+                                 if (typeof updateOverflowSim === 'undefined') { function updateOverflowSim(id) { console.log("updateOverflowSim not defined"); } }
+                                 if (typeof decToBinary8Bit === 'undefined') { function decToBinary8Bit(dec) { return "00000000"; } }
+                             </script>
+                         </div>
+                     </div>
+
+                    <div class="ks3-accordion-item">
+                         <button class="ks3-accordion-header" aria-expanded="false">
+                             <span>Lesson 4: The Secret Life of Letters & Symbols</span>
+                             <span class="accordion-indicator" aria-hidden="true"></span>
+                         </button>
+                         <div class="ks3-accordion-content" role="region">
+                             <section class="content-section">
+                                 <h2>Lesson 4: The Secret Life of Letters & Symbols 🔡</h2>
+                                 <p>We know computers love binary (0s & 1s) and that Hex is a handy shortcut. But how does a computer understand the letters you type or the emojis you send? 🤔 It uses secret codes!</p>
+                             </section>
+                             <section class="content-section">
+                                 <h3>Character Sets: The Computer's Codebook 📖</h3>
+                                 <p>Every letter, number, symbol, and even emoji needs a unique code for the computer to understand it. This "codebook" is called a <strong>Character Set</strong>. Two important ones are:</p>
+                                 <div class="character-set-info">
+                                     <h4>1. ASCII (American Standard Code for Information Interchange)</h4>
+                                     <ul><li>One of the first standard codebooks, designed mainly for English.</li><li>Uses 7 or 8 bits for each character. 8-bit ASCII allows for 256 possible codes (0-255).</li><li>Assigns a unique number (and thus a unique binary pattern) to letters, digits, punctuation, and control characters (like 'Enter' or 'Backspace').</li></ul>
+                                     <p>Here's a table showing the standard ASCII codes for digits and uppercase/lowercase English letters:</p>
+                                     <div class="ascii-table-container">
+                                         <table class="ascii-full-table interactive-hover">
+                                             <thead><tr><th>Char</th><th>Decimal</th><th>Binary (8-bit)</th><th>Hex</th></tr></thead>
+                                             <tbody>
+                                                 <tr><td>0</td><td>48</td><td>00110000</td><td>30</td></tr><tr><td>1</td><td>49</td><td>00110001</td><td>31</td></tr><tr><td>2</td><td>50</td><td>00110010</td><td>32</td></tr><tr><td>3</td><td>51</td><td>00110011</td><td>33</td></tr><tr><td>4</td><td>52</td><td>00110100</td><td>34</td></tr><tr><td>5</td><td>53</td><td>00110101</td><td>35</td></tr><tr><td>6</td><td>56</td><td>00110110</td><td>36</td></tr><tr><td>7</td><td>57</td><td>00110111</td><td>37</td></tr><tr><td>8</td><td>58</td><td>00111000</td><td>38</td></tr><tr><td>9</td><td>59</td><td>00111001</td><td>39</td></tr><tr><td>A</td><td>65</td><td>01000001</td><td>41</td></tr><tr><td>B</td><td>66</td><td>01000010</td><td>42</td></tr><tr><td>C</td><td>67</td><td>01000011</td><td>43</td></tr><tr><td>X</td><td>88</td><td>01011000</td><td>58</td></tr><tr><td>Y</td><td>89</td><td>01011001</td><td>59</td></tr><tr><td>Z</td><td>90</td><td>01011010</td><td>5A</td></tr><tr><td>a</td><td>97</td><td>01100001</td><td>61</td></tr><tr><td>b</td><td>98</td><td>01100010</td><td>62</td></tr><tr><td>c</td><td>99</td><td>01100011</td><td>63</td></tr><tr><td>x</td><td>120</td><td>01111000</td><td>78</td></tr><tr><td>y</td><td>121</td><td>01111001</td><td>79</td></tr><tr><td>z</td><td>122</td><td>01111010</td><td>7A</td></tr>
+                                             </tbody>
+                                         </table>
+                                     </div>
+                                     <p><em>(Note: This table shows common codes. Full ASCII includes punctuation too!)</em></p>
+                                 </div>
+                                 <div class="character-set-info">
+                                     <h4>2. Unicode (and why it's necessary!)</h4>
+                                     <p>ASCII was great for English, but what about other languages? German (ä, ö, ü, ß), French (é, ç), Spanish (ñ), Chinese (汉字), Arabic (ع), Russian (Я), and thousands of other characters simply didn't fit in ASCII's 256 slots!</p>
+                                     <p>This led to problems: different computers used different "extended ASCII" versions, causing text to appear garbled (like "fÃ¼r" instead of "für").</p>
+                                     <p><strong>Unicode solves this!</strong></p>
+                                     <ul><li>It aims to give a <strong>unique number (code point)</strong> to every single character in every language, plus symbols and emojis.</li><li>It can represent over a million characters (though currently defines around 150,000).</li><li>Uses different **encoding forms** (like UTF-8 or UTF-16) to store these code points efficiently in binary. UTF-8 is very common on the web because it uses only 1 byte for the original ASCII characters, saving space.</li></ul>
+                                     <p class="emoji-fact">Unicode is why you can text your friend in German, add a Japanese emoji, and include English all in the same message, and it displays correctly worldwide! 😊👍🌍</p>
+                                 </div>
+                             </section>
+                             <section class="content-section">
+                                 <h3>How Computers Decode Text (Example)</h3>
+                                 <p>When you type "Hi!", the computer looks up each character's standard code (usually Unicode, which includes ASCII):</p>
+                                 <div class="text-encoding-example"><div class="char-encoding"><span class="char">'H'</span><span class="arrow">→</span><span class="code-value">ASCII/Unicode 72</span><span class="arrow">→</span><span class="binary-code">01001000</span></div><div class="char-encoding"><span class="char">'i'</span><span class="arrow">→</span><span class="code-value">ASCII/Unicode 105</span><span class="arrow">→</span><span class="binary-code">01101001</span></div><div class="char-encoding"><span class="char">'!'</span><span class="arrow">→</span><span class="code-value">ASCII/Unicode 33</span><span class="arrow">→</span><span class="binary-code">00100001</span></div></div>
+                                 <p>The computer stores `01001000 01101001 00100001`. To show the text, it just translates back!</p>
+                             </section>
+                             <section class="content-section">
+                                  <h3>Interactive Binary-to-Text Converter</h3>
+                                  <p>Enter an 8-bit binary number (00000000 to 11111111) and see which ASCII character it represents!</p>
+                                  <div class="binary-to-char-converter" id="converterL4"> 
+                                      <label for="binaryInputL4">8-Bit Binary:</label>
+                                      <input type="text" id="binaryInputL4" maxlength="8" pattern="[01]*" inputmode="numeric" placeholder="e.g., 01000001" oninput="updateCharFromBinary('converterL4')" onkeypress="return event.charCode >= 48 && event.charCode <= 49">
+                                      <span class="result-label">Character:</span>
+                                      <span id="charResultL4" class="char-result-box">?</span>
+                                  </div>
+                                  <div id="binaryInputErrorL4" class="input-error"></div>
+                             </section>
+                             <section class="content-section">
+                                 <h3>Text vs Binary vs Hex</h3>
+                                 <p>Let's see how the short sentence "Be cool." looks in different forms using their ASCII codes:</p>
+                                 <div class="representation-comparison"><div class="rep-row"><span class="rep-label">Text:</span><span class="rep-value text-val">Be cool.</span></div><div class="rep-row"><span class="rep-label">Binary (ASCII):</span><div class="rep-value binary-val"><span>01000010</span><span>01100101</span><span>00100000</span><span>01100011</span><span>01101111</span><span>01101111</span><span>01101100</span><span>00101110</span></div></div><div class="rep-row"><span class="rep-label">Hex (ASCII):</span><div class="rep-value hex-val"><span>42</span><span>65</span><span>20</span><span>63</span><span>6F</span><span>6F</span><span>6C</span><span>2E</span></div></div></div>
+                                 <p>Hex acts as a neat shorthand for the longer binary code!</p>
+                             </section>
+                             <section class="content-section conclusion">
+                                 <h2>Lesson 4 Recap</h2>
+                                 <ul><li>Computers use standard <strong>Character Sets</strong> (like ASCII and Unicode) as codebooks for text.</li><li>Each character (letter, number, symbol, emoji) has a unique binary code.</li><li><strong>ASCII</strong> is limited, mainly for English.</li><li><strong>Unicode</strong> is essential for representing global languages and symbols consistently across all devices.</li><li>Standard codes allow computers everywhere to understand and display text correctly.</li></ul>
+                             </section>
+                             <script> // Keep placeholder script tags if needed
+                                 if (typeof updateCharFromBinary === 'undefined') { function updateCharFromBinary(id) { console.log("updateCharFromBinary not defined"); } }
+                             </script>
+                         </div>
+                     </div>
+
+                     <div class="ks3-accordion-item">
+                          <button class="ks3-accordion-header" aria-expanded="false">
+                              <span>Lesson 5: Pixel Power! Painting with Binary</span>
+                              <span class="accordion-indicator" aria-hidden="true"></span>
+                          </button>
+                          <div class="ks3-accordion-content" role="region">
+                              <section class="content-section">
+                                  <h2>Lesson 5: Pixel Power! Painting with Binary 🖼️</h2>
+                                  <p>We've seen how computers use binary for numbers and text. Now, let's explore the colourful world of images! How do computers store the pictures you see on screen using just 0s and 1s?</p>
+                              </section>
+                              <section class="content-section">
+                                  <h3>Pixels: Tiny Dots of Light</h3>
+                                  <p>Look closely at your screen... really close! You might see tiny squares or dots. These are called <strong>pixels</strong> (short for "picture elements"), and they are the smallest building blocks of any digital image.</p>
+                                  <p>An image is like a giant grid made of these pixels. Each pixel has a specific colour, and millions of them together create the pictures you see!</p>
+                                  <div class="info-box pixel-example"><img src="../../../assets/images/lessons/pixel_grid_example.png" alt="Magnified view showing square pixels making up an image"><p>Zooming in reveals the individual pixels that make up an image.</p></div>
+                              </section>
+                              <section class="content-section">
+                                  <h3>Resolution: How Detailed is the Picture?</h3>
+                                  <p><strong>Resolution</strong> tells us how many pixels an image has, usually described as width × height (e.g., 1920 × 1080 pixels).</p>
+                                  <ul><li><strong>More Pixels (High Resolution) = More Detail:</strong> Clearer, sharper images.</li><li><strong>Fewer Pixels (Low Resolution) = Less Detail:</strong> Images can look blurry or "blocky," especially when enlarged.</li></ul>
+                                  <h4>Resolution vs. Density (Why Phones Look Sharp!)</h4>
+                                  <p>It's not just the *number* of pixels, but how *closely packed* they are – this is <strong>Pixel Density</strong> (measured in PPI - Pixels Per Inch). A small phone screen can look sharper than a huge projector screen even with the same resolution, because the phone's pixels are packed much tighter (higher PPI).</p>
+                                  <div class="resolution-demo">
+                                       <h5>Resolution Density Demo</h5>
+                                       <p>See how the same small image looks when stretched (simulating lower density). Adjust the slider:</p>
+                                       <div class="image-stretch-container"><img id="stretchImageL5" src="../../../assets/images/lessons/placeholder_icon.png" alt="Image being stretched" style="width: 32px; height: 32px; image-rendering: pixelated;"></div>
+                                       <label for="stretchSliderL5">Stretch Factor (Image Size):</label><input type="range" id="stretchSliderL5" min="1" max="8" value="1" oninput="updateImageStretch_L5()"><span id="stretchValueL5">1x</span>
+                                       <p>Notice how the individual "pixels" become much larger and the image looks blockier as you increase the size without increasing the number of pixels.</p>
+                                  </div>
+                              </section>
+                              <section class="content-section">
+                                  <h3>Colour Depth: How Many Colours? 🌈</h3>
+                                  <p>Each pixel needs a binary code to represent its colour. <strong>Colour Depth</strong> measures how many bits are used per pixel – more bits mean more possible colours!</p>
+                                  <ul><li><strong>1-bit:</strong> 2<sup>1</sup> = 2 colours (usually Black & White). Uses 1 bit per pixel.</li><li><strong>2-bit:</strong> 2<sup>2</sup> = 4 colours. Uses 2 bits per pixel.</li><li><strong>4-bit:</strong> 2<sup>4</sup> = 16 colours. Uses 4 bits per pixel.</li><li><strong>8-bit:</strong> 2<sup>8</sup> = 256 colours (common in older games/GIFs). Uses 8 bits (1 byte) per pixel.</li><li><strong>24-bit (True Color):</strong> 2<sup>24</sup> = 16,777,216 colours! Uses 24 bits (3 bytes) per pixel.</li></ul>
+                                  <h4>How 24-bit Colour Works (RGB)</h4>
+                                  <p>Most photos use 24-bit colour. Each pixel's colour is defined by mixing amounts of Red, Green, and Blue light. Each colour (R, G, B) gets 8 bits, allowing 256 different levels of intensity (0-255) for each. Combining these gives millions of distinct colours!</p>
+                                  <div class="interactive-color-picker embedded-picker" id="pickerL5">
+                                       <p><em>Try mixing RGB values below (0-255) and see the resulting colour and Hex code:</em></p>
+                                       <div class="color-picker-container">
+                                           <div id="colorPreviewL5" class="color-preview"></div>
+                                           <div class="sliders">
+                                                <div class="slider-group"> <label for="redSliderL5">R (<span id="redValueL5">128</span>)</label> <input type="range" id="redSliderL5" min="0" max="255" value="128" oninput="updateColorPicker('pickerL5')"> <span class="hex-val" id="redHexL5">80</span> </div>
+                                                <div class="slider-group"> <label for="greenSliderL5">G (<span id="greenValueL5">128</span>)</label> <input type="range" id="greenSliderL5" min="0" max="255" value="128" oninput="updateColorPicker('pickerL5')"> <span class="hex-val" id="greenHexL5">80</span> </div>
+                                                <div class="slider-group"> <label for="blueSliderL5">B (<span id="blueValueL5">128</span>)</label> <input type="range" id="blueSliderL5" min="0" max="255" value="128" oninput="updateColorPicker('pickerL5')"> <span class="hex-val" id="blueHexL5">80</span> </div>
+                                           </div>
+                                           <div class="hex-result"> Hex Code: <span class="hex-code" id="hexCodeL5">#808080</span> </div>
+                                       </div>
+                                  </div>
+                              </section>
+                              <section class="content-section">
+                                   <h3>Interactive Pixel Painter & File Size</h3>
+                                   <p>Let's see how resolution (grid size), colour depth (bits per pixel), and file size are related. Choose a bit depth, pick a colour from the palette, and click on the grid squares to paint. Watch how the binary code and file size change!</p>
+                                   <div class="pixel-painter-container" id="painterL5">
+                                       <div class="painter-controls">
+                                           <div class="control-group"><label for="bitDepthSelectL5">Colour Depth:</label><select id="bitDepthSelectL5" onchange="setupPixelPainter('painterL5')"><option value="1">1-bit (2 Colours)</option><option value="2">2-bit (4 Colours)</option><option value="4">4-bit (16 Colours)</option></select></div> <div class="control-group"><label>Palette:</label><div class="palette" id="paletteL5"></div></div>
+                                       </div>
+                                       <div class="painter-grid-area">
+                                           <div class="pixel-grid" id="pixelGridL5" style="grid-template-columns: repeat(8, 25px); grid-template-rows: repeat(8, 25px);"></div>
+                                           <div class="painter-output">
+                                               <label>Binary Representation (per pixel):</label><textarea id="binaryOutputL5" class="binary-output" readonly rows="8" style="font-size: 0.7em; line-height: 1.2;"></textarea> <label>Estimated File Size:</label><span id="fileSizeL5" class="file-size">0 Bytes</span> </div>
+                                       </div>
+                                   </div>
+                              </section>
+                              <section class="content-section">
+                                  <h3>Calculating Image File Size</h3>
+                                  <p>The total storage space an uncompressed image needs depends directly on its dimensions and colour depth.</p>
+                                  <p><strong>Formula:</strong> File Size (in bits) = Image Width × Image Height × Colour Depth (bits/pixel)</p>
+                                  <p><em>Remember: Divide bits by 8 to get Bytes. Divide Bytes by 1024 for Kilobytes (KB), then by 1024 again for Megabytes (MB).</em></p>
+                                  <div class="info-box file-size-calc-box" id="calcBoxL5_img"> 
+                                       <h4>Try Calculating File Size</h4>
+                                       <div class="calc-input-group"><label for="imgWidthL5">Width (pixels):</label><input type="number" id="imgWidthL5" value="800" min="1"></div>
+                                       <div class="calc-input-group"><label for="imgHeightL5">Height (pixels):</label><input type="number" id="imgHeightL5" value="600" min="1"></div>
+                                       <div class="calc-input-group"><label for="imgDepthL5">Colour Depth (bits):</label><select id="imgDepthL5"><option value="1">1-bit (B&W)</option><option value="8">8-bit (256 colours)</option><option value="24" selected>24-bit (True Color)</option></select></div>
+                                       <button onclick="calculateFileSize('calcBoxL5_img')">Calculate Size</button> <div id="fileSizeResultL5" class="calc-result-display"></div>
+                                  </div>
+                                  <p>Higher resolution and/or higher colour depth lead to much larger file sizes, affecting storage space and download/upload times.</p>
+                              </section>
+                              <section class="content-section conclusion">
+                                   <h2>Lesson 5 Recap</h2>
+                                   <ul><li>Digital images are made of tiny squares called <strong>pixels</strong> arranged in a grid.</li><li><strong>Resolution</strong> (Width × Height) determines the number of pixels and potential detail.</li><li><strong>Pixel Density</strong> (PPI) affects sharpness on different screen sizes.</li><li><strong>Colour Depth</strong> (bits per pixel) determines the number of possible colours for each pixel (e.g., 1-bit, 8-bit, 24-bit RGB).</li><li>Image <strong>File Size</strong> ≈ Resolution × Colour Depth (divided by 8 for bytes).</li></ul>
+                              </section>
+                              <script> // Keep placeholder script tags if needed
+                                 if (typeof updateImageStretch_L5 === 'undefined') { function updateImageStretch_L5() {} }
+                                 if (typeof updateColorPicker_L5 === 'undefined') { function updateColorPicker_L5(id) {} } // Assume takes ID now
+                                 if (typeof setupPixelPainter === 'undefined') { function setupPixelPainter(id) {} } // Takes ID
+                                 if (typeof selectPainterColor === 'undefined') { function selectPainterColor(el) {} } // Needs more context perhaps
+                                 if (typeof paintPixel === 'undefined') { function paintPixel(el) {} } // Needs more context perhaps
+                                 if (typeof updatePainterOutput === 'undefined') { function updatePainterOutput(id) {} } // Takes ID
+                                 if (typeof calculateFileSize === 'undefined') { function calculateFileSize(id) {} } // Takes ID
+                             </script>
+                         </div>
+                     </div>
+
+                    <div class="ks3-accordion-item">
+                        <button class="ks3-accordion-header" aria-expanded="false">
+                            <span>Lesson 6: Binary Beats: How Computers Hear Sound</span>
+                            <span class="accordion-indicator" aria-hidden="true"></span>
+                        </button>
+                        <div class="ks3-accordion-content" role="region">
+                             <section class="content-section">
+                                 <h2>Lesson 6: Binary Beats & Packing It In! 🎵💾</h2>
+                                 <p>We've seen binary create numbers, text, and even pictures! Now for the final piece: sound! How does your computer store your favourite songs using just 0s and 1s? We'll also look at how computers manage all this data and use clever tricks to save space.</p>
+                             </section>
+                             <section class="content-section">
+                                 <h3>Data Storage: From Bits to Terabytes</h3>
+                                 <p>All the information (numbers, text, images, sound) is stored as <strong>bits</strong> (0s and 1s). Computers group these bits:</p>
+                                 <ul><li>8 bits = 1 <strong>Byte</strong> (enough for one letter usually)</li><li>~1000 Bytes = 1 <strong>Kilobyte (KB)</strong></li><li>~1000 KB = 1 <strong>Megabyte (MB)</strong> (like a song file)</li><li>~1000 MB = 1 <strong>Gigabyte (GB)</strong> (like a movie file)</li><li>~1000 GB = 1 <strong>Terabyte (TB)</strong> (like a big hard drive)</li></ul>
+                                 <div class="info-box"><strong>Heads up!</strong> Sometimes you'll see KiB, MiB, GiB. These use powers of 2 (1024) instead of 1000, which is how computers *actually* count storage, but KB/MB/GB are commonly used too!<br> 1 KiB = 1024 Bytes, 1 MiB = 1024 KiB, etc.</div>
+                                 <p>Think of it like building with Lego: 8 tiny bits make a byte brick, 1024 bricks make a small box (KiB), 1024 boxes make a bigger box (MiB), and so on!</p>
+                             </section>
+                             <section class="content-section">
+                                 <h3>How Computers Hear Sound: Sampling 🎧</h3>
+                                 <p>Computers can't store smooth sound waves directly. Instead, they take thousands of tiny "snapshots" of the sound wave every second. This process is called <strong>sampling</strong>.</p>
+                                 <div class="sampling-analogy"><img src="../../../assets/images/lessons/sound_wave_sampling.png" alt="Diagram showing a sound wave being sampled at discrete points"><p>Imagine tracing a wave by plotting lots of individual points – the more points you plot, the closer you get to the original wave!</p></div>
+                                 <p>Two key factors determine the quality and file size of digital sound:</p>
+                                 <ul><li><strong>Sampling Rate (Hz or kHz):</strong> How many snapshots (samples) are taken per second? Higher rate = more detail, better quality, bigger file. (CD quality is 44,100 Hz or 44.1 kHz).</li><li><strong>Sampling Resolution (Bit Depth):</strong> How many bits are used to store the value of each snapshot? Higher bit depth = more possible volume levels per snapshot, better quality, bigger file. (CD quality uses 16 bits).</li></ul>
+                             </section>
+                             <section class="content-section interactive-sound-demo" id="soundDemoL6">
+                                 <h4>Interactive Sound Demo</h4>
+                                 <p>Adjust the sliders to see how Sample Rate and Bit Depth affect a (simplified) sound wave representation and file size. Click Play to hear the difference (using placeholder sounds).</p>
+                                 <div class="sound-demo-container">
+                                     <div class="sound-controls">
+                                         <div class="control-group"><label for="sampleRateSliderL6">Sample Rate:</label><input type="range" id="sampleRateSliderL6" min="1" max="10" value="5" oninput="updateSoundDemo('soundDemoL6')"><span id="sampleRateValueL6" class="demo-value">Medium</span><audio class="audio-low" src="../../../assets/sounds/placeholder_low_quality.mp3"></audio><audio class="audio-high" src="../../../assets/sounds/placeholder_high_quality.mp3"></audio><button onclick="playSoundDemo('soundDemoL6')">Play Sample</button></div>
+                                         <div class="control-group"><label for="bitDepthSliderL6">Bit Depth:</label><input type="range" id="bitDepthSliderL6" min="1" max="4" value="2" oninput="updateSoundDemo('soundDemoL6')"><span id="bitDepthValueL6" class="demo-value">Medium</span></div>
+                                     </div>
+                                     <div class="sound-visualizer"><canvas id="soundWaveCanvasL6" class="sound-wave-canvas" width="300" height="100"></canvas><div id="soundFileSizeL6" class="file-size">File Size (1s Mono): Calculating...</div></div>
+                                     <p class="demo-explanation" id="demoExplanationL6">Medium Rate, Medium Depth.</p>
+                                 </div>
+                                 <p><em>Note: Stereo sound (like headphones) needs twice the data as it stores separate left/right channels!</em></p>
+                             </section>
+                             <section class="content-section">
+                                 <h3>Calculating File Size (Sound & Image Recap)</h3>
+                                 <p>File size tells you how much storage space data uses.</p>
+                                 <ul><li><strong>Image Size ≈</strong> Width × Height × Colour Depth (bits) ÷ 8 (bytes)</li><li><strong>Sound Size ≈</strong> Sample Rate (Hz) × Bit Depth × Duration (sec) × Channels (1=mono, 2=stereo) ÷ 8 (bytes)</li></ul>
+                                  <div class="info-box file-size-calc-box" id="calcBoxL6_sound"> 
+                                      <h4>Try Calculating Sound File Size</h4>
+                                      <div class="calc-input-group"> <label for="sampleRateSelectL6">Sample Rate:</label> <select id="sampleRateSelectL6"> <option value="8000">8 kHz (Low)</option> <option value="22050">22.05 kHz (Medium)</option> <option value="44100" selected>44.1 kHz (CD)</option> </select> </div>
+                                      <div class="calc-input-group"> <label for="bitDepthSelectL6_calc">Bit Depth:</label> <select id="bitDepthSelectL6_calc"> <option value="8">8-bit</option> <option value="16" selected>16-bit</option> <option value="24">24-bit</option> </select> </div>
+                                      <div class="calc-input-group"> <label for="durationInputL6">Duration (sec):</label> <input type="number" id="durationInputL6" value="60" min="1"> </div>
+                                      <div class="calc-input-group"> <label for="channelsSelectL6">Channels:</label> <select id="channelsSelectL6"> <option value="1">Mono</option> <option value="2" selected>Stereo</option> </select> </div>
+                                      <button onclick="calculateSoundFileSize_L6('calcBoxL6_sound')">Calculate Size</button>
+                                      <div id="soundFileSizeResultL6" class="calc-result-display"></div>
+                                 </div>
+                             </section>
+                             <section class="content-section">
+                                 <h3>Packing It In: File Compression 🧳</h3>
+                                 <p>All this data takes up space! <strong>File Compression</strong> is like packing a suitcase efficiently to make files smaller.</p>
+                                 <div class="compression-types">
+                                     <div class="compression-box lossless"><img src="../../../assets/images/lessons/lossless_compression.png" alt="Suitcase neatly packed"><h4>Lossless Compression</h4><p>Shrinks files *without* losing any information. When unzipped, it's exactly the same as the original. Think ZIP files or PNG images. Perfect for text or programs where every bit matters!</p></div>
+                                     <div class="compression-box lossy"><img src="../../../assets/images/lessons/lossy_compression.png" alt="Suitcase slightly squashed"><h4>Lossy Compression</h4><p>Shrinks files *by removing* some data that humans might not easily notice (like tiny colour details or very high/low sounds). Files are much smaller, but you can't get the *exact* original back. Think JPEG images or MP3/AAC music.</p></div>
+                                 </div>
+                                 <p><strong>Why compress?</strong> To save storage space and make files faster to download, upload, or stream!</p>
+                             </section>
+                             <section class="content-section conclusion">
+                                 <h2>Lesson 6 & Term Recap 🎉</h2>
+                                 <p>You've reached the end of our Data Representation journey!</p>
+                                 <ul><li>We learned how all data (numbers, text, images, sound) is stored as <strong>binary</strong> (0s & 1s) and measured in <strong>Bytes, KB, MB, GB, TB</strong>.</li><li>We explored <strong>Hexadecimal</strong> as a useful shorthand.</li><li>We practiced <strong>Binary <-> Denary conversion</strong> and <strong>Binary Addition</strong>, including <strong>Overflow</strong>.</li><li>We saw how text uses <strong>ASCII/Unicode</strong>, images use <strong>pixels</strong> (Resolution & Colour Depth), and sound uses <strong>sampling</strong> (Rate & Bit Depth).</li><li>We learned how <strong>File Size</strong> is calculated for images and sound.</li><li>We discovered <strong>File Compression</strong> (Lossless vs. Lossy) helps save space.</li></ul>
+                                 <p>Understanding data representation is key to understanding almost everything computers do!</p>
+                             </section>
+                             <script> // Keep placeholder script tags if needed
+                                 if (typeof drawSoundWave === 'undefined') { function drawSoundWave(id, amp, freq, sam, dep) {} } // Placeholder L6 function
+                                 if (typeof updateSoundDemo === 'undefined') { function updateSoundDemo(id) {} } // Placeholder L6 function
+                                 if (typeof playSoundDemo === 'undefined') { function playSoundDemo(id) {} } // Placeholder L6 function
+                                 if (typeof calculateSoundFileSize === 'undefined') { function calculateSoundFileSize(id) {} } // Placeholder L6 function
+                             </script>
+                         </div>
+                    </div>
+
+                </div> </div> </div> </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../../../scripts/global/main.js?v=1.1.0" defer></script>
+    <script src="../../../scripts/global/include.js?v=1.1.0" defer></script>
+    <script src="../../../scripts/global/hamburger-menu.js?v=1.1.0" defer></script>
+    <script src="../../../scripts/ks3/ks3_accordion.js?v=1.1.0" defer></script>
+    
+    <script src="../../../scripts/ks3/year7/y7_t6_content_interactives.js?v=1.1.0" defer></script> 
+
+</body>
+</html>
