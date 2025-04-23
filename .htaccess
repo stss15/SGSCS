@@ -1,0 +1,5 @@
+# Redirect root and index.html to the homepage-shell.html with content parameter
+# Keep these commented out for now as we're using meta refresh in index.html
+# RewriteEngine On
+# RewriteRule ^$ /homepage-shell.html?content=content/index_fragment.html [L,R=302]
+# RewriteRule ^index\.html$ /homepage-shell.html?content=content/index_fragment.html [L,R=302] 
