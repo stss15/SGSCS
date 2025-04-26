@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IGCSE Computer Science – Python If Statements</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../../styles/global/main.css">
+  <link rel="stylesheet" href="../../styles/global/landing_pages.css">
+  <link rel="stylesheet" href="../../styles/ks4/ks4.css">
+
+  <!-- This page's Styles -->
+  <link rel="stylesheet" href="../../styles/ks4/learn_python.css">
+
+  <!-- Source Code Pro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <main class="ks4-container">
+    <!-- Page Title -->
+    <div class="page-title">
+      <h1>Python: If Statements</h1>
+      <div class="title-underline"></div>
+    </div>
+
+    <!-- Section 1: Explanation -->
+    <section class="basics-section">
+      <h2>Explanation</h2>
+      
+      <div class="python-fundamentals">
+        <div class="python-concept">
+          <h3>If statements</h3>
+          <p>allow your program to make a decision and change the route that is taken through the program.</p>
+        </div>
+        
+        <div class="python-concept">
+          <p>An if statement works by testing a condition and then executing specific code based on whether that condition is True or False. Think of it as the computer asking a yes/no question, and then doing different things depending on the answer.</p>
+          
+          <p>For example, if we want to check if a number is greater than 10, equal to 10, or less than 10, we would use this structure:</p>
+          
+          <p>1. First, we test if the number is greater than 10. If this is TRUE, we display "This is over 10" and the other tests are skipped.</p>
+          
+          <p>2. If the first condition is FALSE, we test if the number equals 10. If this is TRUE, we display "This is equal to 10" and the rest is skipped.</p>
+          
+          <p>3. If both previous conditions are FALSE, we know the number must be less than 10, so we display "This is under 10".</p>
+          
+          <div class="code-snippet full-width">
+            <code>if num1 > 10:
+    print("This is over 10")
+elif num1 == 10:
+    print("This is equal to 10")
+else:
+    print("This is under 10")</code>
+          </div>
+          
+          <p>The computer follows this path from top to bottom, checking each condition until one of them is True, then executing the corresponding code and skipping the rest.</p>
+        </div>
+      </div>
+
+      <!-- Gold divider -->
+      <div class="section-divider"></div>
+
+      <h2>Indenting Lines of Code</h2>
+      <div class="python-fundamentals">
+        <p>Indenting is very important in Python as it shows the lines that are dependent on others, as shown in the example above. In order to indent text you can use your <span class="code-highlight">Tab</span> key or you can press your <span class="code-highlight">space key</span> five times. The <span class="code-highlight">backspace</span> key will remove indents.</p>
+        
+        <p>The first line of the if statement tests a condition, and if that condition is met (i.e. the first condition is true) then the lines of code directly below it are run. If it is not met (i.e. the first condition is false) it will test the second condition, if there is one, and so on. Below are examples of the different comparison and logical operators you can use in the condition line of your if statement.</p>
+      </div>
+
+      <!-- Gold divider -->
+      <div class="section-divider"></div>
+
+      <h2>Comparison & Logical Operators</h2>
+      <div class="operators-grid">
+        <div class="operators-table">
+          <h3>Comparison Operators</h3>
+          <table>
+            <tr>
+              <th>Operator</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>==</td>
+              <td>Equal to</td>
+            </tr>
+            <tr>
+              <td>!=</td>
+              <td>Not equal to</td>
+            </tr>
+            <tr>
+              <td>></td>
+              <td>Greater than</td>
+            </tr>
+            <tr>
+              <td><</td>
+              <td>Less than</td>
+            </tr>
+            <tr>
+              <td>>=</td>
+              <td>Greater than or equal to</td>
+            </tr>
+            <tr>
+              <td><=</td>
+              <td>Less than or equal to</td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="operators-table">
+          <h3>Logical Operators</h3>
+          <table>
+            <tr>
+              <th>Operator</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>and</td>
+              <td>Both conditions must be met</td>
+            </tr>
+            <tr>
+              <td>or</td>
+              <td>Either condition must be met</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Gold divider -->
+      <div class="section-divider"></div>
+
+      <h2>Example Code</h2>
+      <div class="code-examples-grid">
+        <div class="code-example-card full-width">
+          <div class="code-heading">Simple If-Else</div>
+          <div class="code-snippet">
+            <code>if num > 10:
+    print("This is over 10")
+else:
+    print("This is not over 10")</code>
+          </div>
+          <div class="code-explanation">
+            <p>If num1 is over 10, it will display the message "This is over 10", otherwise it will display the message "This is not over 10".</p>
+          </div>
+        </div>
+
+        <div class="code-example-card full-width">
+          <div class="code-heading">If-Elif-Else</div>
+          <div class="code-snippet">
+            <code>if num > 10:
+    print("This is over 10")
+elif num == 10:
+    print("This is equal to 10")
+else:
+    print("This is under 10")</code>
+          </div>
+          <div class="code-explanation">
+            <p>If num1 is over 10, it will display the message "This is over 10", otherwise it will check the next condition. If num1 is equal to 10, it will display the message "This is equal to 10". Otherwise, if neither of the first two conditions have been met, it will display the message "This is under 10".</p>
+          </div>
+        </div>
+
+        <div class="code-example-card full-width">
+          <div class="code-heading">Nested If Statements</div>
+          <div class="code-snippet">
+            <code>if num >= 10:
+    if num <= 20:
+        print("This is between 10 and 20")
+    else:
+        print("This is over 20")
+else:
+    print("This is under 10")</code>
+          </div>
+          <div class="code-explanation">
+            <p>If num1 is 10 or more then it will test another if statement to see if num1 is less than or equal to 20. If it is, it will display the message "This is between 10 and 20". If num1 is not less than or equal to 20 then it will display the message "This is over 20". If num1 is not over 10, it will display the message "This is under 10".</p>
+          </div>
+        </div>
+
+        <div class="code-example-card full-width">
+          <div class="code-heading">String Conversion</div>
+          <div class="code-snippet">
+            <code>text = str.lower(text)</code>
+          </div>
+          <div class="code-explanation">
+            <p>Changes the text to lower case. As Python is case sensitive, this changes the data input by the user into lower case so it is easier to check.</p>
+          </div>
+        </div>
+
+        <div class="code-example-card full-width">
+          <div class="code-heading">Using AND Operator</div>
+          <div class="code-snippet">
+            <code>num = int(input("Enter a number between 10 and 20: "))
+if num >= 10 and num <= 20:
+    print("Thank you")
+else:
+    print("Out of range")</code>
+          </div>
+          <div class="code-explanation">
+            <p>This uses <span class="code-highlight">and</span> to test multiple conditions in the if statement. Both the conditions must be met to produce the output "Thank you".</p>
+          </div>
+        </div>
+
+        <div class="code-example-card full-width">
+          <div class="code-heading">Using OR Operator</div>
+          <div class="code-snippet">
+            <code>num = int(input("Enter an EVEN number between 1 and 5: "))
+if num == 2 or num == 4:
+    print("Thank you")
+else:
+    print("Incorrect")</code>
+          </div>
+          <div class="code-explanation">
+            <p>This uses <span class="code-highlight">or</span> to test the conditions in the if statement. Just one condition must be met to display the output "Thank you".</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 3: IDE Demo -->
+    <section id="ide-demo" class="basics-section">
+      <h2>Interactive Demo</h2>
+      
+      <div class="monitor-container" data-demo-output='[
+        "Enter a number: 15",
+        "This is over 10",
+        "Enter a number: 10",
+        "This is equal to 10",
+        "Enter a number: 5",
+        "This is under 10",
+        "Enter a number between 1 and 100: 25",
+        "25 is within the valid range.",
+        "The square of 25 is 625"
+      ]'>
+        <div class="monitor">
+          <!-- Mac-style titlebar -->
+          <div class="ide-titlebar">
+            <span class="circle close"></span>
+            <span class="circle minimize"></span>
+            <span class="circle zoom"></span>
+          </div>
+          
+          <!-- Screen content -->
+          <div class="screen-content">
+            <!-- Code editor - initially full height -->
+            <div class="ide-editor-container">
+              <pre id="code" class="ide-editor"># Basic if-elif-else example
+num = int(input("Enter a number: "))
+
+if num > 10:
+    print("This is over 10")
+elif num == 10:
+    print("This is equal to 10")
+else:
+    print("This is under 10")
+
+# More complex example with input validation
+number = int(input("Enter a number between 1 and 100: "))
+
+if number >= 1 and number <= 100:
+    print(f"{number} is within the valid range.")
+    # Calculate and display the square of the number
+    square = number * number
+    print(f"The square of {number} is {square}")
+else:
+    print("Invalid input! The number must be between 1 and 100.")
+    print("Please try again.")</pre>
+              
+              <!-- Run button inside the screen -->
+              <button id="run" class="run-btn">Run ▶︎</button>
+            </div>
+            
+            <!-- Resize handle (initially hidden) -->
+            <div id="resize-handle" class="resize-handle"></div>
+            
+            <!-- Output shell (initially hidden) -->
+            <div class="ide-shell-container">
+              <pre id="output" class="ide-shell"></pre>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Monitor stand -->
+        <div class="monitor-stand"></div>
+      </div>
+    </section>
+
+    <!-- Gold divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 4: Challenges -->
+    <section id="challenges" class="basics-section">
+      <h2>Challenges</h2>
+      <div class="challenges-container">
+        <div class="challenges-grid">
+          <!-- Challenge 012 -->
+          <div class="challenge-card">
+            <div class="challenge-number">012</div>
+            <div class="challenge-text">
+              <p>Ask for two numbers. If the first one is larger than the second, display the second number first and then the first number, otherwise show the first number first and then the second.</p>
+            </div>
+          </div>
+
+          <!-- Challenge 013 -->
+          <div class="challenge-card">
+            <div class="challenge-number">013</div>
+            <div class="challenge-text">
+              <p>Ask the user to enter a number that is under 20. If they enter a number that is 20 or more, display the message "Too high", otherwise display "Thank you".</p>
+            </div>
+          </div>
+
+          <!-- Challenge 014 -->
+          <div class="challenge-card">
+            <div class="challenge-number">014</div>
+            <div class="challenge-text">
+              <p>Ask the user to enter a number between 10 and 20 (inclusive). If they enter a number within this range, display the message "Thank you", otherwise display the message "Incorrect answer".</p>
+            </div>
+          </div>
+
+          <!-- Challenge 015 -->
+          <div class="challenge-card">
+            <div class="challenge-number">015</div>
+            <div class="challenge-text">
+              <p>Ask the user to enter their favourite colour. If they enter "red", "RED" or "Red" display the message "I like red too", otherwise display the message "I don't like [colour], I prefer red".</p>
+            </div>
+          </div>
+
+          <!-- Challenge 016 -->
+          <div class="challenge-card">
+            <div class="challenge-number">016</div>
+            <div class="challenge-text">
+              <p>Ask the user if it is raining and convert their answer to lower case so it doesn't matter what case they type it in. If they answer "yes", ask if it is windy. If they answer "yes" to this second question, display the answer "It is too windy for an umbrella", otherwise display the message "Take an umbrella". If they did not answer yes to the first question, display the answer "Enjoy your day".</p>
+            </div>
+          </div>
+
+          <!-- Challenge 017 -->
+          <div class="challenge-card">
+            <div class="challenge-number">017</div>
+            <div class="challenge-text">
+              <p>Ask the user's age. If they are 18 or over, display the message "You can vote", if they are aged 17, display the message "You can learn to drive", if they are 16, display the message "You can buy a lottery ticket", if they are under 16, display the message "You can go Trick-or-Treating".</p>
+            </div>
+          </div>
+
+          <!-- Challenge 018 -->
+          <div class="challenge-card">
+            <div class="challenge-number">018</div>
+            <div class="challenge-text">
+              <p>Ask the user to enter a number. If it is under 10, display the message "Too low", if their number is between 10 and 20, display "Correct", otherwise display "Too high".</p>
+            </div>
+          </div>
+
+          <!-- Challenge 019 -->
+          <div class="challenge-card">
+            <div class="challenge-number">019</div>
+            <div class="challenge-text">
+              <p>Ask the user to enter 1, 2 or 3. If they enter a 1, display the message "Thank you", if they enter a 2, display "Well done", if they enter a 3, display "Correct". If they enter anything else, display "Error message".</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold divider -->
+    <div class="section-divider"></div>
+
+    <!-- Navigation Links -->
+    <section class="lesson-navigation">
+      <div class="nav-links">
+        <div class="nav-link-prev">
+          <a href="basics.html">
+            <span class="nav-label">Previous Lesson</span>
+            <span class="nav-title">Python Basics</span>
+          </a>
+        </div>
+        <div class="nav-link-next">
+          <a href="math.html">
+            <span class="nav-label">Next Lesson</span>
+            <span class="nav-title">Math Operations</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <!-- Include header/footer -->
+  <script src="../../scripts/global/include.js" defer></script>
+  <!-- IDE mock-run logic -->
+  <script src="../../scripts/ks4/learn_python.js" defer></script>
+</body>
+</html>

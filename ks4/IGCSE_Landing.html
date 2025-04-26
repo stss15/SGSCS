@@ -22,15 +22,36 @@
     <div data-include="header"></div>
 
     <main>
+        <!-- Sticky Navigation -->
+        <nav class="ks4-sticky-nav">
+            <div class="ks4-container">
+                <ul class="ks4-nav-links">
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#content">Content</a></li>
+                    <li><a href="#python">Learn Python</a></li>
+                    <li><a href="#revision">Revision</a></li>
+                </ul>
+            </div>
+        </nav>
+
         <div class="ks4-container new-ks4-layout">
+            <!-- Hero Banner -->
+            <section class="ks4-hero-banner">
+                <a href="new_to_CS.html">
+                    <img src="../assets/images/KS4/ks4_hero_banner.png" alt="IGCSE Computer Science - Click to learn more">
+                </a>
+            </section>
+
+            <!-- simple gold divider -->
+            <div class="section-divider"></div>
 
             <!-- Resources at top -->
-            <section class="resources-section">
-                <h2>Resources</h2>
+            <section id="resources" class="resources-section">
+                <h2><i class="fas fa-book"></i> Resources</h2>
                 <div class="resource-grid">
                     <!-- Year 10 column -->
                     <div class="resource-column">
-                        <h3>Year 10</h3>
+                        <h3><i class="fas fa-user-graduate"></i> Year 10</h3>
                         <ul>
                             <li><a href="parent_information_year10.html"><i class="fas fa-book"></i> Parent Information</a></li>
                             <li><a href="overview_year10.html"><i class="fas fa-book"></i> Overview</a></li>
@@ -39,7 +60,7 @@
 
                     <!-- Year 11 column -->
                     <div class="resource-column">
-                        <h3>Year 11</h3>
+                        <h3><i class="fas fa-user-graduate"></i> Year 11</h3>
                         <ul>
                             <li><a href="parent_information_year11.html"><i class="fas fa-book"></i> Parent Information</a></li>
                             <li><a href="overview_year11.html"><i class="fas fa-book"></i> Overview</a></li>
@@ -48,7 +69,7 @@
 
                     <!-- Additional info column -->
                     <div class="resource-column">
-                        <h3>Additional</h3>
+                        <h3><i class="fas fa-info-circle"></i> Additional</h3>
                         <ul>
                             <li><a href="../assets/docs/Cambridge_IGCSE_Syllabus-202.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> IGCSE Syllabus</a></li>
                         </ul>
@@ -56,12 +77,15 @@
                 </div>
             </section>
 
+            <!-- simple gold divider -->
+            <div class="section-divider"></div>
+
             <!-- Two-column layout -->
-            <div class="papers-layout">
+            <div id="content" class="papers-layout">
 
                 <!-- Paper 1: Computer Systems -->
                 <div class="paper paper1">
-                    <h2>Computer Systems</h2>
+                    <h2><i class="fas fa-desktop"></i> Computer Systems</h2>
                     <div class="ks4-topic-grid">
                         <!-- Topic 1: Data representation -->
                         <div class="ks4-topic">
@@ -223,7 +247,7 @@
 
                 <!-- Paper 2: Algorithms, Programming & Logic -->
                 <div class="paper paper2">
-                    <h2>Algorithms, Programming & Logic</h2>
+                    <h2><i class="fas fa-code"></i> Algorithms, Programming & Logic</h2>
                     <div class="ks4-topic-grid">
                         <!-- Topic 7: Algorithm design and problem solving -->
                         <div class="ks4-topic">
@@ -357,39 +381,82 @@
             <div class="section-divider"></div>
 
             <!-- Learn Python single-column box -->
-            <section class="single-section">
-                <h2>Learn Python</h2>
-                <ul class="single-links">
-                    <li><a href="python_basics.html">Python Basics</a></li>
-                    <!-- add more Python pages here -->
-                </ul>
+            <section id="python" class="single-section">
+                <h2 class="python-header"><i class="fab fa-python"></i> Learn Python</h2>
+                <div class="python-grid">
+                    <ul class="single-links">
+                        <li class="topic-basics">
+                            <a href="python/basics.html"><i class="fab fa-python"></i> Python Basics</a>
+                        </li>
+                        <li class="topic-if">
+                            <a href="python/if.html"><i class="fas fa-code-branch"></i> If Statements</a>
+                        </li>
+                        <li class="topic-math">
+                            <a href="python/math.html"><i class="fas fa-calculator"></i> Math Operations</a>
+                        </li>
+                        <li class="topic-string">
+                            <a href="python/strings.html"><i class="fas fa-font"></i> String Manipulation</a>
+                        </li>
+                    </ul>
+                    <ul class="single-links">
+                        <li class="topic-for">
+                            <a href="python/for.html"><i class="fas fa-redo-alt"></i> For Loops</a>
+                        </li>
+                        <li class="topic-while">
+                            <a href="python/while.html"><i class="fas fa-infinity"></i> While Loops</a>
+                        </li>
+                        <li class="topic-random">
+                            <a href="python/random.html"><i class="fas fa-dice"></i> Random Numbers</a>
+                        </li>
+                        <li class="topic-arrays">
+                            <a href="python/lists.html"><i class="fas fa-list-ol"></i> Lists as Arrays</a>
+                        </li>
+                    </ul>
+                    <ul class="single-links">
+                        <li class="topic-2d">
+                            <a href="python/2DLists.html"><i class="fas fa-th-large"></i> 2D Lists</a>
+                        </li>
+                        <li class="topic-io">
+                            <a href="python/files.html"><i class="fas fa-file-import"></i> File Input/Output</a>
+                        </li>
+                        <li class="topic-sub">
+                            <a href="python/subroutines.html"><i class="fas fa-project-diagram"></i> Subroutines</a>
+                        </li>
+                        <li class="topic-challenge">
+                            <a href="python/challenges.html"><i class="fas fa-lightbulb"></i> Project Challenges</a>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
+            <!-- simple gold divider -->
+            <div class="section-divider"></div>
+
             <!-- Revision section -->
-            <section class="single-section">
-                <h2>Revision</h2>
+            <section id="revision" class="single-section">
+                <h2><i class="fas fa-graduation-cap"></i> Revision</h2>
                 <div class="revision-grid">
                     <!-- Paper 1 -->
                     <div class="revision-column">
-                        <h3>Paper 1</h3>
+                        <h3><i class="fas fa-desktop"></i> Paper 1</h3>
                         <ul class="single-links">
-                            <li><a href="data_representation.html">1. Data representation</a></li>
-                            <li><a href="data_transmission.html">2. Data transmission</a></li>
-                            <li><a href="hardware.html">3. Hardware</a></li>
-                            <li><a href="software.html">4. Software</a></li>
-                            <li><a href="internet.html">5. The internet & its uses</a></li>
-                            <li><a href="automated_tech.html">6. Automated & emerging tech</a></li>
+                            <li class="topic-data-rep"><a href="data_representation.html"><i class="fas fa-microchip"></i> 1. Data representation</a></li>
+                            <li class="topic-data-trans"><a href="data_transmission.html"><i class="fas fa-exchange-alt"></i> 2. Data transmission</a></li>
+                            <li class="topic-hardware"><a href="hardware.html"><i class="fas fa-server"></i> 3. Hardware</a></li>
+                            <li class="topic-software"><a href="software.html"><i class="fas fa-cogs"></i> 4. Software</a></li>
+                            <li class="topic-internet"><a href="internet.html"><i class="fas fa-globe"></i> 5. The internet & its uses</a></li>
+                            <li class="topic-auto"><a href="automated_tech.html"><i class="fas fa-robot"></i> 6. Automated & emerging tech</a></li>
                         </ul>
                     </div>
 
                     <!-- Paper 2 -->
                     <div class="revision-column">
-                        <h3>Paper 2</h3>
+                        <h3><i class="fas fa-code"></i> Paper 2</h3>
                         <ul class="single-links">
-                            <li><a href="algorithms.html">7. Algorithm design & problem solving</a></li>
-                            <li><a href="programming.html">8. Programming</a></li>
-                            <li><a href="databases.html">9. Databases</a></li>
-                            <li><a href="boolean_logic.html">10. Boolean logic</a></li>
+                            <li class="topic-algorithms"><a href="algorithms.html"><i class="fas fa-sitemap"></i> 7. Algorithm design & problem solving</a></li>
+                            <li class="topic-programming"><a href="programming.html"><i class="fas fa-laptop-code"></i> 8. Programming</a></li>
+                            <li class="topic-databases"><a href="databases.html"><i class="fas fa-database"></i> 9. Databases</a></li>
+                            <li class="topic-logic"><a href="boolean_logic.html"><i class="fas fa-project-diagram"></i> 10. Boolean logic</a></li>
                         </ul>
                     </div>
                 </div>

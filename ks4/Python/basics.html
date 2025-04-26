@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IGCSE Computer Science – Python Basics</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../../styles/global/main.css">
+  <link rel="stylesheet" href="../../styles/global/landing_pages.css">
+  <link rel="stylesheet" href="../../styles/ks4/ks4.css">
+
+  <!-- This page's Styles -->
+  <link rel="stylesheet" href="../../styles/ks4/learn_python.css">
+
+  <!-- Source Code Pro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div data-include="header"></div>
+
+    <main class="ks4-container">
+    <!-- Page Title -->
+    <div class="page-title">
+      <h1>Python: The Basics</h1>
+      <div class="title-underline"></div>
+    </div>
+
+    <!-- Section 1: Important Information & Example Code Combined -->
+    <section class="basics-section">
+      <h2>Important Things to Note When Writing Your Programs</h2>
+      
+      <div class="python-fundamentals">
+        <div class="python-concept">
+          <h3>Python is case sensitive</h3>
+          <p>so it is important that you use the correct case, otherwise your code <strong>will not work</strong>.</p>
+        </div>
+        
+        <div class="python-concept">
+          <p>Text values need to appear in speech marks (") but numbers do not.</p>
+          
+          <p>When naming <span class="code-highlight">variables</span> (i.e. values that you want to store data in) you cannot use any dedicated words such as print, input, etc. otherwise your code will not work.</p>
+          
+          <p>When saving your files <strong>do not save them with any dedicated words</strong> that Python already uses, such as print, input, etc. If you do this it will not run and you will need to rename the file before it works.</p>
+          
+          <p>To edit a program you have saved and closed, right-click on the file and select <span class="code-highlight">Edit with IDLE</span>. If you just double-click on the file it will only try to run it and you will not be able to edit it.</p>
+        </div>
+      </div>
+
+      <!-- Gold divider -->
+      <div class="section-divider"></div>
+
+      <h2>Example Code</h2>
+      <div class="code-examples-grid">
+        <!-- Variable Declaration Example - Full Width -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Variable Declaration</div>
+          <div class="code-snippet">
+            <code>num1 = 93</code>
+          </div>
+          <div class="code-explanation">
+            <p>Set the value of a <span class="code-highlight">variable</span>, if there is not a variable already created, it will create one. A variable is a container for a value (in this case the variable will be called "num1" and store the value 93). The value stored in the variable can change while the program is running. The variable can be called whatever you want (except Python dedicated words such as print, save, etc.) and it must start with a letter rather than a number or symbol and have no spaces.</p>
+          </div>
+        </div>
+
+        <!-- Addition Example -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Addition</div>
+          <div class="code-snippet">
+            <code>answer = num1 + num2</code>
+          </div>
+          <div class="code-explanation">
+            <p>Adds together num1 and num2 and stores the answer in a variable called answer.</p>
+          </div>
+        </div>
+
+        <!-- Subtraction Example -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Subtraction</div>
+          <div class="code-snippet">
+            <code>answer = num1 - num2</code>
+          </div>
+          <div class="code-explanation">
+            <p>Subtracts num2 from num1 and stores the answer in a variable called answer.</p>
+          </div>
+        </div>
+
+        <!-- Multiplication Example -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Multiplication</div>
+          <div class="code-snippet">
+            <code>answer = num1 * num2</code>
+          </div>
+          <div class="code-explanation">
+            <p>Multiplies num1 by num2 and stores the answer in a variable called answer.</p>
+          </div>
+        </div>
+
+        <!-- Division Example -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Division</div>
+          <div class="code-snippet">
+            <code>answer = num1 / num2</code>
+          </div>
+          <div class="code-explanation">
+            <p>Divides num1 by num2 and stores the answer in a variable called answer.</p>
+          </div>
+        </div>
+
+        <!-- Integer Division Example -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Integer Division</div>
+          <div class="code-snippet">
+            <code>answer = num1 // num2</code>
+          </div>
+          <div class="code-explanation">
+            <p>A whole number division (i.e. 9//4 = 2) and stores the answer in a variable called answer.</p>
+          </div>
+        </div>
+
+        <!-- Print with Newline Example -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Print with Line Break</div>
+          <div class="code-snippet">
+            <code>print("First line\nSecond line")</code>
+          </div>
+          <div class="code-explanation">
+            <p>"\n" is used as a line break.</p>
+          </div>
+        </div>
+
+        <!-- Print Variable Example -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Print with Variable</div>
+          <div class="code-snippet">
+            <code>print("The answer is", answer)</code>
+          </div>
+          <div class="code-explanation">
+            <p>Displays the text "The answer is" and the value of the variable answer.</p>
+          </div>
+        </div>
+
+        <!-- Print String Example - Full width at end -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Print Text</div>
+          <div class="code-snippet">
+            <code>print("This is a message")</code>
+          </div>
+          <div class="code-explanation">
+            <p>Displays the message in the brackets. As the value we want displayed is a text value it has the speech marks, which will not be displayed in the output. If you wanted to display a numerical value or the contents of a variable, the speech marks are not needed.</p>
+          </div>
+        </div>
+
+        <!-- Input Text Example - Full width at end -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Input Text</div>
+          <div class="code-snippet">
+            <code>textValue = input("Enter a text value: ")</code>
+          </div>
+          <div class="code-explanation">
+            <p>Displays the question "Enter a text value: " and stores the value the user enters in a variable called textValue. The space after the colon allows a space to be added before the user enters their answer, otherwise they appear squashed unattractively together.</p>
+          </div>
+        </div>
+
+        <!-- Input Number Example - Full width at end -->
+        <div class="code-example-card full-width">
+          <div class="code-heading">Input Number</div>
+          <div class="code-snippet">
+            <code>numValue = int(input("Enter a number: "))</code>
+          </div>
+          <div class="code-explanation">
+            <p>Displays the question "Enter a number: " and stores the value as an integer (a whole number) in a variable called numValue. Integers can be used in calculations but variables stored as text cannot.</p>
+                </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Gold divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 3: IDE Demo -->
+    <section id="ide-demo" class="basics-section">
+      <h2>Interactive Demo</h2>
+      
+      <div class="monitor-container" data-demo-output='[
+        "First number: 10",
+        "Second number: 5",
+        "Sum: 15",
+        "Difference: 5",
+        "Product: 50",
+        "Division: 2.0",
+        "Whole Division: 2",
+        "Python is a powerful programming language!",
+        "You can display multiple lines",
+        "using the newline character.",
+        "Initial count: 5",
+        "Updated count: 6"
+      ]'>
+        <div class="monitor">
+          <!-- Mac-style titlebar -->
+          <div class="ide-titlebar">
+            <span class="circle close"></span>
+            <span class="circle minimize"></span>
+            <span class="circle zoom"></span>
+          </div>
+          
+          <!-- Screen content -->
+          <div class="screen-content">
+            <!-- Code editor - initially full height -->
+            <div class="ide-editor-container">
+              <pre id="code" class="ide-editor"># Variables and basic operations
+num1 = 10
+num2 = 5
+
+# Basic mathematical operations
+sum_result = num1 + num2
+difference = num1 - num2
+product = num1 * num2
+quotient = num1 / num2
+whole_division = num1 // num2
+
+# Display results
+print("First number:", num1)
+print("Second number:", num2)
+print("Sum:", sum_result)
+print("Difference:", difference)
+print("Product:", product)
+print("Division:", quotient)
+print("Whole Division:", whole_division)
+
+# Demonstrating text output with print
+print("Python is a powerful programming language!")
+print("You can display multiple lines\nusing the newline character.")
+
+# Demonstrating variable updates
+count = 5
+print("Initial count:", count)
+count = count + 1
+print("Updated count:", count)</pre>
+              
+              <!-- Run button inside the screen -->
+              <button id="run" class="run-btn">Run ▶︎</button>
+            </div>
+            
+            <!-- Resize handle (initially hidden) -->
+            <div id="resize-handle" class="resize-handle"></div>
+            
+            <!-- Output shell (initially hidden) -->
+            <div class="ide-shell-container">
+              <pre id="output" class="ide-shell"></pre>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Monitor stand -->
+        <div class="monitor-stand"></div>
+      </div>
+    </section>
+
+    <!-- Gold divider -->
+    <div class="section-divider"></div>
+
+    <!-- Section 4: Challenges -->
+    <section id="challenges" class="basics-section">
+      <h2>Challenges</h2>
+      <div class="challenges-container">
+        <div class="challenges-grid">
+          <!-- Challenge 001 -->
+          <div class="challenge-card">
+            <div class="challenge-number">001</div>
+            <div class="challenge-text">
+              <p>Ask for the user's first name and display the output message <code>Hello [First Name]</code>.</p>
+            </div>
+          </div>
+
+          <!-- Challenge 002 -->
+          <div class="challenge-card">
+            <div class="challenge-number">002</div>
+            <div class="challenge-text">
+              <p>Ask for the user's first name and then ask for their surname and display the output message <code>Hello [First Name] [Surname]</code>.</p>
+            </div>
+          </div>
+
+          <!-- Challenge 003 -->
+          <div class="challenge-card">
+            <div class="challenge-number">003</div>
+            <div class="challenge-text">
+              <p>Write code that will display the joke "What do you call a bear with no teeth?" and on the next line display the answer "A gummy bear!" Try to create it using only one line of code.</p>
+            </div>
+          </div>
+
+          <!-- Challenge 004 -->
+          <div class="challenge-card">
+            <div class="challenge-number">004</div>
+            <div class="challenge-text">
+              <p>Ask the user to enter two numbers. Add them together and display the answer as <code>The total is [answer]</code>.</p>
+            </div>
+                </div>
+
+          <!-- Challenge 005 -->
+          <div class="challenge-card">
+            <div class="challenge-number">005</div>
+            <div class="challenge-text">
+              <p>Ask the user to enter three numbers. Add together the first two numbers and then multiply this total by the third. Display the answer as <code>The answer is [answer]</code>.</p>
+                    </div>
+                    </div>
+
+          <!-- Challenge 006 -->
+          <div class="challenge-card">
+            <div class="challenge-number">006</div>
+            <div class="challenge-text">
+              <p>Ask how many slices of pizza the user started with and ask how many slices they have eaten. Work out how many slices they have left and display the answer in a user-friendly format.</p>
+                    </div>
+                    </div>
+
+          <!-- Challenge 007 -->
+          <div class="challenge-card">
+            <div class="challenge-number">007</div>
+            <div class="challenge-text">
+              <p>Ask the user for their name and their age. Add 1 to their age and display the output <code>[Name] next birthday you will be [new age]</code>.</p>
+                    </div>
+                </div>
+
+          <!-- Challenge 008 -->
+          <div class="challenge-card">
+            <div class="challenge-number">008</div>
+            <div class="challenge-text">
+              <p>Ask for the total price of the bill, then ask how many diners there are. Divide the total bill by the number of diners and show how much each person must pay.</p>
+            </div>
+                </div>
+
+          <!-- Challenge 009 -->
+          <div class="challenge-card">
+            <div class="challenge-number">009</div>
+            <div class="challenge-text">
+              <p>Write a program that will ask for a number of days and then will show how many hours, minutes and seconds are in that number of days.</p>
+                </div>
+                </div>
+
+          <!-- Challenge 010 -->
+          <div class="challenge-card">
+            <div class="challenge-number">010</div>
+            <div class="challenge-text">
+              <p>There are 2,204 pounds in a kilogram. Ask the user to enter a weight in kilograms and convert it to pounds.</p>
+                </div>
+          </div>
+
+          <!-- Challenge 011 -->
+          <div class="challenge-card">
+            <div class="challenge-number">011</div>
+            <div class="challenge-text">
+              <p>Task the user to enter a number over 100 and then enter a number under 10 and tell them how many times the smaller number goes into the larger number in a user-friendly format.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold divider -->
+    <div class="section-divider"></div>
+
+    <!-- Navigation Links -->
+    <section class="lesson-navigation">
+      <div class="nav-links">
+        <!-- No previous link for first lesson -->
+        <div class="nav-link-prev disabled">
+          <span class="nav-label">Previous Lesson</span>
+        </div>
+        <div class="nav-link-next">
+          <a href="if.html">
+            <span class="nav-label">Next Lesson</span>
+            <span class="nav-title">If Statements</span>
+          </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="footer"></div>
+
+  <!-- Include header/footer -->
+  <script src="../../scripts/global/include.js" defer></script>
+  <!-- IDE mock-run logic -->
+  <script src="../../scripts/ks4/learn_python.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,721 @@
+/* ── Section spacing ───────────────────────────────────────────────────────── */
+.basics-section {
+    margin-bottom: var(--section-spacing);
+  }
+  
+  /* ── Page Title ──────────────────────────────────────────────────────────── */
+  .page-title {
+    text-align: center;
+    margin: var(--section-spacing) 0;
+  }
+  
+  .page-title h1 {
+    font-family: var(--heading-font);
+    color: var(--gold);
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  .title-underline {
+    height: 3px;
+    background: var(--gold);
+    width: 100px;
+    margin: 10px auto 0;
+    border-radius: 1.5px;
+  }
+  
+  /* ── Section Headers ───────────────────────────────────────────────────────── */
+  .basics-section h2 {
+    font-family: var(--heading-font);
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: var(--element-spacing);
+  }
+  
+  /* ── Gold Section Divider ──────────────────────────────────────────────────── */
+  .section-divider {
+    height: 3px;
+    background: var(--gold);
+    margin: var(--section-spacing) 0;
+    border-radius: 1.5px;
+  }
+  
+  /* ── Python Fundamentals Section ───────────────────────────────────────────── */
+  .python-fundamentals {
+    background: var(--off-white);
+    border-radius: 8px;
+    padding: var(--element-spacing);
+    margin-bottom: var(--element-spacing);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .python-concept {
+    margin-bottom: 1.5rem;
+  }
+  
+  .python-concept h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-navy);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  .python-concept p {
+    font-family: var(--body-font);
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0.75rem 0;
+  }
+  
+  .code-highlight {
+    font-family: 'Source Code Pro', monospace;
+    background-color: rgba(255, 215, 0, 0.2);
+    padding: 0 0.3rem;
+    font-weight: 600;
+  }
+  
+  /* ── Flow Chart Text ──────────────────────────────────────────────────────── */
+  .flow-chart-text {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+  }
+  
+  .flow-chart-text pre {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--dark-gray);
+    margin: 0;
+  }
+  
+  /* ── Operators Tables ─────────────────────────────────────────────────────── */
+  .operators-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: var(--element-spacing);
+  }
+  
+  .operators-table {
+    background: var(--off-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .operators-table h3 {
+    font-family: var(--heading-font);
+    color: var(--off-white);
+    background: var(--primary-navy);
+    padding: 0.75rem 1rem;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .operators-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .operators-table th {
+    background: rgba(0,0,0,0.05);
+    padding: 0.75rem;
+    text-align: left;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    color: var(--primary-navy);
+  }
+  
+  .operators-table td {
+    padding: 0.75rem;
+    border-top: 1px solid #ddd;
+    font-family: var(--body-font);
+    color: var(--dark-gray);
+  }
+  
+  .operators-table td:first-child {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    color: var(--primary-navy-dark);
+  }
+
+  /* ── Code Heading ───────────────────────────────────────────────────────── */
+  .code-heading {
+    background: var(--gold);
+    color: var(--primary-navy-dark);
+    padding: 0.5rem 1rem;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* ── Code Examples Grid ─────────────────────────────────────────────────────── */
+  .code-examples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: var(--element-spacing);
+  }
+  
+  .code-example-card {
+    background: var(--off-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  .code-example-card.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .code-example-card.three-col {
+    grid-column: span 1;
+  }
+  
+  .code-snippet {
+    background: var(--primary-navy-dark);
+    padding: 0.85rem 1rem;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+  }
+  
+  .code-snippet code {
+    color: var(--code-text);
+    font-size: 1rem;
+    white-space: pre-wrap;
+  }
+  
+  .code-explanation {
+    padding: 1rem;
+    flex-grow: 1;
+  }
+  
+  .code-explanation p {
+    margin: 0;
+    font-family: var(--body-font);
+    color: var(--dark-gray);
+    line-height: 1.5;
+  }
+  
+  /* ── Monitor Container (for centering) ───────────────────────────────────────── */
+  .monitor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* ── Monitor bezel ──────────────────────────────────────────────────────────── */
+  .monitor {
+    background: #e0e0e0;
+    border-radius: 16px;
+    padding: 12px 12px 8px 12px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    margin-top: var(--element-spacing);
+  }
+  
+  /* ── Stand below monitor ───────────────────────────────────────────────────── */
+  .monitor-stand {
+    width: 120px;
+    height: 16px;
+    background: #e0e0e0;
+    margin: 0 auto;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  /* ── Screen content with fixed height ───────────────────────────────────────── */
+  .screen-content {
+    background: #1e1e1e;
+    position: relative;
+    width: 100%;
+    height: 500px; /* Fixed height instead of aspect ratio */
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ── Titlebar ───────────────────────────────────────────────────────────────── */
+  .ide-titlebar {
+    background: #e0e0e0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+  }
+  .ide-titlebar .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    display: inline-block;
+  }
+  .ide-titlebar .close    { background: #ff5f56; }
+  .ide-titlebar .minimize { background: #ffbd2e; }
+  .ide-titlebar .zoom     { background: #27c93f; }
+  
+  /* ── Editor container (flex layout) ───────────────────────────────────────── */
+  .ide-editor-container {
+    flex: 1;
+    overflow: auto;
+    transition: flex 0.3s ease;
+  }
+  
+  /* ── Code editor styling ────────────────────────────────────────────────────── */
+  .ide-editor {
+    width: 100%;
+    height: 100%;
+    background: #1e1e1e;
+    color: #d4f1be;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: pre;
+    text-align: left;
+  }
+  
+  /* ── Run button ─────────────────────────────────────────────────────────────── */
+  .run-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-navy);
+    color: var(--code-text);
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-family: var(--heading-font);
+    cursor: pointer;
+    z-index: 10;
+  }
+  .run-btn:hover {
+    background: var(--primary-navy-light);
+  }
+  
+  /* ── Resize handle ───────────────────────────────────────────────────────── */
+  .resize-handle {
+    height: 6px;
+    background: #333;
+    cursor: ns-resize;
+    display: none; /* Initially hidden */
+    position: relative;
+  }
+  
+  .resize-handle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 2px;
+    background: #666;
+    border-radius: 1px;
+  }
+  
+  .resize-handle.active {
+    display: block;
+  }
+  
+  /* ── Shell container styling ──────────────────────────────────────────────── */
+  .ide-shell-container {
+    flex: 0;
+    overflow: hidden;
+    transition: flex 0.3s ease;
+    display: none; /* Initially hidden */
+  }
+  
+  .ide-shell-container.active {
+    flex: 0.5; /* Start with 50/50 split when active */
+    display: block;
+  }
+  
+  /* ── Shell output styling ───────────────────────────────────────────────────── */
+  .ide-shell {
+    width: 100%;
+    height: 100%;
+    background: #111;
+    color: #eee;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.93rem;
+    line-height: 1.4;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: pre;
+    text-align: left;
+    border-top: 1px solid #333;
+  }
+  
+  /* When shell is active, make sure both containers have scrollbars */
+  .screen-content.shell-active .ide-editor-container,
+  .screen-content.shell-active .ide-shell-container {
+    overflow: auto;
+  }
+  
+  /* ── Challenges Section ──────────────────────────────────────────────────────── */
+  .challenges-container {
+    background: var(--off-white);
+    border-radius: 8px;
+    padding: var(--element-spacing);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .challenge-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  .challenge-number {
+    background: var(--primary-navy-dark);
+    color: var(--gold);
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+  }
+  
+  .challenge-text {
+    padding: 1rem;
+  }
+  
+  .challenge-text p {
+    margin: 0;
+    font-family: var(--body-font);
+    color: var(--dark-gray);
+    line-height: 1.5;
+  }
+  
+  .challenge-text code {
+    font-family: 'Source Code Pro', monospace;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+  }
+  
+  .placeholder-text {
+    font-family: var(--body-font);
+    color: var(--dark-gray);
+    font-style: italic;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  /* ── Lesson Navigation ──────────────────────────────────────────────────────── */
+  .lesson-navigation {
+    margin: var(--element-spacing) 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--off-white);
+    border-radius: 8px;
+    padding: var(--element-spacing);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .nav-link-prev, .nav-link-next {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+  
+  .nav-link-next {
+    text-align: right;
+    align-items: flex-end;
+  }
+  
+  .nav-link-prev {
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .nav-link-prev.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    transform: translateY(-2px);
+  }
+  
+  .nav-label {
+    font-family: var(--body-font);
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+  
+  .nav-title {
+    font-family: var(--heading-font);
+    color: var(--primary-navy);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .nav-link-prev a .nav-title {
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .nav-link-next a .nav-title {
+    position: relative;
+    padding-right: 20px;
+  }
+  
+  .nav-link-prev a .nav-title:before {
+    content: "←";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .nav-link-next a .nav-title:after {
+    content: "→";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* ── Responsive tweaks ─────────────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .page-title h1 {
+      font-size: 2rem;
+    }
+    
+    .basics-section h2 {
+      font-size: 1.5rem;
+    }
+    
+    .monitor {
+      border-radius: 12px;
+    }
+    
+    .ide-editor, .code-example pre.python-code {
+      font-size: 0.85rem;
+    }
+    
+    .ide-shell {
+      font-size: 0.83rem;
+    }
+    
+    .code-examples-grid, .challenges-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .code-example-card.three-col {
+      grid-column: 1 / -1;
+    }
+    
+    .operators-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .nav-link-prev, .nav-link-next {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .nav-link-prev a .nav-title, .nav-link-next a .nav-title {
+      padding: 0 0 0 0;
+    }
+    
+    .nav-link-prev a .nav-title:before, .nav-link-next a .nav-title:after {
+      position: static;
+      transform: none;
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+
+  /* ── Key Points / What You'll Learn ───────────────────────────────────────── */
+  .key-points {
+    background: var(--off-white);
+    border-left: 6px solid var(--gold);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: var(--element-spacing);
+    box-shadow: var(--shadow-soft);
+  }
+  .key-points h2 {
+    color: var(--primary-navy);
+    font-family: var(--heading-font);
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  .key-points ul {
+    margin: 0 0 0 1.2rem;
+    padding: 0;
+    color: var(--primary-navy);
+    font-family: var(--body-font);
+    font-size: 1rem;
+  }
+
+  /* ── Accordion for Examples ──────────────────────────────────────────────── */
+  .accordion {
+    background: none;
+    border-radius: 8px;
+    margin-bottom: var(--element-spacing);
+  }
+  .accordion-item {
+    background: var(--off-white);
+    border: 1.5px solid var(--gold);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .accordion-header {
+    background: var(--gold);
+    color: var(--primary-navy-dark);
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s;
+  }
+  .accordion-header .chevron {
+    margin-left: 1rem;
+    font-size: 1.2em;
+    transition: transform 0.2s;
+  }
+  .accordion-header.active .chevron {
+    transform: rotate(90deg);
+  }
+  .accordion-body {
+    background: var(--off-white);
+    padding: 1.1rem 1.5rem 1.2rem 1.5rem;
+    border-top: 1px solid var(--gold);
+    animation: fadeIn 0.3s;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ── Callout Boxes (Info, Tip, Warning) ─────────────────────────────────── */
+  .callout {
+    display: flex;
+    align-items: flex-start;
+    background: var(--off-white);
+    border-left: 5px solid var(--gold);
+    border-radius: 6px;
+    padding: 0.9rem 1.2rem;
+    margin: 1rem 0;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: var(--primary-navy);
+    box-shadow: var(--shadow-soft);
+  }
+  .callout .callout-icon {
+    margin-right: 0.8rem;
+    font-size: 1.3em;
+    color: var(--gold);
+  }
+  .callout.info .callout-icon { color: var(--primary-navy); }
+  .callout.tip .callout-icon { color: var(--gold); }
+  .callout.warning .callout-icon { color: #e67e22; }
+
+  /* ── Show More Button for Challenges ────────────────────────────────────── */
+  .show-more-btn {
+    background: var(--gold);
+    color: var(--primary-navy-dark);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1.2rem;
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1.2rem auto 0 auto;
+    display: block;
+    box-shadow: var(--shadow-soft);
+    transition: background 0.2s;
+  }
+  .show-more-btn:hover {
+    background: var(--primary-navy);
+    color: var(--gold);
+  }
+
+  /* ── Reduce Padding/Margins for Less Scroll ─────────────────────────────── */
+  .basics-section, .challenges-container, .code-examples-grid, .operators-grid {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0;
+  }
+  .code-examples-grid, .challenges-grid {
+    gap: 1rem;
+  }
+
+  /* ── Responsive Tweaks for New Elements ─────────────────────────────────── */
+  @media (max-width: 768px) {
+    .key-points {
+      padding: 1rem 0.7rem;
+    }
+    .accordion-body {
+      padding: 1rem 0.7rem 1.1rem 0.7rem;
+    }
+    .accordion-header {
+      font-size: 1rem;
+      padding: 0.7rem 0.7rem;
+    }
+    .callout {
+      padding: 0.7rem 0.7rem;
+      font-size: 0.97rem;
+    }
+  }

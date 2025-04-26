@@ -8,11 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add active class to current page in navigation
     highlightCurrentPage();
     
-    // Set up accordion for topic headers
-    initTopicAccordions();
+    // Initialize the accordion functionality
+    initAccordion();
     
-    // Add smooth transitions for subtopic links
-    initSubtopicInteractions();
+    // Auto-expand the first topic in the accordion
+    const firstTopic = document.querySelector('.ks4-topic-header');
+    if (firstTopic) {
+        firstTopic.classList.add('open');
+        const firstTopicList = firstTopic.nextElementSibling;
+        if (firstTopicList) {
+            firstTopicList.classList.remove('collapsed');
+        }
+    }
+    
+    // Initialize smooth scrolling for navigation links
+    initSmoothScroll();
 });
 
 /**
@@ -30,67 +40,77 @@ function highlightCurrentPage() {
     });
 }
 
-/**
- * Initialize accordion functionality for topic headers
- */
-function initTopicAccordions() {
-    // grab every topic block
-    const topics = document.querySelectorAll('.ks4-topic');
-
-    topics.forEach(topic => {
-        const headerEl = topic.querySelector('.ks4-topic-header');
-        const listEl = topic.querySelector('.ks4-subtopic-list');
-
-        // start collapsed
-        listEl.classList.add('collapsed');
-        
-        headerEl.addEventListener('click', () => {
-            // close every other list
-            document.querySelectorAll('.ks4-topic-header').forEach(header => {
-                if (header !== headerEl) {
-                    header.classList.remove('open');
-                    const topicEl = header.closest('.ks4-topic');
-                    const subtopicList = topicEl.querySelector('.ks4-subtopic-list');
-                    subtopicList.classList.add('collapsed');
-                }
-            });
+function initAccordion() {
+    const topicHeaders = document.querySelectorAll('.ks4-topic-header');
+    
+    // First, ensure all subtopic lists are initially collapsed except the first one
+    document.querySelectorAll('.ks4-subtopic-list').forEach((list, index) => {
+        if (index !== 0) { // Skip the first one
+            list.classList.add('collapsed');
+        }
+    });
+    
+    topicHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
             
-            // toggle this one
-            headerEl.classList.toggle('open');
-            listEl.classList.toggle('collapsed');
+            // Toggle the open class for the header
+            this.classList.toggle('open');
+            
+            // Toggle the collapsed class for the content
+            content.classList.toggle('collapsed');
+        });
+    });
+}
+
+function initSmoothScroll() {
+    const navLinks = document.querySelectorAll('.ks4-nav-links a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Add active class to the clicked link and remove from others
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Calculate offset to account for sticky header
+                const navHeight = document.querySelector('.ks4-sticky-nav').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
     
-    // Expand the first topic by default for better UX
-    if (topics.length > 0) {
-        const firstTopic = topics[0];
-        const firstHeader = firstTopic.querySelector('.ks4-topic-header');
-        const firstList = firstTopic.querySelector('.ks4-subtopic-list');
+    // Highlight the current section in the navigation
+    window.addEventListener('scroll', function() {
+        let currentSection = '';
+        const sections = document.querySelectorAll('section[id]');
+        const navHeight = document.querySelector('.ks4-sticky-nav').offsetHeight;
         
-        firstHeader.classList.add('open');
-        firstList.classList.remove('collapsed');
-    }
-}
-
-/**
- * Initialize interactions for subtopic links
- */
-function initSubtopicInteractions() {
-    const subtopicLinks = document.querySelectorAll('.ks4-subtopic-link');
-    
-    subtopicLinks.forEach(link => {
-        // Add subtle hover effect
-        link.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s ease';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navHeight - 20; // 20px offset for better UX
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                currentSection = '#' + section.getAttribute('id');
+            }
         });
         
-        // Add click effect
-        link.addEventListener('click', function() {
-            // Simple click animation
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 150);
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === currentSection) {
+                link.classList.add('active');
+            }
         });
     });
 } 
