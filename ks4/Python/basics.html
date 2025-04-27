@@ -26,6 +26,17 @@
       <div class="title-underline"></div>
     </div>
 
+    <!-- Key Points Section -->
+    <div class="key-points">
+      <h2>What You'll Learn</h2>
+      <ul>
+        <li>How to create and use <strong>variables</strong> in Python</li>
+        <li>Basic arithmetic operations (+, -, *, /, //)</li>
+        <li>How to display output with <code>print()</code></li>
+        <li>How to get user input with <code>input()</code></li>
+      </ul>
+    </div>
+
     <!-- Section 1: Important Information & Example Code Combined -->
     <section class="basics-section">
       <h2>Important Things to Note When Writing Your Programs</h2>
@@ -34,6 +45,11 @@
         <div class="python-concept">
           <h3>Python is case sensitive</h3>
           <p>so it is important that you use the correct case, otherwise your code <strong>will not work</strong>.</p>
+        </div>
+        
+        <div class="callout info">
+          <span class="callout-icon">&#8505;</span>
+          Variables like <code>name</code> and <code>Name</code> are completely different in Python! Always pay attention to capitalization.
         </div>
         
         <div class="python-concept">
@@ -51,129 +67,140 @@
       <div class="section-divider"></div>
 
       <h2>Example Code</h2>
-      <div class="code-examples-grid">
-        <!-- Variable Declaration Example - Full Width -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Variable Declaration</div>
-          <div class="code-snippet">
-            <code>num1 = 93</code>
-          </div>
-          <div class="code-explanation">
-            <p>Set the value of a <span class="code-highlight">variable</span>, if there is not a variable already created, it will create one. A variable is a container for a value (in this case the variable will be called "num1" and store the value 93). The value stored in the variable can change while the program is running. The variable can be called whatever you want (except Python dedicated words such as print, save, etc.) and it must start with a letter rather than a number or symbol and have no spaces.</p>
-          </div>
-        </div>
-
-        <!-- Addition Example -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Addition</div>
-          <div class="code-snippet">
-            <code>answer = num1 + num2</code>
-          </div>
-          <div class="code-explanation">
-            <p>Adds together num1 and num2 and stores the answer in a variable called answer.</p>
+      <div class="accordion">
+        <!-- Variable Declaration -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Variable Declaration
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">num1 = 93</pre>
+            <p class="code-explanation">Set the value of a <span class="code-highlight">variable</span>. If the variable doesn't exist, it will be created. A variable is a container for a value that can change while the program is running.</p>
           </div>
         </div>
-
-        <!-- Subtraction Example -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Subtraction</div>
-          <div class="code-snippet">
-            <code>answer = num1 - num2</code>
-          </div>
-          <div class="code-explanation">
-            <p>Subtracts num2 from num1 and stores the answer in a variable called answer.</p>
-          </div>
-        </div>
-
-        <!-- Multiplication Example -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Multiplication</div>
-          <div class="code-snippet">
-            <code>answer = num1 * num2</code>
-          </div>
-          <div class="code-explanation">
-            <p>Multiplies num1 by num2 and stores the answer in a variable called answer.</p>
+        
+        <!-- Addition -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Addition
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">answer = num1 + num2</pre>
+            <p class="code-explanation">Adds together <code>num1</code> and <code>num2</code> and stores the result in <code>answer</code>.</p>
           </div>
         </div>
-
-        <!-- Division Example -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Division</div>
-          <div class="code-snippet">
-            <code>answer = num1 / num2</code>
-          </div>
-          <div class="code-explanation">
-            <p>Divides num1 by num2 and stores the answer in a variable called answer.</p>
-          </div>
-        </div>
-
-        <!-- Integer Division Example -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Integer Division</div>
-          <div class="code-snippet">
-            <code>answer = num1 // num2</code>
-          </div>
-          <div class="code-explanation">
-            <p>A whole number division (i.e. 9//4 = 2) and stores the answer in a variable called answer.</p>
+        
+        <!-- Subtraction -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Subtraction
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">answer = num1 - num2</pre>
+            <p class="code-explanation">Subtracts <code>num2</code> from <code>num1</code> and stores the result in <code>answer</code>.</p>
           </div>
         </div>
-
-        <!-- Print with Newline Example -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Print with Line Break</div>
-          <div class="code-snippet">
-            <code>print("First line\nSecond line")</code>
-          </div>
-          <div class="code-explanation">
-            <p>"\n" is used as a line break.</p>
-          </div>
-        </div>
-
-        <!-- Print Variable Example -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Print with Variable</div>
-          <div class="code-snippet">
-            <code>print("The answer is", answer)</code>
-          </div>
-          <div class="code-explanation">
-            <p>Displays the text "The answer is" and the value of the variable answer.</p>
+        
+        <!-- Multiplication -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Multiplication
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">answer = num1 * num2</pre>
+            <p class="code-explanation">Multiplies <code>num1</code> by <code>num2</code> and stores the result in <code>answer</code>.</p>
           </div>
         </div>
-
-        <!-- Print String Example - Full width at end -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Print Text</div>
-          <div class="code-snippet">
-            <code>print("This is a message")</code>
-          </div>
-          <div class="code-explanation">
-            <p>Displays the message in the brackets. As the value we want displayed is a text value it has the speech marks, which will not be displayed in the output. If you wanted to display a numerical value or the contents of a variable, the speech marks are not needed.</p>
-          </div>
-        </div>
-
-        <!-- Input Text Example - Full width at end -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Input Text</div>
-          <div class="code-snippet">
-            <code>textValue = input("Enter a text value: ")</code>
-          </div>
-          <div class="code-explanation">
-            <p>Displays the question "Enter a text value: " and stores the value the user enters in a variable called textValue. The space after the colon allows a space to be added before the user enters their answer, otherwise they appear squashed unattractively together.</p>
+        
+        <!-- Division -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Division
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">answer = num1 / num2</pre>
+            <p class="code-explanation">Divides <code>num1</code> by <code>num2</code> and stores the result in <code>answer</code>.</p>
           </div>
         </div>
-
-        <!-- Input Number Example - Full width at end -->
-        <div class="code-example-card full-width">
-          <div class="code-heading">Input Number</div>
-          <div class="code-snippet">
-            <code>numValue = int(input("Enter a number: "))</code>
+        
+        <!-- Integer Division -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Integer Division
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">answer = num1 // num2</pre>
+            <p class="code-explanation">Performs a whole number division (i.e. 9//4 = 2) and stores the result in <code>answer</code>.</p>
           </div>
-          <div class="code-explanation">
-            <p>Displays the question "Enter a number: " and stores the value as an integer (a whole number) in a variable called numValue. Integers can be used in calculations but variables stored as text cannot.</p>
-                </div>
-                </div>
-            </div>
-        </section>
+        </div>
+        
+        <!-- Print with Line Break -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Print with Line Break
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">print("First line\nSecond line")</pre>
+            <p class="code-explanation">The <code>\n</code> character creates a line break in the output.</p>
+          </div>
+        </div>
+        
+        <!-- Print with Variable -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Print with Variable
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">print("The answer is", answer)</pre>
+            <p class="code-explanation">Displays the text "The answer is" followed by the value stored in <code>answer</code>.</p>
+          </div>
+        </div>
+        
+        <!-- Print Text -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Print Text
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">print("This is a message")</pre>
+            <p class="code-explanation">Displays text enclosed in quotes. The quotes themselves aren't displayed in the output.</p>
+          </div>
+        </div>
+        
+        <!-- Input Text -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Input Text
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">textValue = input("Enter a text value: ")</pre>
+            <p class="code-explanation">Displays the prompt and waits for user input, storing the text they enter in <code>textValue</code>.</p>
+          </div>
+        </div>
+        
+        <!-- Input Number -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Input Number
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">numValue = int(input("Enter a number: "))</pre>
+            <p class="code-explanation">Gets user input as text, then converts it to an integer using <code>int()</code>. Integers can be used in calculations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Gold divider -->
     <div class="section-divider"></div>
@@ -290,69 +317,70 @@ print("Updated count:", count)</pre>
           </div>
 
           <!-- Challenge 004 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">004</div>
             <div class="challenge-text">
               <p>Ask the user to enter two numbers. Add them together and display the answer as <code>The total is [answer]</code>.</p>
             </div>
-                </div>
+          </div>
 
           <!-- Challenge 005 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">005</div>
             <div class="challenge-text">
               <p>Ask the user to enter three numbers. Add together the first two numbers and then multiply this total by the third. Display the answer as <code>The answer is [answer]</code>.</p>
-                    </div>
-                    </div>
+            </div>
+          </div>
 
           <!-- Challenge 006 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">006</div>
             <div class="challenge-text">
               <p>Ask how many slices of pizza the user started with and ask how many slices they have eaten. Work out how many slices they have left and display the answer in a user-friendly format.</p>
-                    </div>
-                    </div>
+            </div>
+          </div>
 
           <!-- Challenge 007 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">007</div>
             <div class="challenge-text">
               <p>Ask the user for their name and their age. Add 1 to their age and display the output <code>[Name] next birthday you will be [new age]</code>.</p>
-                    </div>
-                </div>
+            </div>
+          </div>
 
           <!-- Challenge 008 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">008</div>
             <div class="challenge-text">
               <p>Ask for the total price of the bill, then ask how many diners there are. Divide the total bill by the number of diners and show how much each person must pay.</p>
             </div>
-                </div>
+          </div>
 
           <!-- Challenge 009 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">009</div>
             <div class="challenge-text">
               <p>Write a program that will ask for a number of days and then will show how many hours, minutes and seconds are in that number of days.</p>
-                </div>
-                </div>
+            </div>
+          </div>
 
           <!-- Challenge 010 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">010</div>
             <div class="challenge-text">
               <p>There are 2,204 pounds in a kilogram. Ask the user to enter a weight in kilograms and convert it to pounds.</p>
-                </div>
+            </div>
           </div>
 
           <!-- Challenge 011 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">011</div>
             <div class="challenge-text">
               <p>Task the user to enter a number over 100 and then enter a number under 10 and tell them how many times the smaller number goes into the larger number in a user-friendly format.</p>
             </div>
           </div>
         </div>
+        <button class="show-more-btn" onclick="document.querySelectorAll('.challenge-card').forEach((c,i)=>{if(i>=3)c.style.display='block'});this.style.display='none';">Show More Challenges</button>
       </div>
     </section>
 
@@ -371,9 +399,9 @@ print("Updated count:", count)</pre>
             <span class="nav-label">Next Lesson</span>
             <span class="nav-title">If Statements</span>
           </a>
-                </div>
-            </div>
-        </section>
+        </div>
+      </div>
+    </section>
     </main>
 
     <div data-include="footer"></div>
@@ -382,5 +410,20 @@ print("Updated count:", count)</pre>
   <script src="../../scripts/global/include.js" defer></script>
   <!-- IDE mock-run logic -->
   <script src="../../scripts/ks4/learn_python.js" defer></script>
+  <!-- Accordion functionality -->
+  <script>
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const body = this.nextElementSibling;
+      const open = body.style.display === 'block';
+      document.querySelectorAll('.accordion-body').forEach(b => b.style.display = 'none');
+      document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+      if (!open) {
+        body.style.display = 'block';
+        this.classList.add('active');
+      }
+    });
+  });
+  </script>
 </body>
 </html>

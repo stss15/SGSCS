@@ -26,6 +26,17 @@
       <div class="title-underline"></div>
     </div>
 
+    <!-- Key Points Section -->
+    <div class="key-points">
+      <h2>What You'll Learn</h2>
+      <ul>
+        <li>How to use <strong>if</strong>, <strong>elif</strong>, and <strong>else</strong> in Python</li>
+        <li>How to compare values and use logical operators</li>
+        <li>How indentation affects code execution</li>
+        <li>How to handle user input and validate it</li>
+      </ul>
+    </div>
+
     <!-- Section 1: Explanation -->
     <section class="basics-section">
       <h2>Explanation</h2>
@@ -68,6 +79,11 @@ else:
         <p>Indenting is very important in Python as it shows the lines that are dependent on others, as shown in the example above. In order to indent text you can use your <span class="code-highlight">Tab</span> key or you can press your <span class="code-highlight">space key</span> five times. The <span class="code-highlight">backspace</span> key will remove indents.</p>
         
         <p>The first line of the if statement tests a condition, and if that condition is met (i.e. the first condition is true) then the lines of code directly below it are run. If it is not met (i.e. the first condition is false) it will test the second condition, if there is one, and so on. Below are examples of the different comparison and logical operators you can use in the condition line of your if statement.</p>
+      </div>
+
+      <div class="callout info">
+        <span class="callout-icon">&#8505;</span>
+        Python is <strong>case sensitive</strong>! <code>num</code> and <code>Num</code> are different variables.
       </div>
 
       <!-- Gold divider -->
@@ -132,86 +148,87 @@ else:
       <div class="section-divider"></div>
 
       <h2>Example Code</h2>
-      <div class="code-examples-grid">
-        <div class="code-example-card full-width">
-          <div class="code-heading">Simple If-Else</div>
-          <div class="code-snippet">
-            <code>if num > 10:
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Simple If-Else
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">if num > 10:
     print("This is over 10")
 else:
-    print("This is not over 10")</code>
-          </div>
-          <div class="code-explanation">
-            <p>If num1 is over 10, it will display the message "This is over 10", otherwise it will display the message "This is not over 10".</p>
+    print("This is not over 10")</pre>
+            <p class="code-explanation">If <code>num</code> is over 10, it will display the message "This is over 10", otherwise it will display the message "This is not over 10".</p>
           </div>
         </div>
-
-        <div class="code-example-card full-width">
-          <div class="code-heading">If-Elif-Else</div>
-          <div class="code-snippet">
-            <code>if num > 10:
+        <div class="accordion-item">
+          <button class="accordion-header">
+            If-Elif-Else
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">if num > 10:
     print("This is over 10")
 elif num == 10:
     print("This is equal to 10")
 else:
-    print("This is under 10")</code>
-          </div>
-          <div class="code-explanation">
-            <p>If num1 is over 10, it will display the message "This is over 10", otherwise it will check the next condition. If num1 is equal to 10, it will display the message "This is equal to 10". Otherwise, if neither of the first two conditions have been met, it will display the message "This is under 10".</p>
+    print("This is under 10")</pre>
+            <p class="code-explanation">Checks if <code>num</code> is over, equal to, or under 10 and prints accordingly.</p>
           </div>
         </div>
-
-        <div class="code-example-card full-width">
-          <div class="code-heading">Nested If Statements</div>
-          <div class="code-snippet">
-            <code>if num >= 10:
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Nested If Statements
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">if num >= 10:
     if num <= 20:
         print("This is between 10 and 20")
     else:
         print("This is over 20")
 else:
-    print("This is under 10")</code>
-          </div>
-          <div class="code-explanation">
-            <p>If num1 is 10 or more then it will test another if statement to see if num1 is less than or equal to 20. If it is, it will display the message "This is between 10 and 20". If num1 is not less than or equal to 20 then it will display the message "This is over 20". If num1 is not over 10, it will display the message "This is under 10".</p>
+    print("This is under 10")</pre>
+            <p class="code-explanation">Demonstrates nested if statements for complex logic.</p>
           </div>
         </div>
-
-        <div class="code-example-card full-width">
-          <div class="code-heading">String Conversion</div>
-          <div class="code-snippet">
-            <code>text = str.lower(text)</code>
-          </div>
-          <div class="code-explanation">
-            <p>Changes the text to lower case. As Python is case sensitive, this changes the data input by the user into lower case so it is easier to check.</p>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            String Conversion
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">text = str.lower(text)</pre>
+            <p class="code-explanation">Converts input to lowercase for easier comparison.</p>
           </div>
         </div>
-
-        <div class="code-example-card full-width">
-          <div class="code-heading">Using AND Operator</div>
-          <div class="code-snippet">
-            <code>num = int(input("Enter a number between 10 and 20: "))
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Using AND Operator
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">num = int(input("Enter a number between 10 and 20: "))
 if num >= 10 and num <= 20:
     print("Thank you")
 else:
-    print("Out of range")</code>
-          </div>
-          <div class="code-explanation">
-            <p>This uses <span class="code-highlight">and</span> to test multiple conditions in the if statement. Both the conditions must be met to produce the output "Thank you".</p>
+    print("Out of range")</pre>
+            <p class="code-explanation">Both conditions must be true to print "Thank you".</p>
           </div>
         </div>
-
-        <div class="code-example-card full-width">
-          <div class="code-heading">Using OR Operator</div>
-          <div class="code-snippet">
-            <code>num = int(input("Enter an EVEN number between 1 and 5: "))
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Using OR Operator
+            <span class="chevron">&#8250;</span>
+          </button>
+          <div class="accordion-body" style="display:none;">
+            <pre class="code-snippet">num = int(input("Enter an EVEN number between 1 and 5: "))
 if num == 2 or num == 4:
     print("Thank you")
 else:
-    print("Incorrect")</code>
-          </div>
-          <div class="code-explanation">
-            <p>This uses <span class="code-highlight">or</span> to test the conditions in the if statement. Just one condition must be met to display the output "Thank you".</p>
+    print("Incorrect")</pre>
+            <p class="code-explanation">Just one condition must be true to print "Thank you".</p>
           </div>
         </div>
       </div>
@@ -321,7 +338,7 @@ else:
           </div>
 
           <!-- Challenge 015 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">015</div>
             <div class="challenge-text">
               <p>Ask the user to enter their favourite colour. If they enter "red", "RED" or "Red" display the message "I like red too", otherwise display the message "I don't like [colour], I prefer red".</p>
@@ -329,7 +346,7 @@ else:
           </div>
 
           <!-- Challenge 016 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">016</div>
             <div class="challenge-text">
               <p>Ask the user if it is raining and convert their answer to lower case so it doesn't matter what case they type it in. If they answer "yes", ask if it is windy. If they answer "yes" to this second question, display the answer "It is too windy for an umbrella", otherwise display the message "Take an umbrella". If they did not answer yes to the first question, display the answer "Enjoy your day".</p>
@@ -337,7 +354,7 @@ else:
           </div>
 
           <!-- Challenge 017 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">017</div>
             <div class="challenge-text">
               <p>Ask the user's age. If they are 18 or over, display the message "You can vote", if they are aged 17, display the message "You can learn to drive", if they are 16, display the message "You can buy a lottery ticket", if they are under 16, display the message "You can go Trick-or-Treating".</p>
@@ -345,7 +362,7 @@ else:
           </div>
 
           <!-- Challenge 018 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">018</div>
             <div class="challenge-text">
               <p>Ask the user to enter a number. If it is under 10, display the message "Too low", if their number is between 10 and 20, display "Correct", otherwise display "Too high".</p>
@@ -353,13 +370,14 @@ else:
           </div>
 
           <!-- Challenge 019 -->
-          <div class="challenge-card">
+          <div class="challenge-card" style="display:none;">
             <div class="challenge-number">019</div>
             <div class="challenge-text">
               <p>Ask the user to enter 1, 2 or 3. If they enter a 1, display the message "Thank you", if they enter a 2, display "Well done", if they enter a 3, display "Correct". If they enter anything else, display "Error message".</p>
             </div>
           </div>
         </div>
+        <button class="show-more-btn" onclick="document.querySelectorAll('.challenge-card').forEach((c,i)=>{if(i>=3)c.style.display='block'});this.style.display='none';">Show More Challenges</button>
       </div>
     </section>
 
@@ -391,5 +409,20 @@ else:
   <script src="../../scripts/global/include.js" defer></script>
   <!-- IDE mock-run logic -->
   <script src="../../scripts/ks4/learn_python.js" defer></script>
+  <!-- Accordion functionality -->
+  <script>
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const body = this.nextElementSibling;
+      const open = body.style.display === 'block';
+      document.querySelectorAll('.accordion-body').forEach(b => b.style.display = 'none');
+      document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+      if (!open) {
+        body.style.display = 'block';
+        this.classList.add('active');
+      }
+    });
+  });
+  </script>
 </body>
 </html>
